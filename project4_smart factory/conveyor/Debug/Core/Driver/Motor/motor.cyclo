@@ -1,4 +1,0 @@
-../Core/Driver/Motor/motor.c:30:6:Motor_Init	1
-../Core/Driver/Motor/motor.c:39:6:Motor_Forward	6
-../Core/Driver/Motor/motor.c:50:6:Motor_Stop	5
-../Core/Driver/Motor/motor.c:60:6:Motor_StopAll	2

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;CNN_CAM_APP/src/main.cc&apos; to &apos;main.c&apos;" description="Rename resource &apos;main.cc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.cc" name="main.c" stamp="1777526244213" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;CNN_CAM_APP/src/ov5640/OV5640.cpp&apos; to &apos;OV5640.c&apos;" description="Rename resource &apos;OV5640.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/ov5640/OV5640.cpp" name="OV5640.c" stamp="1777526579139" updateReferences="true"/>
-</session>

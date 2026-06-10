@@ -1,4 +1,0 @@
-../Core/Driver/Motor/motor.c:30:6:Motor_Init	8	static
-../Core/Driver/Motor/motor.c:39:6:Motor_Forward	24	static
-../Core/Driver/Motor/motor.c:50:6:Motor_Stop	24	static
-../Core/Driver/Motor/motor.c:60:6:Motor_StopAll	16	static

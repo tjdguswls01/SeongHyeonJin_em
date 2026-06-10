@@ -1,7 +1,0 @@
-/*CNN_CMA_B*/
-the_ROM_image:
-{
-  [bootloader]<CNN_CMA_B/boot/fsbl.elf>
-   <bitstream> 
-  <elf,ps7_cortexa9_0>
-}

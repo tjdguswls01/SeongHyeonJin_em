@@ -1,2 +1,0 @@
-../Core/Driver/ir_sensor/ir_sensor.c:23:9:IR_Detected	16	static
-../Core/Driver/ir_sensor/ir_sensor.c:30:9:StepIR_Detected	16	static
