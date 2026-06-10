@@ -1,0 +1,542 @@
+timestamp=[2026-04-30 13:50:47], mode=PLATFORM_CREATION, duration=0:00:14.083, duration_ms=14083, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2026-04-30 13:52:14], mode=PLATFORM_GENERATION, duration=0:00:05.110, duration_ms=5110, data={name=CNN_CAM}
+timestamp=[2026-04-30 13:54:56], mode=WORKBENCH_START, duration=0:00:05.740, duration_ms=5740, data={}
+timestamp=[2026-04-30 13:54:58], mode=WORKBENCH_UI_INIT, duration=0:00:01.583, duration_ms=1583, data={editors_count=1, platform_editors_count=1, projects_count=7, platform_projects_count=1, active_platform_editor=true, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_system,RemoteSystemsTempFiles}
+timestamp=[2026-04-30 13:55:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:02.529, duration_ms=2529, data={}
+timestamp=[2026-04-30 13:56:11], mode=PLATFORM_GENERATION, duration=0:00:41.335, duration_ms=41335, data={name=system_wrapper}
+timestamp=[2026-04-30 13:56:11], mode=BUILD, duration=0:00:00.236, duration_ms=236, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 13:56:18], mode=BUILD, duration=0:00:02.864, duration_ms=2864, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 13:56:23], mode=BUILD, duration=0:00:04.887, duration_ms=4887, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 13:58:56], mode=PLATFORM_GENERATION, duration=0:00:03.991, duration_ms=3991, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:07:25], mode=PLATFORM_GENERATION, duration=0:00:03.993, duration_ms=3993, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:10:32], mode=PLATFORM_GENERATION, duration=0:00:01.282, duration_ms=1282, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:10:47], mode=PLATFORM_GENERATION, duration=0:00:09.793, duration_ms=9793, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:11:22], mode=PLATFORM_GENERATION, duration=0:00:07.264, duration_ms=7264, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:12:31], mode=PLATFORM_GENERATION, duration=0:00:01.304, duration_ms=1304, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:12:48], mode=PLATFORM_GENERATION, duration=0:00:13.352, duration_ms=13352, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:13:32], mode=APP_CREATION, duration=0:00:04.701, duration_ms=4701, data={name=CNN_CAM_APP, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=CNN_CAM, application_type=application}
+timestamp=[2026-04-30 14:14:07], mode=BUILD, duration=0:00:00.619, duration_ms=619, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:14:09], mode=BUILD, duration=0:00:01.860, duration_ms=1860, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:14:32], mode=BUILD, duration=0:00:00.391, duration_ms=391, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:15:43], mode=PLATFORM_GENERATION, duration=0:00:03.995, duration_ms=3995, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:16:01], mode=PLATFORM_GENERATION, duration=0:00:14.654, duration_ms=14654, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:16:18], mode=WORKBENCH_START, duration=0:00:09.512, duration_ms=9512, data={}
+timestamp=[2026-04-30 14:16:19], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.063, duration_ms=63, data={}
+timestamp=[2026-04-30 14:16:19], mode=WORKBENCH_UI_INIT, duration=0:00:01.527, duration_ms=1527, data={editors_count=4, platform_editors_count=1, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_CAM_APP,CNN_CAM_APP_system,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,system_wrapper}
+timestamp=[2026-04-30 14:16:32], mode=PLATFORM_GENERATION, duration=0:00:08.207, duration_ms=8207, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:16:32], mode=BUILD, duration=0:00:00.236, duration_ms=236, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:16:33], mode=BUILD, duration=0:00:00.167, duration_ms=167, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:16:35], mode=PLATFORM_GENERATION, duration=0:00:01.853, duration_ms=1853, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:16:35], mode=BUILD, duration=0:00:00.209, duration_ms=209, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:16:53], mode=PLATFORM_GENERATION, duration=0:00:17.547, duration_ms=17547, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:16:55], mode=BUILD, duration=0:00:00.954, duration_ms=954, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:17:39], mode=PLATFORM_GENERATION, duration=0:00:04.176, duration_ms=4176, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:17:39], mode=BUILD, duration=0:00:00.130, duration_ms=130, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:17:43], mode=PLATFORM_GENERATION, duration=0:00:01.278, duration_ms=1278, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:17:43], mode=BUILD, duration=0:00:00.123, duration_ms=123, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:17:43], mode=BUILD, duration=0:00:00.123, duration_ms=123, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:18:04], mode=PLATFORM_GENERATION, duration=0:00:15.023, duration_ms=15023, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:18:05], mode=BUILD, duration=0:00:00.696, duration_ms=696, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:25:28], mode=PLATFORM_GENERATION, duration=0:00:04.125, duration_ms=4125, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:25:28], mode=BUILD, duration=0:00:00.188, duration_ms=188, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:25:47], mode=PLATFORM_GENERATION, duration=0:00:14.714, duration_ms=14714, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:25:48], mode=BUILD, duration=0:00:00.942, duration_ms=942, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:28:08], mode=PLATFORM_GENERATION, duration=0:00:04.208, duration_ms=4208, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:28:08], mode=BUILD, duration=0:00:00.188, duration_ms=188, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:28:26], mode=PLATFORM_GENERATION, duration=0:00:14.868, duration_ms=14868, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:28:27], mode=BUILD, duration=0:00:01.077, duration_ms=1077, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:34:12], mode=PLATFORM_GENERATION, duration=0:00:05.129, duration_ms=5129, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:34:12], mode=BUILD, duration=0:00:00.190, duration_ms=190, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:34:32], mode=PLATFORM_GENERATION, duration=0:00:17.889, duration_ms=17889, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:34:33], mode=BUILD, duration=0:00:00.949, duration_ms=949, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:35:08], mode=PLATFORM_GENERATION, duration=0:00:04.260, duration_ms=4260, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:35:08], mode=BUILD, duration=0:00:00.185, duration_ms=185, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:35:30], mode=PLATFORM_GENERATION, duration=0:00:16.981, duration_ms=16981, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:35:31], mode=BUILD, duration=0:00:01.643, duration_ms=1643, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:36:34], mode=PLATFORM_GENERATION, duration=0:00:04.419, duration_ms=4419, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:36:35], mode=BUILD, duration=0:00:00.206, duration_ms=206, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:36:54], mode=PLATFORM_GENERATION, duration=0:00:16.734, duration_ms=16734, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:36:56], mode=BUILD, duration=0:00:01.447, duration_ms=1447, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:37:00], mode=BUILD, duration=0:00:00.262, duration_ms=262, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:37:05], mode=BUILD, duration=0:00:04.568, duration_ms=4568, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:42:55], mode=PLATFORM_GENERATION, duration=0:00:04.278, duration_ms=4278, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:42:55], mode=BUILD, duration=0:00:00.191, duration_ms=191, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:43:14], mode=PLATFORM_GENERATION, duration=0:00:16.531, duration_ms=16531, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:43:16], mode=BUILD, duration=0:00:01.654, duration_ms=1654, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:43:22], mode=BUILD, duration=0:00:00.265, duration_ms=265, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:43:26], mode=BUILD, duration=0:00:04.526, duration_ms=4526, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:35], mode=BUILD, duration=0:00:00.617, duration_ms=617, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:37], mode=BUILD, duration=0:00:01.883, duration_ms=1883, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:39], mode=PLATFORM_GENERATION, duration=0:00:01.483, duration_ms=1483, data={name=system_wrapper}
+timestamp=[2026-04-30 14:45:39], mode=BUILD, duration=0:00:00.251, duration_ms=251, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:44], mode=BUILD, duration=0:00:04.422, duration_ms=4422, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:53], mode=BUILD, duration=0:00:00.652, duration_ms=652, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:55], mode=BUILD, duration=0:00:01.942, duration_ms=1942, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:45:55], mode=BUILD, duration=0:00:00.247, duration_ms=247, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:46:00], mode=BUILD, duration=0:00:04.435, duration_ms=4435, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:47:37], mode=BUILD, duration=0:00:00.816, duration_ms=816, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:47:42], mode=BUILD, duration=0:00:04.572, duration_ms=4572, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:47:42], mode=BUILD, duration=0:00:00.242, duration_ms=242, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:47:47], mode=BUILD, duration=0:00:04.566, duration_ms=4566, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:48:04], mode=PLATFORM_GENERATION, duration=0:00:04.376, duration_ms=4376, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:48:04], mode=BUILD, duration=0:00:00.189, duration_ms=189, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:48:32], mode=PLATFORM_GENERATION, duration=0:00:16.688, duration_ms=16688, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:48:34], mode=BUILD, duration=0:00:01.447, duration_ms=1447, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:48:39], mode=PLATFORM_GENERATION, duration=0:00:04.846, duration_ms=4846, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:48:39], mode=BUILD, duration=0:00:00.190, duration_ms=190, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:48:40], mode=BUILD, duration=0:00:00.186, duration_ms=186, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:49:05], mode=PLATFORM_GENERATION, duration=0:00:17.268, duration_ms=17268, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:49:07], mode=BUILD, duration=0:00:01.559, duration_ms=1559, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:49:12], mode=BUILD, duration=0:00:04.903, duration_ms=4903, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:56:21], mode=PLATFORM_GENERATION, duration=0:00:04.554, duration_ms=4554, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:56:21], mode=BUILD, duration=0:00:00.205, duration_ms=205, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:56:42], mode=PLATFORM_GENERATION, duration=0:00:17.922, duration_ms=17922, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:56:44], mode=BUILD, duration=0:00:01.555, duration_ms=1555, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:56:51], mode=BUILD, duration=0:00:00.244, duration_ms=244, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:57:15], mode=PLATFORM_GENERATION, duration=0:00:04.367, duration_ms=4367, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:57:15], mode=BUILD, duration=0:00:00.189, duration_ms=189, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:57:15], mode=BUILD, duration=0:00:00.124, duration_ms=124, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 14:57:39], mode=PLATFORM_GENERATION, duration=0:00:16.711, duration_ms=16711, data={name=CNN_CAM}
+timestamp=[2026-04-30 14:57:40], mode=BUILD, duration=0:00:01.464, duration_ms=1464, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:57:45], mode=BUILD, duration=0:00:04.698, duration_ms=4698, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:59:19], mode=BUILD, duration=0:00:00.826, duration_ms=826, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:59:24], mode=BUILD, duration=0:00:04.429, duration_ms=4429, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:59:24], mode=BUILD, duration=0:00:00.241, duration_ms=241, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:59:29], mode=BUILD, duration=0:00:04.453, duration_ms=4453, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:59:35], mode=BUILD, duration=0:00:00.270, duration_ms=270, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 14:59:40], mode=BUILD, duration=0:00:04.441, duration_ms=4441, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:02:04], mode=BUILD, duration=0:00:00.838, duration_ms=838, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:02:09], mode=BUILD, duration=0:00:00.242, duration_ms=242, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:02:14], mode=BUILD, duration=0:00:04.382, duration_ms=4382, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:04:00], mode=PLATFORM_GENERATION, duration=0:00:04.579, duration_ms=4579, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:04:00], mode=BUILD, duration=0:00:00.188, duration_ms=188, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:04:20], mode=PLATFORM_GENERATION, duration=0:00:16.872, duration_ms=16872, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:04:22], mode=BUILD, duration=0:00:01.377, duration_ms=1377, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:04:30], mode=PLATFORM_GENERATION, duration=0:00:04.493, duration_ms=4493, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:04:30], mode=BUILD, duration=0:00:00.185, duration_ms=185, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:04:30], mode=BUILD, duration=0:00:00.187, duration_ms=187, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:04:49], mode=PLATFORM_GENERATION, duration=0:00:17.844, duration_ms=17844, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:04:51], mode=BUILD, duration=0:00:01.450, duration_ms=1450, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:04:56], mode=BUILD, duration=0:00:04.562, duration_ms=4562, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:06:09], mode=BUILD, duration=0:00:00.627, duration_ms=627, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:06:11], mode=BUILD, duration=0:00:01.926, duration_ms=1926, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:06:12], mode=BUILD, duration=0:00:00.247, duration_ms=247, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:06:16], mode=BUILD, duration=0:00:04.491, duration_ms=4491, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:06:57], mode=BUILD, duration=0:00:00.627, duration_ms=627, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:06:59], mode=BUILD, duration=0:00:01.935, duration_ms=1935, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:07:00], mode=BUILD, duration=0:00:00.253, duration_ms=253, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:07:05], mode=BUILD, duration=0:00:04.584, duration_ms=4584, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:07:30], mode=BUILD, duration=0:00:00.372, duration_ms=372, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:07:33], mode=BUILD, duration=0:00:01.947, duration_ms=1947, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:07:33], mode=BUILD, duration=0:00:00.251, duration_ms=251, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:07:38], mode=BUILD, duration=0:00:04.624, duration_ms=4624, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:08:33], mode=BUILD, duration=0:00:00.824, duration_ms=824, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:08:39], mode=BUILD, duration=0:00:05.880, duration_ms=5880, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:08:40], mode=BUILD, duration=0:00:00.264, duration_ms=264, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:08:45], mode=BUILD, duration=0:00:05.087, duration_ms=5087, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:08:50], mode=BUILD, duration=0:00:00.256, duration_ms=256, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:08:55], mode=BUILD, duration=0:00:04.487, duration_ms=4487, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:10:03], mode=BUILD, duration=0:00:00.632, duration_ms=632, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:10:06], mode=BUILD, duration=0:00:02.003, duration_ms=2003, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:10:06], mode=BUILD, duration=0:00:00.260, duration_ms=260, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:10:11], mode=BUILD, duration=0:00:04.570, duration_ms=4570, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:11:04], mode=BUILD, duration=0:00:00.840, duration_ms=840, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:11:08], mode=BUILD, duration=0:00:04.502, duration_ms=4502, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:11:09], mode=BUILD, duration=0:00:00.250, duration_ms=250, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:11:14], mode=BUILD, duration=0:00:04.569, duration_ms=4569, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:11:17], mode=BUILD, duration=0:00:00.245, duration_ms=245, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:11:22], mode=BUILD, duration=0:00:04.484, duration_ms=4484, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:14:32], mode=BUILD, duration=0:00:00.384, duration_ms=384, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:14:37], mode=BUILD, duration=0:00:04.495, duration_ms=4495, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:14:38], mode=BUILD, duration=0:00:00.243, duration_ms=243, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:14:42], mode=BUILD, duration=0:00:04.580, duration_ms=4580, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:01], mode=BUILD, duration=0:00:00.399, duration_ms=399, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:06], mode=BUILD, duration=0:00:04.562, duration_ms=4562, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:06], mode=BUILD, duration=0:00:00.239, duration_ms=239, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:11], mode=BUILD, duration=0:00:04.553, duration_ms=4553, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:34], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:38], mode=BUILD, duration=0:00:04.487, duration_ms=4487, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:39], mode=BUILD, duration=0:00:00.245, duration_ms=245, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:15:43], mode=BUILD, duration=0:00:04.491, duration_ms=4491, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:20:12], mode=BUILD, duration=0:00:00.379, duration_ms=379, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:25:56], mode=BUILD, duration=0:00:00.186, duration_ms=186, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:25:56], mode=BUILD, duration=0:00:00.558, duration_ms=558, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:25:58], mode=BUILD, duration=0:00:01.875, duration_ms=1875, data={name=CNN_CAM_APP_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:25:59], mode=BUILD, duration=0:00:00.238, duration_ms=238, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:26:03], mode=BUILD, duration=0:00:04.366, duration_ms=4366, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:28:52], mode=BUILD, duration=0:00:00.187, duration_ms=187, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:28:52], mode=BUILD, duration=0:00:00.573, duration_ms=573, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:32:04], mode=BUILD, duration=0:00:00.378, duration_ms=378, data={name=CNN_CAM_APP, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:32:13], mode=PLATFORM_GENERATION, duration=0:00:04.465, duration_ms=4465, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:32:13], mode=BUILD, duration=0:00:00.188, duration_ms=188, data={name=CNN_CAM_APP, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:36:55], mode=PLATFORM_GENERATION, duration=0:00:01.411, duration_ms=1411, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:37:17], mode=PLATFORM_GENERATION, duration=0:00:16.559, duration_ms=16559, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:37:52], mode=APP_CREATION, duration=0:00:05.722, duration_ms=5722, data={name=cnn_cpp, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=CNN_CAM, application_type=application}
+timestamp=[2026-04-30 15:38:34], mode=BUILD, duration=0:00:02.214, duration_ms=2214, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:38:39], mode=BUILD, duration=0:00:00.253, duration_ms=253, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:38:44], mode=BUILD, duration=0:00:04.455, duration_ms=4455, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:45:13], mode=BUILD, duration=0:00:01.515, duration_ms=1515, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:45:18], mode=BUILD, duration=0:00:04.525, duration_ms=4525, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:45:18], mode=BUILD, duration=0:00:00.257, duration_ms=257, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:45:23], mode=BUILD, duration=0:00:04.513, duration_ms=4513, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:45:33], mode=PLATFORM_GENERATION, duration=0:00:04.502, duration_ms=4502, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:45:33], mode=BUILD, duration=0:00:00.190, duration_ms=190, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:45:34], mode=BUILD, duration=0:00:00.127, duration_ms=127, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 15:45:54], mode=PLATFORM_GENERATION, duration=0:00:17.697, duration_ms=17697, data={name=CNN_CAM}
+timestamp=[2026-04-30 15:45:57], mode=BUILD, duration=0:00:02.839, duration_ms=2839, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 15:46:02], mode=BUILD, duration=0:00:04.705, duration_ms=4705, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:04:40], mode=BUILD, duration=0:00:01.519, duration_ms=1519, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:04:45], mode=BUILD, duration=0:00:04.548, duration_ms=4548, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:04:46], mode=BUILD, duration=0:00:00.254, duration_ms=254, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:04:50], mode=BUILD, duration=0:00:04.572, duration_ms=4572, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:45:24], mode=WORKBENCH_START, duration=0:00:10.607, duration_ms=10607, data={}
+timestamp=[2026-04-30 16:45:24], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.112, duration_ms=112, data={}
+timestamp=[2026-04-30 16:45:26], mode=WORKBENCH_UI_INIT, duration=0:00:02.034, duration_ms=2034, data={editors_count=3, platform_editors_count=0, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-04-30 16:45:55], mode=PLATFORM_GENERATION, duration=0:00:08.789, duration_ms=8789, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:46:16], mode=PLATFORM_GENERATION, duration=0:00:19.003, duration_ms=19003, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:46:29], mode=PLATFORM_GENERATION, duration=0:00:04.408, duration_ms=4408, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:46:29], mode=BUILD, duration=0:00:00.211, duration_ms=211, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:46:29], mode=BUILD, duration=0:00:00.197, duration_ms=197, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:46:33], mode=PLATFORM_GENERATION, duration=0:00:01.431, duration_ms=1431, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:46:33], mode=BUILD, duration=0:00:00.185, duration_ms=185, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:46:54], mode=PLATFORM_GENERATION, duration=0:00:17.102, duration_ms=17102, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:46:58], mode=BUILD, duration=0:00:02.906, duration_ms=2906, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:47:04], mode=BUILD, duration=0:00:00.274, duration_ms=274, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:47:09], mode=BUILD, duration=0:00:04.837, duration_ms=4837, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:50:47], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.039, duration_ms=39, data={}
+timestamp=[2026-04-30 16:50:48], mode=WORKBENCH_START, duration=0:00:10.455, duration_ms=10455, data={}
+timestamp=[2026-04-30 16:50:49], mode=WORKBENCH_UI_INIT, duration=0:00:01.110, duration_ms=1110, data={editors_count=3, platform_editors_count=0, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-04-30 16:51:03], mode=PLATFORM_GENERATION, duration=0:00:08.178, duration_ms=8178, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:51:26], mode=PLATFORM_GENERATION, duration=0:00:16.228, duration_ms=16228, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:51:37], mode=PLATFORM_GENERATION, duration=0:00:04.594, duration_ms=4594, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:51:37], mode=BUILD, duration=0:00:00.197, duration_ms=197, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:51:37], mode=BUILD, duration=0:00:00.132, duration_ms=132, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:51:42], mode=PLATFORM_GENERATION, duration=0:00:01.350, duration_ms=1350, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:51:42], mode=BUILD, duration=0:00:00.194, duration_ms=194, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:52:03], mode=PLATFORM_GENERATION, duration=0:00:16.981, duration_ms=16981, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:52:07], mode=BUILD, duration=0:00:02.617, duration_ms=2617, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:52:13], mode=BUILD, duration=0:00:00.272, duration_ms=272, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:52:18], mode=BUILD, duration=0:00:04.544, duration_ms=4544, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:56:41], mode=PLATFORM_GENERATION, duration=0:00:04.381, duration_ms=4381, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:56:59], mode=PLATFORM_GENERATION, duration=0:00:15.906, duration_ms=15906, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:57:04], mode=PLATFORM_GENERATION, duration=0:00:05.269, duration_ms=5269, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:57:04], mode=BUILD, duration=0:00:00.190, duration_ms=190, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:57:05], mode=BUILD, duration=0:00:00.204, duration_ms=204, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:57:09], mode=PLATFORM_GENERATION, duration=0:00:01.343, duration_ms=1343, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:57:09], mode=BUILD, duration=0:00:00.194, duration_ms=194, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-04-30 16:57:29], mode=PLATFORM_GENERATION, duration=0:00:17.245, duration_ms=17245, data={name=CNN_CAM}
+timestamp=[2026-04-30 16:57:33], mode=BUILD, duration=0:00:02.338, duration_ms=2338, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:57:37], mode=BUILD, duration=0:00:00.273, duration_ms=273, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-04-30 16:57:46], mode=BUILD, duration=0:00:04.436, duration_ms=4436, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:23:53], mode=WORKBENCH_START, duration=0:00:17.337, duration_ms=17337, data={}
+timestamp=[2026-05-04 17:23:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.400, duration_ms=400, data={}
+timestamp=[2026-05-04 17:23:55], mode=WORKBENCH_UI_INIT, duration=0:00:01.687, duration_ms=1687, data={editors_count=5, platform_editors_count=0, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-05-04 17:42:03], mode=BUILD, duration=0:00:05.685, duration_ms=5685, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:42:10], mode=BUILD, duration=0:00:06.743, duration_ms=6743, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:42:58], mode=PLATFORM_GENERATION, duration=0:00:47.559, duration_ms=47559, data={name=system_wrapper}
+timestamp=[2026-05-04 17:43:02], mode=BUILD, duration=0:00:02.358, duration_ms=2358, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:43:07], mode=BUILD, duration=0:00:04.139, duration_ms=4139, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:47:36], mode=BUILD, duration=0:00:01.944, duration_ms=1944, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:47:42], mode=BUILD, duration=0:00:05.509, duration_ms=5509, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:47:42], mode=BUILD, duration=0:00:00.286, duration_ms=286, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:47:48], mode=BUILD, duration=0:00:05.331, duration_ms=5331, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:49:18], mode=BUILD, duration=0:00:01.883, duration_ms=1883, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:49:24], mode=BUILD, duration=0:00:05.567, duration_ms=5567, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:49:25], mode=BUILD, duration=0:00:00.332, duration_ms=332, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-04 17:49:30], mode=BUILD, duration=0:00:05.348, duration_ms=5348, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 17:36:48], mode=WORKBENCH_START, duration=0:00:12.289, duration_ms=12289, data={}
+timestamp=[2026-05-05 17:36:48], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.123, duration_ms=123, data={}
+timestamp=[2026-05-05 17:36:49], mode=WORKBENCH_UI_INIT, duration=0:00:01.545, duration_ms=1545, data={editors_count=6, platform_editors_count=0, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-05-05 17:55:30], mode=PLATFORM_CREATION, duration=0:00:13.962, duration_ms=13962, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2026-05-05 17:55:57], mode=PLATFORM_GENERATION, duration=0:00:06.477, duration_ms=6477, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 17:56:04], mode=BUILD, duration=0:00:04.964, duration_ms=4964, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 17:56:10], mode=BUILD, duration=0:00:05.535, duration_ms=5535, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 17:56:12], mode=BUILD, duration=0:00:00.282, duration_ms=282, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 17:56:16], mode=BUILD, duration=0:00:04.062, duration_ms=4062, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 17:57:21], mode=PLATFORM_GENERATION, duration=0:00:04.237, duration_ms=4237, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 17:58:44], mode=PLATFORM_GENERATION, duration=0:00:01.312, duration_ms=1312, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:00:13], mode=PLATFORM_GENERATION, duration=0:00:04.322, duration_ms=4322, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:03:39], mode=PLATFORM_GENERATION, duration=0:00:02.620, duration_ms=2620, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:04:10], mode=PLATFORM_GENERATION, duration=0:00:01.196, duration_ms=1196, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:04:20], mode=PLATFORM_GENERATION, duration=0:00:02.542, duration_ms=2542, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:13:51], mode=PLATFORM_GENERATION, duration=0:00:01.751, duration_ms=1751, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:14:04], mode=PLATFORM_GENERATION, duration=0:00:05.237, duration_ms=5237, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:14:29], mode=PLATFORM_GENERATION, duration=0:00:03.091, duration_ms=3091, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:15:00], mode=PLATFORM_GENERATION, duration=0:00:03.111, duration_ms=3111, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:15:17], mode=PLATFORM_GENERATION, duration=0:00:03.105, duration_ms=3105, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:16:53], mode=WORKBENCH_START, duration=0:00:09.872, duration_ms=9872, data={}
+timestamp=[2026-05-05 18:16:53], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.076, duration_ms=76, data={}
+timestamp=[2026-05-05 18:16:54], mode=WORKBENCH_UI_INIT, duration=0:00:01.272, duration_ms=1272, data={editors_count=7, platform_editors_count=1, projects_count=13, platform_projects_count=3, active_platform_editor=true, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_CAM_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-05-05 18:17:29], mode=PLATFORM_GENERATION, duration=0:00:28.814, duration_ms=28814, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:18:30], mode=PLATFORM_GENERATION, duration=0:00:04.336, duration_ms=4336, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:18:47], mode=PLATFORM_GENERATION, duration=0:00:13.529, duration_ms=13529, data={name=CNN_CAM_B}
+timestamp=[2026-05-05 18:19:51], mode=PLATFORM_CREATION, duration=0:00:08.983, duration_ms=8983, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2026-05-05 18:20:25], mode=PLATFORM_GENERATION, duration=0:00:18.072, duration_ms=18072, data={name=CNN_CMA_B}
+timestamp=[2026-05-05 18:22:04], mode=APP_CREATION, duration=0:00:04.765, duration_ms=4765, data={name=cnn_cam_b, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=CNN_CMA_B, application_type=application}
+timestamp=[2026-05-05 18:22:42], mode=PLATFORM_GENERATION, duration=0:00:01.406, duration_ms=1406, data={name=CNN_CMA_B}
+timestamp=[2026-05-05 18:22:45], mode=BUILD, duration=0:00:02.674, duration_ms=2674, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:22:50], mode=BUILD, duration=0:00:00.279, duration_ms=279, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:22:54], mode=BUILD, duration=0:00:04.195, duration_ms=4195, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:35:31], mode=BUILD, duration=0:00:00.881, duration_ms=881, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:35:37], mode=BUILD, duration=0:00:05.781, duration_ms=5781, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:35:41], mode=BUILD, duration=0:00:00.368, duration_ms=368, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:35:48], mode=BUILD, duration=0:00:05.950, duration_ms=5950, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:35:51], mode=BUILD, duration=0:00:00.367, duration_ms=367, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:35:58], mode=BUILD, duration=0:00:06.130, duration_ms=6130, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:37:38], mode=BUILD, duration=0:00:02.540, duration_ms=2540, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:37:43], mode=BUILD, duration=0:00:05.052, duration_ms=5052, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:37:44], mode=BUILD, duration=0:00:00.338, duration_ms=338, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:37:49], mode=BUILD, duration=0:00:05.036, duration_ms=5036, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:37:49], mode=BUILD, duration=0:00:00.258, duration_ms=258, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 18:37:54], mode=BUILD, duration=0:00:03.841, duration_ms=3841, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:01:25], mode=BUILD, duration=0:00:01.917, duration_ms=1917, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:01:31], mode=BUILD, duration=0:00:05.318, duration_ms=5318, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:01:31], mode=BUILD, duration=0:00:00.357, duration_ms=357, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:01:37], mode=BUILD, duration=0:00:05.500, duration_ms=5500, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:01:37], mode=BUILD, duration=0:00:00.288, duration_ms=288, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:01:42], mode=BUILD, duration=0:00:04.049, duration_ms=4049, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:02:53], mode=BUILD, duration=0:00:01.388, duration_ms=1388, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:02:57], mode=BUILD, duration=0:00:03.776, duration_ms=3776, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:02:57], mode=BUILD, duration=0:00:00.252, duration_ms=252, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:03:01], mode=BUILD, duration=0:00:03.701, duration_ms=3701, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:03:01], mode=BUILD, duration=0:00:00.267, duration_ms=267, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:03:05], mode=BUILD, duration=0:00:03.705, duration_ms=3705, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:06:59], mode=BUILD, duration=0:00:02.277, duration_ms=2277, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:07:01], mode=BUILD, duration=0:00:02.088, duration_ms=2088, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:07:21], mode=BUILD, duration=0:00:00.303, duration_ms=303, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:07:29], mode=BUILD, duration=0:00:07.081, duration_ms=7081, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:08:01], mode=BUILD, duration=0:00:00.366, duration_ms=366, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:08:09], mode=BUILD, duration=0:00:07.746, duration_ms=7746, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:08:10], mode=BUILD, duration=0:00:00.444, duration_ms=444, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:08:18], mode=BUILD, duration=0:00:07.943, duration_ms=7943, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:10:03], mode=PLATFORM_GENERATION, duration=0:00:04.780, duration_ms=4780, data={name=CNN_CMA_B}
+timestamp=[2026-05-05 19:10:03], mode=BUILD, duration=0:00:00.202, duration_ms=202, data={name=cnn_cam_b, configuration=Debug, clean_build=true}
+timestamp=[2026-05-05 19:10:04], mode=BUILD, duration=0:00:00.142, duration_ms=142, data={name=cnn_cam_b_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-05 19:10:23], mode=PLATFORM_GENERATION, duration=0:00:16.760, duration_ms=16760, data={name=CNN_CMA_B}
+timestamp=[2026-05-05 19:10:26], mode=BUILD, duration=0:00:02.995, duration_ms=2995, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:10:31], mode=BUILD, duration=0:00:04.333, duration_ms=4333, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:13:09], mode=BUILD, duration=0:00:01.767, duration_ms=1767, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:13:15], mode=BUILD, duration=0:00:05.289, duration_ms=5289, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:13:15], mode=BUILD, duration=0:00:00.284, duration_ms=284, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:13:21], mode=BUILD, duration=0:00:05.583, duration_ms=5583, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:13:22], mode=BUILD, duration=0:00:00.433, duration_ms=433, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:13:27], mode=BUILD, duration=0:00:04.813, duration_ms=4813, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:15:36], mode=BUILD, duration=0:00:01.457, duration_ms=1457, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:15:40], mode=BUILD, duration=0:00:03.956, duration_ms=3956, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:15:40], mode=BUILD, duration=0:00:00.265, duration_ms=265, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:15:45], mode=BUILD, duration=0:00:04.022, duration_ms=4022, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:15:45], mode=BUILD, duration=0:00:00.258, duration_ms=258, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:15:49], mode=BUILD, duration=0:00:03.957, duration_ms=3957, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:16:14], mode=BUILD, duration=0:00:01.320, duration_ms=1320, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:16:18], mode=BUILD, duration=0:00:03.755, duration_ms=3755, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:16:18], mode=BUILD, duration=0:00:00.261, duration_ms=261, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:16:23], mode=BUILD, duration=0:00:03.767, duration_ms=3767, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:16:23], mode=BUILD, duration=0:00:00.253, duration_ms=253, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:16:27], mode=BUILD, duration=0:00:03.834, duration_ms=3834, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:18:59], mode=BUILD, duration=0:00:01.391, duration_ms=1391, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:19:03], mode=BUILD, duration=0:00:03.712, duration_ms=3712, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:19:03], mode=BUILD, duration=0:00:00.247, duration_ms=247, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:19:07], mode=BUILD, duration=0:00:03.699, duration_ms=3699, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:19:07], mode=BUILD, duration=0:00:00.246, duration_ms=246, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:19:11], mode=BUILD, duration=0:00:03.697, duration_ms=3697, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:21:56], mode=BUILD, duration=0:00:01.826, duration_ms=1826, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:22:02], mode=BUILD, duration=0:00:05.303, duration_ms=5303, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:22:02], mode=BUILD, duration=0:00:00.347, duration_ms=347, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:22:08], mode=BUILD, duration=0:00:05.218, duration_ms=5218, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:22:08], mode=BUILD, duration=0:00:00.277, duration_ms=277, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-05 19:22:13], mode=BUILD, duration=0:00:05.087, duration_ms=5087, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-06 10:23:09], mode=WORKBENCH_START, duration=0:00:15.902, duration_ms=15902, data={}
+timestamp=[2026-05-06 10:23:09], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.294, duration_ms=294, data={}
+timestamp=[2026-05-06 10:23:10], mode=WORKBENCH_UI_INIT, duration=0:00:01.462, duration_ms=1462, data={editors_count=3, platform_editors_count=0, projects_count=15, platform_projects_count=3, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cam_b,cnn_cam_b_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-05-06 20:26:00], mode=WORKBENCH_START, duration=0:00:14.854, duration_ms=14854, data={}
+timestamp=[2026-05-06 20:26:01], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.419, duration_ms=419, data={}
+timestamp=[2026-05-06 20:26:01], mode=WORKBENCH_UI_INIT, duration=0:00:01.589, duration_ms=1589, data={editors_count=3, platform_editors_count=0, projects_count=15, platform_projects_count=3, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cam_b,cnn_cam_b_system,cnn_cpp,cnn_cpp_system,system_wrapper}
+timestamp=[2026-05-06 20:38:24], mode=PLATFORM_GENERATION, duration=0:00:06.374, duration_ms=6374, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:38:37], mode=PLATFORM_GENERATION, duration=0:00:10.543, duration_ms=10543, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:39:58], mode=PLATFORM_GENERATION, duration=0:00:01.268, duration_ms=1268, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:40:15], mode=PLATFORM_GENERATION, duration=0:00:14.169, duration_ms=14169, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:41:59], mode=PLATFORM_GENERATION, duration=0:00:04.274, duration_ms=4274, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:42:13], mode=PLATFORM_GENERATION, duration=0:00:08.077, duration_ms=8077, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:44:02], mode=PLATFORM_GENERATION, duration=0:00:04.173, duration_ms=4173, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:44:20], mode=PLATFORM_GENERATION, duration=0:00:04.109, duration_ms=4109, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:44:21], mode=BUILD, duration=0:00:00.788, duration_ms=788, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-06 20:44:23], mode=BUILD, duration=0:00:01.221, duration_ms=1221, data={name=cnn_cpp_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-06 20:44:48], mode=PLATFORM_GENERATION, duration=0:00:04.157, duration_ms=4157, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:44:48], mode=BUILD, duration=0:00:00.411, duration_ms=411, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-06 20:45:56], mode=PLATFORM_GENERATION, duration=0:00:04.103, duration_ms=4103, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:45:56], mode=BUILD, duration=0:00:00.228, duration_ms=228, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:45:56], mode=BUILD, duration=0:00:00.140, duration_ms=140, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:46:05], mode=PLATFORM_GENERATION, duration=0:00:01.270, duration_ms=1270, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:46:17], mode=PLATFORM_GENERATION, duration=0:00:07.752, duration_ms=7752, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:47:29], mode=PLATFORM_GENERATION, duration=0:00:04.169, duration_ms=4169, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:47:29], mode=BUILD, duration=0:00:00.204, duration_ms=204, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:47:38], mode=PLATFORM_GENERATION, duration=0:00:01.213, duration_ms=1213, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:47:38], mode=BUILD, duration=0:00:00.204, duration_ms=204, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:47:39], mode=BUILD, duration=0:00:00.205, duration_ms=205, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:47:52], mode=PLATFORM_GENERATION, duration=0:00:07.796, duration_ms=7796, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:47:52], mode=BUILD, duration=0:00:00.387, duration_ms=387, data={name=cnn_cpp, configuration=Debug, clean_build=false}
+timestamp=[2026-05-06 20:49:03], mode=PLATFORM_GENERATION, duration=0:00:04.027, duration_ms=4027, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:49:45], mode=PLATFORM_GENERATION, duration=0:00:04.334, duration_ms=4334, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:50:34], mode=PLATFORM_GENERATION, duration=0:00:01.260, duration_ms=1260, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:50:34], mode=BUILD, duration=0:00:00.203, duration_ms=203, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:50:34], mode=BUILD, duration=0:00:00.144, duration_ms=144, data={name=cnn_cpp_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-06 20:50:37], mode=PLATFORM_GENERATION, duration=0:00:01.265, duration_ms=1265, data={name=CNN_CAM}
+timestamp=[2026-05-06 20:50:37], mode=BUILD, duration=0:00:00.198, duration_ms=198, data={name=cnn_cpp, configuration=Debug, clean_build=true}
+timestamp=[2026-05-07 09:30:58], mode=PLATFORM_GENERATION, duration=0:00:05.167, duration_ms=5167, data={name=CNN_CAM}
+timestamp=[2026-05-07 09:33:20], mode=PLATFORM_GENERATION, duration=0:00:01.192, duration_ms=1192, data={name=CNN_CAM}
+timestamp=[2026-05-07 09:34:34], mode=PLATFORM_GENERATION, duration=0:00:03.951, duration_ms=3951, data={name=CNN_CAM}
+timestamp=[2026-05-07 09:34:49], mode=PLATFORM_GENERATION, duration=0:00:10.550, duration_ms=10550, data={name=CNN_CAM}
+timestamp=[2026-05-07 10:08:08], mode=PLATFORM_CREATION, duration=0:00:09.906, duration_ms=9906, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2026-05-07 10:08:19], mode=PLATFORM_GENERATION, duration=0:00:02.149, duration_ms=2149, data={name=CNN_CAM}
+timestamp=[2026-05-07 10:12:14], mode=PLATFORM_GENERATION, duration=0:00:01.206, duration_ms=1206, data={name=CNN_CAM}
+timestamp=[2026-05-07 10:14:08], mode=PLATFORM_GENERATION, duration=0:00:01.811, duration_ms=1811, data={name=CNN_CAM}
+timestamp=[2026-05-10 19:59:13], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.070, duration_ms=70, data={}
+timestamp=[2026-05-10 19:59:15], mode=WORKBENCH_START, duration=0:00:12.194, duration_ms=12194, data={}
+timestamp=[2026-05-10 19:59:17], mode=WORKBENCH_UI_INIT, duration=0:00:01.900, duration_ms=1900, data={editors_count=1, platform_editors_count=0, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}
+timestamp=[2026-05-10 21:48:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.024, duration_ms=24, data={}
+timestamp=[2026-05-10 21:48:01], mode=WORKBENCH_START, duration=0:00:10.014, duration_ms=10014, data={}
+timestamp=[2026-05-10 21:48:02], mode=WORKBENCH_UI_INIT, duration=0:00:01.252, duration_ms=1252, data={editors_count=1, platform_editors_count=0, projects_count=12, platform_projects_count=2, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}
+timestamp=[2026-05-10 21:48:56], mode=PLATFORM_CREATION, duration=0:00:12.193, duration_ms=12193, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2026-05-10 21:49:08], mode=PLATFORM_GENERATION, duration=0:00:03.007, duration_ms=3007, data={name=CNN_CAM_A}
+timestamp=[2026-05-10 21:53:30], mode=PLATFORM_GENERATION, duration=0:00:01.407, duration_ms=1407, data={name=CNN_CAM_A}
+timestamp=[2026-05-10 21:53:57], mode=PLATFORM_GENERATION, duration=0:00:21.377, duration_ms=21377, data={name=CNN_CAM_A}
+timestamp=[2026-05-10 21:54:36], mode=APP_CREATION, duration=0:00:04.391, duration_ms=4391, data={name=cnn_a, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=CNN_CAM_A, application_type=application}
+timestamp=[2026-05-11 00:14:49], mode=BUILD, duration=0:00:01.833, duration_ms=1833, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 00:17:46], mode=PLATFORM_GENERATION, duration=0:00:05.029, duration_ms=5029, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 00:17:47], mode=BUILD, duration=0:00:00.221, duration_ms=221, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 00:17:58], mode=PLATFORM_GENERATION, duration=0:00:01.318, duration_ms=1318, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 00:17:58], mode=BUILD, duration=0:00:00.217, duration_ms=217, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 00:18:20], mode=PLATFORM_GENERATION, duration=0:00:16.551, duration_ms=16551, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 00:18:20], mode=BUILD, duration=0:00:00.214, duration_ms=214, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 00:18:24], mode=BUILD, duration=0:00:03.599, duration_ms=3599, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:16:41], mode=PLATFORM_GENERATION, duration=0:00:04.833, duration_ms=4833, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:16:41], mode=BUILD, duration=0:00:00.218, duration_ms=218, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:17:01], mode=PLATFORM_GENERATION, duration=0:00:16.520, duration_ms=16520, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:17:04], mode=BUILD, duration=0:00:02.975, duration_ms=2975, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:19:23], mode=PLATFORM_GENERATION, duration=0:00:04.587, duration_ms=4587, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:19:23], mode=BUILD, duration=0:00:00.218, duration_ms=218, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:19:55], mode=PLATFORM_GENERATION, duration=0:00:16.038, duration_ms=16038, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:19:58], mode=BUILD, duration=0:00:02.876, duration_ms=2876, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:21:45], mode=WORKBENCH_START, duration=0:00:09.768, duration_ms=9768, data={}
+timestamp=[2026-05-11 01:21:46], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.057, duration_ms=57, data={}
+timestamp=[2026-05-11 01:21:47], mode=WORKBENCH_UI_INIT, duration=0:00:01.537, duration_ms=1537, data={editors_count=2, platform_editors_count=0, projects_count=15, platform_projects_count=3, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM_A,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_a,cnn_a_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}
+timestamp=[2026-05-11 01:22:09], mode=PLATFORM_GENERATION, duration=0:00:08.222, duration_ms=8222, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:22:10], mode=BUILD, duration=0:00:00.234, duration_ms=234, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:22:18], mode=PLATFORM_GENERATION, duration=0:00:01.347, duration_ms=1347, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:22:18], mode=BUILD, duration=0:00:00.224, duration_ms=224, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:22:47], mode=PLATFORM_GENERATION, duration=0:00:16.161, duration_ms=16161, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:22:52], mode=BUILD, duration=0:00:02.481, duration_ms=2481, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:22:54], mode=BUILD, duration=0:00:02.030, duration_ms=2030, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:27:49], mode=PLATFORM_GENERATION, duration=0:00:04.591, duration_ms=4591, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:27:49], mode=BUILD, duration=0:00:00.221, duration_ms=221, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:28:09], mode=PLATFORM_GENERATION, duration=0:00:16.141, duration_ms=16141, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:28:13], mode=BUILD, duration=0:00:03.218, duration_ms=3218, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:28:26], mode=BUILD, duration=0:00:00.289, duration_ms=289, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:28:30], mode=BUILD, duration=0:00:04.144, duration_ms=4144, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:36:53], mode=PLATFORM_GENERATION, duration=0:00:04.967, duration_ms=4967, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:36:53], mode=BUILD, duration=0:00:00.232, duration_ms=232, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:36:53], mode=BUILD, duration=0:00:00.246, duration_ms=246, data={name=cnn_a_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:36:58], mode=PLATFORM_GENERATION, duration=0:00:01.318, duration_ms=1318, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:36:58], mode=BUILD, duration=0:00:00.217, duration_ms=217, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:36:59], mode=BUILD, duration=0:00:00.217, duration_ms=217, data={name=cnn_a_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 01:37:19], mode=PLATFORM_GENERATION, duration=0:00:16.882, duration_ms=16882, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 01:37:22], mode=BUILD, duration=0:00:03.281, duration_ms=3281, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:37:27], mode=BUILD, duration=0:00:04.217, duration_ms=4217, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:39:56], mode=BUILD, duration=0:00:00.351, duration_ms=351, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 01:40:01], mode=BUILD, duration=0:00:04.214, duration_ms=4214, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 14:36:38], mode=PLATFORM_GENERATION, duration=0:00:21.026, duration_ms=21026, data={name=CNN_CMA_B}
+timestamp=[2026-05-11 14:36:41], mode=BUILD, duration=0:00:02.555, duration_ms=2555, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 14:36:48], mode=BUILD, duration=0:00:06.078, duration_ms=6078, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 14:36:50], mode=BUILD, duration=0:00:02.077, duration_ms=2077, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 14:36:56], mode=BUILD, duration=0:00:06.278, duration_ms=6278, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 14:37:57], mode=PLATFORM_GENERATION, duration=0:01:00.305, duration_ms=60305, data={name=system_wrapper}
+timestamp=[2026-05-11 14:38:02], mode=BUILD, duration=0:00:02.848, duration_ms=2848, data={name=Zybo-Z7-20-pcam-5c, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 14:38:08], mode=BUILD, duration=0:00:05.875, duration_ms=5875, data={name=Zybo-Z7-20-pcam-5c_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 21:59:12], mode=WORKBENCH_START, duration=0:00:12.616, duration_ms=12616, data={}
+timestamp=[2026-05-11 21:59:13], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.157, duration_ms=157, data={}
+timestamp=[2026-05-11 21:59:14], mode=WORKBENCH_UI_INIT, duration=0:00:01.682, duration_ms=1682, data={editors_count=4, platform_editors_count=0, projects_count=15, platform_projects_count=3, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM_A,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_a,cnn_a_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}
+timestamp=[2026-05-11 22:37:40], mode=PLATFORM_GENERATION, duration=0:00:13.093, duration_ms=13093, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:37:40], mode=BUILD, duration=0:00:00.292, duration_ms=292, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 22:38:57], mode=PLATFORM_GENERATION, duration=0:00:24.423, duration_ms=24423, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:39:02], mode=BUILD, duration=0:00:02.861, duration_ms=2861, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:45:44], mode=PLATFORM_GENERATION, duration=0:00:06.019, duration_ms=6019, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:45:45], mode=BUILD, duration=0:00:00.289, duration_ms=289, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 22:46:21], mode=PLATFORM_GENERATION, duration=0:00:20.410, duration_ms=20410, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:46:26], mode=BUILD, duration=0:00:04.199, duration_ms=4199, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:50:35], mode=PLATFORM_GENERATION, duration=0:00:06.338, duration_ms=6338, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:50:36], mode=BUILD, duration=0:00:00.273, duration_ms=273, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 22:51:01], mode=PLATFORM_GENERATION, duration=0:00:22.136, duration_ms=22136, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:51:05], mode=BUILD, duration=0:00:03.868, duration_ms=3868, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:51:12], mode=BUILD, duration=0:00:00.397, duration_ms=397, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:51:18], mode=BUILD, duration=0:00:06.075, duration_ms=6075, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:56:14], mode=PLATFORM_GENERATION, duration=0:00:05.982, duration_ms=5982, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:56:14], mode=BUILD, duration=0:00:00.236, duration_ms=236, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 22:56:14], mode=BUILD, duration=0:00:00.252, duration_ms=252, data={name=cnn_a_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 22:56:28], mode=PLATFORM_GENERATION, duration=0:00:01.416, duration_ms=1416, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:56:29], mode=BUILD, duration=0:00:00.245, duration_ms=245, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-11 22:57:04], mode=PLATFORM_GENERATION, duration=0:00:18.523, duration_ms=18523, data={name=CNN_CAM_A}
+timestamp=[2026-05-11 22:57:07], mode=BUILD, duration=0:00:03.438, duration_ms=3438, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:59:21], mode=BUILD, duration=0:00:00.345, duration_ms=345, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-11 22:59:25], mode=BUILD, duration=0:00:04.413, duration_ms=4413, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 09:49:42], mode=PLATFORM_GENERATION, duration=0:00:12.215, duration_ms=12215, data={name=CNN_CMA_B}
+timestamp=[2026-05-12 09:49:42], mode=BUILD, duration=0:00:00.305, duration_ms=305, data={name=cnn_cam_b, configuration=Debug, clean_build=true}
+timestamp=[2026-05-12 09:49:42], mode=BUILD, duration=0:00:00.237, duration_ms=237, data={name=cnn_cam_b_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-12 09:52:00], mode=PLATFORM_GENERATION, duration=0:00:19.284, duration_ms=19284, data={name=CNN_CMA_B}
+timestamp=[2026-05-12 09:52:04], mode=BUILD, duration=0:00:03.980, duration_ms=3980, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 09:52:09], mode=BUILD, duration=0:00:04.802, duration_ms=4802, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 09:59:09], mode=PLATFORM_GENERATION, duration=0:00:07.105, duration_ms=7105, data={name=CNN_CMA_B}
+timestamp=[2026-05-12 09:59:09], mode=BUILD, duration=0:00:00.331, duration_ms=331, data={name=cnn_cam_b, configuration=Debug, clean_build=true}
+timestamp=[2026-05-12 09:59:10], mode=BUILD, duration=0:00:00.247, duration_ms=247, data={name=cnn_cam_b_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-12 09:59:38], mode=PLATFORM_GENERATION, duration=0:00:23.811, duration_ms=23811, data={name=CNN_CMA_B}
+timestamp=[2026-05-12 09:59:42], mode=BUILD, duration=0:00:03.873, duration_ms=3873, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 09:59:49], mode=BUILD, duration=0:00:06.414, duration_ms=6414, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 10:12:40], mode=BUILD, duration=0:00:03.472, duration_ms=3472, data={name=cnn_cam_b, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 10:12:47], mode=BUILD, duration=0:00:06.561, duration_ms=6561, data={name=cnn_cam_b_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-12 20:24:55], mode=WORKBENCH_START, duration=0:00:14.468, duration_ms=14468, data={}
+timestamp=[2026-05-12 20:24:56], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.223, duration_ms=223, data={}
+timestamp=[2026-05-12 20:24:57], mode=WORKBENCH_UI_INIT, duration=0:00:01.566, duration_ms=1566, data={editors_count=4, platform_editors_count=0, projects_count=15, platform_projects_count=3, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM_A,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_a,cnn_a_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}
+timestamp=[2026-05-13 10:29:31], mode=WORKBENCH_START, duration=0:00:12.748, duration_ms=12748, data={}
+timestamp=[2026-05-13 10:29:32], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.202, duration_ms=202, data={}
+timestamp=[2026-05-13 10:29:33], mode=WORKBENCH_UI_INIT, duration=0:00:01.739, duration_ms=1739, data={editors_count=4, platform_editors_count=1, projects_count=15, platform_projects_count=3, active_platform_editor=true, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM_A,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_a,cnn_a_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}
+timestamp=[2026-05-13 10:30:26], mode=PLATFORM_GENERATION, duration=0:00:09.496, duration_ms=9496, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 10:31:27], mode=PLATFORM_GENERATION, duration=0:00:22.424, duration_ms=22424, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 10:32:32], mode=PLATFORM_GENERATION, duration=0:00:05.149, duration_ms=5149, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 10:32:32], mode=BUILD, duration=0:00:00.309, duration_ms=309, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 10:33:13], mode=PLATFORM_GENERATION, duration=0:00:22.323, duration_ms=22323, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 10:33:20], mode=BUILD, duration=0:00:05.055, duration_ms=5055, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 10:40:35], mode=PLATFORM_GENERATION, duration=0:00:05.296, duration_ms=5296, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 10:40:36], mode=BUILD, duration=0:00:00.240, duration_ms=240, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 10:41:01], mode=PLATFORM_GENERATION, duration=0:00:21.280, duration_ms=21280, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 10:41:04], mode=BUILD, duration=0:00:03.543, duration_ms=3543, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 10:41:22], mode=BUILD, duration=0:00:00.358, duration_ms=358, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 10:41:31], mode=BUILD, duration=0:00:05.018, duration_ms=5018, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 10:46:29], mode=BUILD, duration=0:00:01.602, duration_ms=1602, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 10:46:40], mode=BUILD, duration=0:00:00.302, duration_ms=302, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 10:46:46], mode=BUILD, duration=0:00:05.182, duration_ms=5182, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:36:15], mode=BUILD, duration=0:00:06.099, duration_ms=6099, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:36:24], mode=BUILD, duration=0:00:08.710, duration_ms=8710, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:45:16], mode=PLATFORM_GENERATION, duration=0:00:07.609, duration_ms=7609, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:45:17], mode=BUILD, duration=0:00:00.249, duration_ms=249, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:45:17], mode=BUILD, duration=0:00:00.251, duration_ms=251, data={name=cnn_a_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:47:20], mode=PLATFORM_GENERATION, duration=0:00:24.544, duration_ms=24544, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:47:24], mode=BUILD, duration=0:00:03.956, duration_ms=3956, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:47:30], mode=BUILD, duration=0:00:05.452, duration_ms=5452, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:49:21], mode=PLATFORM_GENERATION, duration=0:00:07.311, duration_ms=7311, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:49:21], mode=BUILD, duration=0:00:00.240, duration_ms=240, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:49:22], mode=BUILD, duration=0:00:00.247, duration_ms=247, data={name=cnn_a_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:50:15], mode=PLATFORM_GENERATION, duration=0:00:22.561, duration_ms=22561, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:50:18], mode=BUILD, duration=0:00:03.848, duration_ms=3848, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:50:22], mode=BUILD, duration=0:00:00.385, duration_ms=385, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:50:28], mode=BUILD, duration=0:00:05.517, duration_ms=5517, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:53:43], mode=PLATFORM_GENERATION, duration=0:00:06.056, duration_ms=6056, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:53:44], mode=BUILD, duration=0:00:00.253, duration_ms=253, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:53:44], mode=BUILD, duration=0:00:00.249, duration_ms=249, data={name=cnn_a_system, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:53:50], mode=PLATFORM_GENERATION, duration=0:00:01.560, duration_ms=1560, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:53:50], mode=BUILD, duration=0:00:00.253, duration_ms=253, data={name=cnn_a, configuration=Debug, clean_build=true}
+timestamp=[2026-05-13 13:54:16], mode=PLATFORM_GENERATION, duration=0:00:21.420, duration_ms=21420, data={name=CNN_CAM_A}
+timestamp=[2026-05-13 13:54:20], mode=BUILD, duration=0:00:03.482, duration_ms=3482, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:54:39], mode=BUILD, duration=0:00:00.371, duration_ms=371, data={name=cnn_a, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 13:54:44], mode=BUILD, duration=0:00:05.149, duration_ms=5149, data={name=cnn_a_system, configuration=Debug, clean_build=false}
+timestamp=[2026-05-13 22:25:26], mode=WORKBENCH_START, duration=0:00:09.757, duration_ms=9757, data={}
+timestamp=[2026-05-13 22:25:27], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.151, duration_ms=151, data={}
+timestamp=[2026-05-13 22:25:27], mode=WORKBENCH_UI_INIT, duration=0:00:01.284, duration_ms=1284, data={editors_count=3, platform_editors_count=1, projects_count=15, platform_projects_count=3, active_platform_editor=false, projects=CNN,CNN1D,CNN1D_system,CNN_1,CNN_CAM_A,CNN_CMA_B,CNN_system,RemoteSystemsTempFiles,Zybo-Z7-20-pcam-5c,Zybo-Z7-20-pcam-5c_system,cnn_a,cnn_a_system,cnn_cam_b,cnn_cam_b_system,system_wrapper}

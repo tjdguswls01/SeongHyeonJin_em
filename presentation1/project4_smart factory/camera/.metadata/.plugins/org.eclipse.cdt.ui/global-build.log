@@ -1,0 +1,16 @@
+Nothing to build in platform 'CNN_CAM_A'
+
+13:54:38 **** Incremental Build of configuration Debug for project cnn_a ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+13:54:39 **** Build of configuration Debug for project cnn_a_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 50632 D:/project/Final_Project/SHJ/VITIS/CNN_CAM_A/export/CNN_CAM_A/CNN_CAM_A.xpfm standalone_domain D:/project/Final_Project/SHJ/VITIS/cnn_a_system/Debug/system.bif
+sdcard_gen --xpfm D:/project/Final_Project/SHJ/VITIS/CNN_CAM_A/export/CNN_CAM_A/CNN_CAM_A.xpfm --sys_config CNN_CAM_A --bif D:/project/Final_Project/SHJ/VITIS/cnn_a_system/Debug/system.bif --bitstream D:/project/Final_Project/SHJ/VITIS/cnn_a/_ide/bitstream/CNN_CAM_A.bit --elf D:/project/Final_Project/SHJ/VITIS/cnn_a/Debug/cnn_a.elf,ps7_cortexa9_0
+creating BOOT.BIN using D:/project/Final_Project/SHJ/VITIS/cnn_a/_ide/bitstream/CNN_CAM_A.bit
+Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image D:/project/Final_Project/SHJ/VITIS/cnn_a_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
