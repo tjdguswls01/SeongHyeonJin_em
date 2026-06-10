@@ -1,0 +1,288 @@
+TRACE::2026-04-30.13:56:19::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.13:56:19::SCWBifWriter::hardware databse : system_wrapper_1
+TRACE::2026-04-30.13:56:19::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.13:56:19::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.13:56:19::SCWBifWriter::proc type : 
+TRACE::2026-04-30.13:56:19::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.13:56:19::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.13:56:19::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.13:56:19::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.14:45:41::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.14:45:41::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.14:45:41::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.14:45:41::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.14:45:41::SCWBifWriter::proc type : 
+TRACE::2026-04-30.14:45:41::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.14:45:41::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.14:45:41::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.14:45:41::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.14:45:56::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.14:45:57::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.14:45:57::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.14:45:57::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.14:45:57::SCWBifWriter::proc type : 
+TRACE::2026-04-30.14:45:57::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.14:45:57::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.14:45:57::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.14:45:57::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.14:47:44::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.14:47:44::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.14:47:44::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.14:47:44::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.14:47:44::SCWBifWriter::proc type : 
+TRACE::2026-04-30.14:47:44::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.14:47:44::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.14:47:44::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.14:47:44::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.14:59:26::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.14:59:26::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.14:59:26::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.14:59:26::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.14:59:26::SCWBifWriter::proc type : 
+TRACE::2026-04-30.14:59:26::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.14:59:26::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.14:59:26::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.14:59:26::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:06:13::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:06:13::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:06:13::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:06:13::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:06:13::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:06:13::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:06:13::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:06:13::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:06:13::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:07:01::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:07:01::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:07:01::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:07:01::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:07:01::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:07:01::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:07:01::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:07:01::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:07:01::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:07:34::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:07:34::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:07:34::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:07:34::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:07:34::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:07:34::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:07:34::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:07:34::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:07:34::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:08:42::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:08:42::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:08:42::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:08:42::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:08:42::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:08:42::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:08:42::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:08:42::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:08:42::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:10:07::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:10:08::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:10:08::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:10:08::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:10:08::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:10:08::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:10:08::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:10:08::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:10:08::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:11:10::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:11:10::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:11:10::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:11:10::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:11:10::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:11:10::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:11:10::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:11:10::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:11:10::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:14:39::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:14:39::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:14:39::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:14:39::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:14:39::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:14:39::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:14:39::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:14:39::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:14:39::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:15:07::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:15:08::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:15:08::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:15:08::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:15:08::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:15:08::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:15:08::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:15:08::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:15:08::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:15:40::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:15:40::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:15:40::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:15:40::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:15:40::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:15:40::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:15:40::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:15:40::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:15:40::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:26:00::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:26:00::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:26:00::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:26:00::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:26:00::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:26:00::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:26:00::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:26:00::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:26:00::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.15:45:20::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.15:45:20::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.15:45:20::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.15:45:20::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.15:45:20::SCWBifWriter::proc type : 
+TRACE::2026-04-30.15:45:20::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.15:45:20::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.15:45:20::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.15:45:20::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-04-30.16:04:47::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-04-30.16:04:47::SCWBifWriter::hardware databse : system_wrapper_2
+TRACE::2026-04-30.16:04:47::SCWBifWriter::bitstream found in the design
+TRACE::2026-04-30.16:04:47::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-04-30.16:04:47::SCWBifWriter::proc type : 
+TRACE::2026-04-30.16:04:47::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-04-30.16:04:47::SCWBifWriter::Device type is : zynq
+TRACE::2026-04-30.16:04:47::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-04-30.16:04:47::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-04.17:43:04::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-04.17:43:04::SCWBifWriter::hardware databse : system_wrapper_1
+TRACE::2026-05-04.17:43:04::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-04.17:43:04::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-04.17:43:04::SCWBifWriter::proc type : 
+TRACE::2026-05-04.17:43:04::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-04.17:43:04::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-04.17:43:04::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-04.17:43:04::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-04.17:47:44::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-04.17:47:44::SCWBifWriter::hardware databse : system_wrapper_1
+TRACE::2026-05-04.17:47:44::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-04.17:47:44::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-04.17:47:44::SCWBifWriter::proc type : 
+TRACE::2026-05-04.17:47:44::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-04.17:47:44::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-04.17:47:44::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-04.17:47:44::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-04.17:49:26::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-04.17:49:26::SCWBifWriter::hardware databse : system_wrapper_1
+TRACE::2026-05-04.17:49:26::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-04.17:49:26::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-04.17:49:26::SCWBifWriter::proc type : 
+TRACE::2026-05-04.17:49:26::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-04.17:49:26::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-04.17:49:26::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-04.17:49:26::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.17:56:13::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.17:56:13::SCWBifWriter::hardware databse : system_wrapper_3
+TRACE::2026-05-05.17:56:13::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.17:56:13::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.17:56:13::SCWBifWriter::proc type : 
+TRACE::2026-05-05.17:56:13::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.17:56:13::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.17:56:13::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.17:56:13::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.18:35:54::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.18:35:54::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.18:35:54::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.18:35:54::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.18:35:54::SCWBifWriter::proc type : 
+TRACE::2026-05-05.18:35:54::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.18:35:54::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.18:35:54::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.18:35:54::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.18:37:51::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.18:37:51::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.18:37:51::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.18:37:51::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.18:37:51::SCWBifWriter::proc type : 
+TRACE::2026-05-05.18:37:51::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.18:37:51::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.18:37:51::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.18:37:51::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:01:39::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:01:39::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:01:39::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:01:39::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:01:39::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:01:39::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:01:39::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:01:39::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:01:39::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:03:03::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:03:03::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:03:03::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:03:03::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:03:03::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:03:03::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:03:03::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:03:03::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:03:03::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:08:12::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:08:12::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:08:12::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:08:12::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:08:12::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:08:12::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:08:12::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:08:12::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:08:12::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:13:23::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:13:24::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:13:24::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:13:24::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:13:24::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:13:24::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:13:24::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:13:24::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:13:24::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:15:46::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:15:47::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:15:47::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:15:47::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:15:47::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:15:47::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:15:47::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:15:47::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:15:47::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:16:24::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:16:24::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:16:24::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:16:24::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:16:24::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:16:24::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:16:24::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:16:24::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:16:24::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:19:09::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:19:09::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:19:09::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:19:09::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:19:09::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:19:09::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:19:09::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:19:09::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:19:09::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-05.19:22:10::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-05.19:22:10::SCWBifWriter::hardware databse : system_wrapper_7
+TRACE::2026-05-05.19:22:10::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-05.19:22:10::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-05.19:22:10::SCWBifWriter::proc type : 
+TRACE::2026-05-05.19:22:10::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-05.19:22:10::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-05.19:22:10::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-05.19:22:10::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-05-11.14:38:04::SCWBifWriter::Found the complete platform D:/project/Final_Project/SHJ/VITIS/system_wrapper/export/system_wrapper/system_wrapper.xpfm
+TRACE::2026-05-11.14:38:04::SCWBifWriter::hardware databse : system_wrapper_4
+TRACE::2026-05-11.14:38:04::SCWBifWriter::bitstream found in the design
+TRACE::2026-05-11.14:38:04::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-05-11.14:38:04::SCWBifWriter::proc type : 
+TRACE::2026-05-11.14:38:04::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-05-11.14:38:04::SCWBifWriter::Device type is : zynq
+TRACE::2026-05-11.14:38:04::SCWBifWriter::Writing BIF to file : D:/project/Final_Project/SHJ/VITIS/Zybo-Z7-20-pcam-5c_system/Debug/system.bif
+TRACE::2026-05-11.14:38:04::SCWBifWriter::Writing the Zynq Baremetal bif 

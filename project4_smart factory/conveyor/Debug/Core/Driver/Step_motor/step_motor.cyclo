@@ -1,0 +1,5 @@
+../Core/Driver/Step_motor/step_motor.c:21:13:apply_step	1
+../Core/Driver/Step_motor/step_motor.c:34:6:StepMotor_Init	1
+../Core/Driver/Step_motor/step_motor.c:45:6:StepMotor_Stop	1
+../Core/Driver/Step_motor/step_motor.c:54:6:StepMotor_SetSpeed	2
+../Core/Driver/Step_motor/step_motor.c:62:6:StepMotor_ISR	2
