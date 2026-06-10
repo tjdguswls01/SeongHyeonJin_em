@@ -1,0 +1,5 @@
+../Core/App/ROBOT_ARM_SVC/robot_arm.c:9:6:RobotArm_SetStopFlag	1
+../Core/App/ROBOT_ARM_SVC/robot_arm.c:28:13:ExecuteStep	2
+../Core/App/ROBOT_ARM_SVC/robot_arm.c:35:6:RobotArm_Init	2
+../Core/App/ROBOT_ARM_SVC/robot_arm.c:86:6:RobotArm_SetAngles	20
+../Core/App/ROBOT_ARM_SVC/robot_arm.c:139:6:RobotArm_Run	2
