@@ -1,0 +1,2 @@
+../Core/Src/uart2.c:19:6:HAL_UART_RxCpltCallback	4
+../Core/Src/uart2.c:50:6:pc_command_processing	4

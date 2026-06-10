@@ -1,0 +1,3 @@
+../Core/Src/ultrasonic.c:18:6:make_trigger	16	static
+../Core/Src/ultrasonic.c:27:6:HAL_TIM_IC_CaptureCallback	16	static
+../Core/Src/ultrasonic.c:67:6:ultrasonic_main	8	static
