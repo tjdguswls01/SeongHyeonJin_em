@@ -1,0 +1,4 @@
+../Core/Driver/servo/servo.c:10:6:Servo_Init	24	static
+../Core/Driver/servo/servo.c:21:6:Servo_SetAngle	24	static
+../Core/Driver/servo/servo.c:30:6:Servo_SetAngleSmooth	40	static
+../Core/Driver/servo/servo.c:49:6:Servo_SoftStart	48	static

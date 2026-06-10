@@ -1,0 +1,6 @@
+../Core/Driver/uart_com/uart_com.c:7:6:UART_Com_Init	1
+../Core/Driver/uart_com/uart_com.c:11:6:UART_Com_SendStatus	5
+../Core/Driver/uart_com/uart_com.c:32:6:UART_Com_SendDone	1
+../Core/Driver/uart_com/uart_com.c:36:6:UART_Com_SendStopped	1
+../Core/Driver/uart_com/uart_com.c:41:15:UART_Com_ReadLine	7
+../Core/Driver/uart_com/uart_com.c:59:6:UART_Com_ReceiveAngles	6
