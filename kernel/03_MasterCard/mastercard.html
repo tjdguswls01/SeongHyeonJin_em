@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mastercard Kernel 2의 이해</title>
+  <style>
+    :root {
+      --bg-top: #f7efe2;
+      --bg-bottom: #ead9bc;
+      --panel: #fffdf8;
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --accent: #b45309;
+      --accent-strong: #92400e;
+      --accent-soft: #fde6bf;
+      --line: #d8c3a1;
+      --shadow: 0 18px 42px rgba(80, 58, 32, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; overflow: hidden; font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif; background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%); color: var(--ink); }
+    .app { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+    .topbar { position: fixed; top: 12px; left: 24px; right: 24px; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0; background: transparent; border: 0; border-radius: 0; pointer-events: none; }
+    .topbar .label, .topbar .status { font-size: 15px; font-weight: 800; color: var(--accent-strong); }
+    .stage-wrap { width: 100vw; height: 100vh; }
+    .stage { width: 100vw; height: 100vh; aspect-ratio: 16 / 9; background: rgba(255, 253, 248, 0.84); border: 0; border-radius: 0; box-shadow: none; overflow: hidden; }
+    .track { display: flex; width: 100%; height: 100%; transition: transform 0.32s ease; }
+    .slide { flex: 0 0 100%; width: 100%; height: 100%; padding: 58px 4vw 46px; display: grid; grid-template-rows: auto 1fr auto; gap: 12px; }
+    .slide-head, .footer-hint { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .section-tag { display: inline-flex; align-items: center; justify-content: center; min-height: 30px; padding: 5px 11px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 12px; font-weight: 800; text-align: center; }
+    .slide-num { font-size: 15px; font-weight: 800; color: var(--accent-strong); }
+    .content { min-height: 0; display: grid; gap: 12px; align-content: center; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.08; letter-spacing: -0.03em; text-align: center; }
+    h2 { font-size: clamp(23px, 2.2vw, 33px); line-height: 1.14; letter-spacing: -0.02em; text-align: center; }
+    h3 { font-size: clamp(16px, 1.35vw, 21px); line-height: 1.25; text-align: center; color: var(--accent-strong); }
+    p, li { font-size: clamp(14px, 1.08vw, 18px); line-height: 1.38; color: var(--ink); }
+    ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; text-align: left; }
+    .lead { font-size: clamp(18px, 1.55vw, 24px); line-height: 1.42; font-weight: 700; text-align: center; }
+    .hero, .grid-2, .grid-3, .grid-4, .flow { display: grid; gap: 10px; align-items: stretch; }
+    .hero { grid-template-columns: 1.2fr 0.95fr; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .flow { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .card, .note, .summary-bar, .flow-box { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 10px 12px; }
+    .card, .note, .flow-box { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 7px; min-height: 100%; }
+    .note { background: linear-gradient(180deg, #fff5dc 0%, #ffefcd 100%); }
+    .summary-bar { display: flex; align-items: center; justify-content: center; min-height: 52px; text-align: center; font-size: clamp(14px, 1.05vw, 18px); line-height: 1.35; font-weight: 800; }
+    .summary-bar strong { color: var(--accent-strong); }
+    .mini { font-size: clamp(12px, 0.96vw, 16px); line-height: 1.33; }
+    .chip-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 7px; }
+    .chip { padding: 6px 10px; border-radius: 999px; background: #fff6e7; border: 1px solid var(--line); font-size: clamp(12px, 0.95vw, 16px); font-weight: 800; color: var(--accent-strong); }
+    .flow-box { position: relative; font-weight: 800; }
+    .flow-box::after { content: "→"; position: absolute; right: -9px; top: 50%; transform: translateY(-50%); color: var(--accent-strong); font-size: 18px; font-weight: 900; }
+    .flow-box:last-child::after { display: none; }
+    .footer-hint { color: var(--muted); font-size: 12px; font-weight: 700; }
+    @media (max-width: 1280px), (max-height: 860px) {
+      .slide { padding: 52px 3vw 34px; gap: 10px; }
+      h1 { font-size: clamp(28px, 2.9vw, 40px); }
+      h2 { font-size: clamp(21px, 2vw, 29px); }
+      h3 { font-size: clamp(15px, 1.2vw, 19px); }
+      p, li { font-size: clamp(13px, 1vw, 16px); line-height: 1.33; }
+      .summary-bar { min-height: 46px; }
+    }
+    @media (max-width: 900px) {
+      .hero, .grid-2, .grid-3, .grid-4, .flow { grid-template-columns: 1fr; }
+      .flow-box::after { display: none; }
+      .slide { padding: 48px 3vw 30px; gap: 8px; }
+      h1 { font-size: clamp(24px, 2.5vw, 34px); }
+      h2 { font-size: clamp(19px, 1.8vw, 25px); }
+      p, li { font-size: clamp(12px, 0.95vw, 14px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar"><div class="label">Mastercard Kernel 2의 이해</div><div class="status" id="statusText">1 / 25</div></div>
+    <div class="stage-wrap"><div class="stage"><div class="track" id="slideTrack">
+      <section class="slide"><div class="slide-head"><span class="section-tag">Mastercard Contactless Standard</span><div class="slide-num">01</div></div><div class="content"><div class="hero"><div class="card"><h1>Mastercard Kernel 2의 이해</h1><p class="lead">EMV Contactless Book C-2 기준으로 Kernel 2의 구조, 데이터, 처리 흐름, 결과 생성 방식을 통합 정리한다.</p><div class="chip-row"><span class="chip">Kernel 2</span><span class="chip">Signal</span><span class="chip">TLV</span><span class="chip">Mag-Stripe</span><span class="chip">EMV</span><span class="chip">Outcome</span></div></div><div class="note"><h3>핵심 축</h3><ul><li>리더 구조와 5개 프로세스</li><li>신호 기반 처리와 데이터베이스</li><li>Mag-Stripe와 EMV 이중 모드</li><li>SDS, IDS, Torn Transaction</li></ul></div></div><div class="summary-bar"><strong>핵심 질문:</strong> Kernel 2는 비접촉 거래를 어떤 단계와 어떤 데이터로 통제하는가</div></div><div class="footer-hint"><span>좌우 방향키로 이동</span><span>1 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Kernel 정의</span><div class="slide-num">02</div></div><div class="content"><h2>Kernel 2는 무엇인가</h2><div class="grid-2"><div class="card"><h3>Mastercard 전용 L2 로직</h3><p>Entry Point가 Mastercard AID를 선택한 뒤, 카드와 단말기 사이의 거래 규칙을 실행하는 브랜드별 처리 계층이다.</p></div><div class="card"><h3>표준의 역할</h3><p>카드 명령 순서, 데이터 해석 방식, 승인·거절·온라인 전환 결과를 동일한 기준으로 맞추는 규격이다.</p></div></div><div class="summary-bar"><strong>정리:</strong> Kernel 2는 Mastercard 비접촉 결제의 판단 엔진이다.</div></div><div class="footer-hint"><span>정의</span><span>2 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">시스템 위치</span><div class="slide-num">03</div></div><div class="content"><h2>POS 시스템에서 Kernel 2의 위치</h2><div class="flow"><div class="flow-box">Terminal<br><span class="mini">금액, UI, 온라인 연동</span></div><div class="flow-box">Entry Point<br><span class="mini">브랜드 선택</span></div><div class="flow-box">Kernel 2<br><span class="mini">Mastercard 처리</span></div><div class="flow-box">Protocol<br><span class="mini">APDU 교환</span></div><div class="flow-box">Card<br><span class="mini">NFC 응답</span></div></div><div class="summary-bar"><strong>의미:</strong> Kernel 2는 상위 업무 로직과 하위 카드 통신 사이를 이어 거래를 완성한다.</div></div><div class="footer-hint"><span>위치</span><span>3 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">5 Processes</span><div class="slide-num">04</div></div><div class="content"><h2>Reader를 이루는 5개 프로세스</h2><div class="flow"><div class="flow-box">M<br><span class="mini">전체 흐름 조정</span></div><div class="flow-box">S<br><span class="mini">카드와 커널 선택</span></div><div class="flow-box">P<br><span class="mini">RF와 APDU 중계</span></div><div class="flow-box">D<br><span class="mini">메시지와 UI 제어</span></div><div class="flow-box">K<br><span class="mini">거래 핵심 판단</span></div></div><div class="summary-bar"><strong>핵심:</strong> Kernel 2는 5개 프로세스 중 K에 해당하며, 나머지 프로세스와 신호로 결합한다.</div></div><div class="footer-hint"><span>구조 1</span><span>4 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Signal Model</span><div class="slide-num">05</div></div><div class="content"><h2>프로세스 간 연결은 Signal로 이뤄진다</h2><div class="grid-3"><div class="card"><h3>ACT</h3><p>거래 시작 신호다. 금액, 통화, 국가, 예측불가수 등 기본 입력이 함께 들어간다.</p></div><div class="card"><h3>CA / RA</h3><p>Kernel이 카드 명령 전송을 요청하면, Protocol 계층이 실제 APDU를 주고받고 응답을 돌려준다.</p></div><div class="card"><h3>OUT</h3><p>거래 결과를 Terminal에 넘긴다. Outcome, Data Record, 부가 데이터가 함께 전달된다.</p></div></div></div><div class="footer-hint"><span>구조 2</span><span>5 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Signal Model</span><div class="slide-num">06</div></div><div class="content"><h2>DEK와 DET가 중요한 이유</h2><div class="grid-2"><div class="card"><h3>DEK</h3><p>Kernel이 추가 데이터나 의사결정용 정보를 Terminal에 요청하는 신호다. 실시간 데이터 교환 창구 역할이다.</p></div><div class="card"><h3>DET</h3><p>Terminal이 Kernel에 필요한 데이터를 넘기거나 온라인 응답, 제어 정보를 제공하는 신호다.</p></div></div><div class="summary-bar"><strong>정리:</strong> Kernel 2는 거래 도중에도 단말기와 데이터를 주고받으며 판단을 보정한다.</div></div><div class="footer-hint"><span>신호</span><span>6 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Database</span><div class="slide-num">07</div></div><div class="content"><h2>Reader Database의 큰 그림</h2><div class="grid-3"><div class="card"><h3>영구 데이터</h3><p>AID 목록, 공개키, 메시지, 리더 설정처럼 여러 거래에 걸쳐 유지되는 데이터다.</p></div><div class="card"><h3>임시 데이터</h3><p>현재 거래에서만 쓰는 값이다. 거래 시작 시 생성되고 종료 시 폐기된다.</p></div><div class="card"><h3>프로세스별 구획</h3><p>M, S, P, D, K가 각자 필요한 데이터를 보유하되, Kernel은 TLV 중심 구조를 가장 많이 활용한다.</p></div></div></div><div class="footer-hint"><span>DB 1</span><span>7 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">TLV Database</span><div class="slide-num">08</div></div><div class="content"><h2>Kernel 2의 중심은 TLV Database다</h2><div class="grid-2"><div class="card"><h3>TLV 방식</h3><p>모든 주요 데이터는 Tag-Length-Value 구조로 저장한다. 태그만 보면 데이터 의미를 즉시 식별할 수 있다.</p></div><div class="card"><h3>인스턴스 복제</h3><p>거래 시작 시 영구 템플릿에서 현재 거래용 인스턴스를 만들고, 카드·단말기 응답으로 계속 갱신한다.</p></div></div><div class="summary-bar"><strong>의미:</strong> Kernel 2는 상태 변수보다 TLV 데이터베이스를 중심으로 동작한다.</div></div><div class="footer-hint"><span>DB 2</span><span>8 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Configuration</span><div class="slide-num">09</div></div><div class="content"><h2>거래를 좌우하는 기본 설정값</h2><div class="grid-4"><div class="card"><h3>CVM Required Limit</h3><p>CVM이 필요한 금액 기준</p></div><div class="card"><h3>Contactless Limit</h3><p>비접촉 허용 금액 범위</p></div><div class="card"><h3>Floor Limit</h3><p>오프라인 승인 가능 기준</p></div><div class="card"><h3>Kernel Configuration</h3><p>EMV·Mag-Stripe Mode, On-device CVM, RRP 같은 Kernel 동작 지원 여부</p></div></div><div class="summary-bar"><strong>별도 설정:</strong> SDS와 IDS는 Data Exchange와 관련 데이터 객체가 준비되어야 활성화된다.</div></div><div class="footer-hint"><span>설정</span><span>9 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Mode Overview</span><div class="slide-num">10</div></div><div class="content"><h2>Kernel 2는 두 가지 거래 모드를 가진다</h2><div class="grid-2"><div class="card"><h3>Mag-Stripe Mode</h3><p>트랙 데이터와 CVC3 기반으로 처리한다. 구조가 단순하며 결과는 항상 온라인 경로로 이어진다.</p></div><div class="card"><h3>EMV Mode</h3><p>ODA, 위험관리, Generate AC를 통해 오프라인 승인·온라인 요청·거절을 세분화해 판단한다.</p></div></div></div><div class="footer-hint"><span>모드 1</span><span>10 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Mag-Stripe</span><div class="slide-num">11</div></div><div class="content"><h2>Mag-Stripe Mode 처리 흐름</h2><div class="flow"><div class="flow-box">GPO</div><div class="flow-box">AIP 확인</div><div class="flow-box">READ RECORD</div><div class="flow-box">CCC</div><div class="flow-box">Online Request</div></div><div class="summary-bar"><strong>핵심:</strong> 카드에서 Track 데이터와 CVC3를 받아 온라인 승인용 데이터를 빠르게 구성한다.</div></div><div class="footer-hint"><span>모드 2</span><span>11 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">EMV</span><div class="slide-num">12</div></div><div class="content"><h2>EMV Mode 처리 흐름</h2><div class="flow"><div class="flow-box">GPO</div><div class="flow-box">READ RECORD</div><div class="flow-box">ODA</div><div class="flow-box">Risk Management</div><div class="flow-box">Generate AC</div></div><div class="summary-bar"><strong>의미:</strong> 더 많은 검증을 수행하는 대신 승인·거절·온라인 요청을 세밀하게 구분한다.</div></div><div class="footer-hint"><span>모드 3</span><span>12 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">ODA</span><div class="slide-num">13</div></div><div class="content"><h2>ODA는 카드 진위를 검증하는 단계다</h2><div class="grid-3"><div class="card"><h3>SDA</h3><p>정적 서명 검증이다. 구현은 단순하지만 복제 저항성은 낮다.</p></div><div class="card"><h3>DDA</h3><p>동적 서명 검증이다. 거래마다 다른 서명으로 카드의 실재성을 확인한다.</p></div><div class="card"><h3>CDA</h3><p>동적 인증과 AC 응답을 결합한다. 보안성과 효율을 함께 확보하는 방식이다.</p></div></div></div><div class="footer-hint"><span>보안 1</span><span>13 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">CVM & Risk</span><div class="slide-num">14</div></div><div class="content"><h2>CVM과 위험관리의 결합</h2><div class="grid-3"><div class="card"><h3>CVM 판단</h3><p>금액 기준, 카드 요구조건, 단말기 기능을 비교해 No CVM, Online PIN, CDCVM 등을 결정한다.</p></div><div class="card"><h3>TVR 기록</h3><p>검증 실패, 데이터 누락, 한도 초과 같은 상황을 비트 단위로 쌓아 이후 결정에 반영한다.</p></div><div class="card"><h3>TAC/IAC 해석</h3><p>단말기와 발급사의 정책 비트를 적용해 TC, ARQC, AAC 방향을 고른다.</p></div></div></div><div class="footer-hint"><span>보안 2</span><span>14 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">GPO</span><div class="slide-num">15</div></div><div class="content"><h2>GPO는 거래 모드와 읽기 계획을 정한다</h2><div class="grid-3"><div class="card"><h3>AIP</h3><p>SDA·DDA·CDA, CVM, Terminal Risk Management, On-device CVM, EMV Mode, RRP 지원을 비트로 나타낸다.</p></div><div class="card"><h3>모드 결정</h3><p>카드 AIP의 EMV Mode 비트와 Kernel Configuration을 비교한다. EMV Mode를 사용할 수 없고 Mag-Stripe를 지원하면 Mag-Stripe 경로를 선택한다.</p></div><div class="card"><h3>AFL·IDS 객체</h3><p>AFL은 READ RECORD 순서를 정한다. IDS 지원 데이터는 GPO Format 2의 DS 관련 객체로 별도 전달된다.</p></div></div><div class="summary-bar"><strong>정리:</strong> AIP 하나가 모든 기능을 표시하는 것이 아니라 설정과 응답 객체를 함께 보아야 한다.</div></div><div class="footer-hint"><span>데이터 1</span><span>15 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">READ RECORD</span><div class="slide-num">16</div></div><div class="content"><h2>READ RECORD는 거래 재료를 모은다</h2><div class="grid-3"><div class="card"><h3>읽는 대상</h3><p>Track 데이터, 인증서, CVM 관련 데이터, CDOL 입력 재료, 기타 애플리케이션 데이터를 읽는다.</p></div><div class="card"><h3>중요성</h3><p>이 단계가 부실하면 ODA, CVM, Generate AC의 입력이 함께 흔들린다.</p></div><div class="card"><h3>실무 관점</h3><p>AFL 해석이 틀리면 이후 단계의 오류가 연쇄적으로 발생한다.</p></div></div></div><div class="footer-hint"><span>데이터 2</span><span>16 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Generate AC</span><div class="slide-num">17</div></div><div class="content"><h2>Generate AC는 최종 판단을 카드와 합의한다</h2><div class="grid-3"><div class="card"><h3>TC</h3><p>오프라인 승인 방향이다. 거래를 마감 가능한 상태로 본다.</p></div><div class="card"><h3>ARQC</h3><p>온라인 승인 요청 방향이다. 발급사 판단이 더 필요하다는 의미다.</p></div><div class="card"><h3>AAC</h3><p>거절 방향이다. 거래를 종료해야 한다는 카드 측 응답이다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> Generate AC는 단말기 판단과 카드 판단이 만나는 최종 암호 응답 단계다.</div></div><div class="footer-hint"><span>데이터 3</span><span>17 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">SDS</span><div class="slide-num">18</div></div><div class="content"><h2>SDS는 결제 명령과 분리된 저장 경로다</h2><div class="grid-2"><div class="card"><h3>Standalone Data Storage</h3><p>Data Exchange로 받은 Tags To Read와 Tags To Write에 따라 GET DATA와 PUT DATA를 실행해 카드 데이터를 읽고 쓴다.</p></div><div class="card"><h3>적용 범위</h3><p>EMV Mode의 선택 기능이며 Mag-Stripe Mode에는 적용되지 않는다. 읽기를 먼저 끝낸 뒤 쓰기를 수행한다.</p></div></div><div class="summary-bar"><strong>포인트:</strong> SDS는 독립 APDU를 추가하고 IDS는 기존 GPO·GENERATE AC에 저장 처리를 통합한다.</div></div><div class="footer-hint"><span>부가 1</span><span>18 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">IDS</span><div class="slide-num">19</div></div><div class="content"><h2>IDS는 결제 흐름 안에 저장 기능을 통합한다</h2><div class="grid-2"><div class="card"><h3>Integrated Data Storage</h3><p>GPO와 Generate AC 응답 안에서 저장 데이터를 함께 다뤄 별도 명령 수를 줄인다.</p></div><div class="card"><h3>보안 장치</h3><p>DS Summary, MAC, 해시 함수로 데이터 위변조 여부를 확인한다.</p></div></div><div class="summary-bar"><strong>차이:</strong> SDS가 분리형 저장이라면 IDS는 거래 결합형 저장이다.</div></div><div class="footer-hint"><span>부가 2</span><span>19 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Torn Transaction</span><div class="slide-num">20</div></div><div class="content"><h2>Torn Transaction Recovery는 끊긴 거래를 복원한다</h2><div class="flow"><div class="flow-box">로그 생성</div><div class="flow-box">카드 이탈</div><div class="flow-box">재접촉 유도</div><div class="flow-box">RECOVER AC</div><div class="flow-box">결과 복원</div></div><div class="summary-bar"><strong>의미:</strong> 카드가 중간에 떨어져도 이전 거래 문맥을 다시 이어 손실을 줄인다.</div></div><div class="footer-hint"><span>부가 3</span><span>20 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Mobile / RRP</span><div class="slide-num">21</div></div><div class="content"><h2>모바일, 잔액조회, 릴레이 저항</h2><div class="grid-3"><div class="card"><h3>CDCVM</h3><p>모바일 기기 안에서 사용자 인증을 먼저 수행한 뒤, Kernel은 그 결과를 거래에 반영한다.</p></div><div class="card"><h3>Balance Reading</h3><p>지원 카드의 오프라인 잔액을 GET DATA로 읽어 보여주는 선택 기능이다.</p></div><div class="card"><h3>RRP</h3><p>왕복 시간 측정으로 릴레이 공격 가능성을 탐지한다. 시간 범위 이탈은 위험 신호로 기록한다.</p></div></div></div><div class="footer-hint"><span>부가 4</span><span>21 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">C-APDU</span><div class="slide-num">22</div></div><div class="content"><h2>Kernel 2가 주로 사용하는 명령 세트</h2><div class="grid-4"><div class="card"><h3>GPO</h3><p>모드와 AFL 확보</p></div><div class="card"><h3>READ RECORD</h3><p>레코드 수집</p></div><div class="card"><h3>GENERATE AC</h3><p>최종 암호응답 요청</p></div><div class="card"><h3>RECOVER AC</h3><p>Torn 거래 복구</p></div></div><div class="grid-3"><div class="card"><h3>CCC</h3><p>Mag-Stripe용 CVC3 생성</p></div><div class="card"><h3>GET / PUT DATA</h3><p>SDS·잔액조회 관련</p></div><div class="card"><h3>EXCHANGE RRP DATA</h3><p>릴레이 저항 측정</p></div></div></div><div class="footer-hint"><span>명령</span><span>22 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">State Machine</span><div class="slide-num">23</div></div><div class="content"><h2>Kernel 2는 상태 기계로 움직인다</h2><div class="grid-3"><div class="card"><h3>초기 상태</h3><p>ACT를 기다리며 거래용 데이터베이스를 준비한다.</p></div><div class="card"><h3>중간 상태</h3><p>GPO, READ RECORD, ODA, Generate AC, IDS, 복구 로직이 각 상태에서 순차 실행된다.</p></div><div class="card"><h3>종료 상태</h3><p>Outcome을 조립해 OUT Signal로 반환하고 다음 거래를 위한 초기 조건으로 돌아간다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> 표준은 함수 목록보다 상태 전이 규칙으로 거래 동작을 고정한다.</div></div><div class="footer-hint"><span>상태</span><span>23 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Outcome</span><div class="slide-num">24</div></div><div class="content"><h2>Outcome Parameter Set이 최종 행동을 정한다</h2><div class="grid-4"><div class="card"><h3>Approved</h3><p>거래 완료 방향</p></div><div class="card"><h3>Online Request</h3><p>호스트 승인 요청 방향</p></div><div class="card"><h3>Declined</h3><p>거래 거절 방향</p></div><div class="card"><h3>End Application</h3><p>거래 종료 처리</p></div></div><div class="grid-2"><div class="card"><h3>포함 정보</h3><p>Status, Start, CVM Performed, Receipt 필요 여부, RF Field Off 요청, Removal Timeout 등이 담긴다.</p></div><div class="card"><h3>상위 시스템 역할</h3><p>Terminal은 이 값을 해석해 화면 표시, 영수증, 온라인 전송, 다음 인터페이스 안내를 수행한다.</p></div></div></div><div class="footer-hint"><span>결과</span><span>24 / 25</span></div></section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Summary</span><div class="slide-num">25</div></div><div class="content"><h2>Kernel 2 이해의 핵심 정리</h2><div class="grid-2"><div class="card"><h3>구조 관점</h3><p>5개 프로세스와 Signal 체계, TLV Database, 상태 기계가 Kernel 2의 골격을 이룬다.</p></div><div class="card"><h3>기능 관점</h3><p>Mag-Stripe와 EMV 이중 모드 위에 ODA, CVM, Generate AC, SDS, IDS, Torn Recovery가 얹힌다.</p></div></div><div class="summary-bar"><strong>한 문장:</strong> Mastercard Kernel 2는 비접촉 거래를 데이터 중심 상태 기계로 해석하고, 결과를 표준화된 Outcome으로 반환한다.</div></div><div class="footer-hint"><span>요약</span><span>25 / 25</span></div></section>
+    </div></div></div>
+  </div>
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const slideTrack = document.getElementById("slideTrack");
+    const statusText = document.getElementById("statusText");
+    let currentIndex = 0;
+    function clamp(index) { return Math.max(0, Math.min(index, slides.length - 1)); }
+    function render() { slideTrack.style.transform = `translateX(-${currentIndex * 100}%)`; statusText.textContent = `${currentIndex + 1} / ${slides.length}`; }
+    function goToSlide(index) { currentIndex = clamp(index); render(); }
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") { event.preventDefault(); goToSlide(currentIndex + 1); }
+      if (event.key === "ArrowLeft" || event.key === "PageUp") { event.preventDefault(); goToSlide(currentIndex - 1); }
+      if (event.key === "Home") { event.preventDefault(); goToSlide(0); }
+      if (event.key === "End") { event.preventDefault(); goToSlide(slides.length - 1); }
+    });
+    render();
+  </script>
+</body>
+</html>

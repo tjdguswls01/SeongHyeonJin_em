@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visa Kernel 3의 이해</title>
+  <style>
+    :root {
+      --bg-top: #f7efe2;
+      --bg-bottom: #ead9bc;
+      --panel: #fffdf8;
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --accent: #b45309;
+      --accent-strong: #92400e;
+      --accent-soft: #fde6bf;
+      --line: #d8c3a1;
+      --shadow: 0 18px 42px rgba(80, 58, 32, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
+      color: var(--ink);
+    }
+    .app { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      position: fixed; top: 12px; left: 24px; right: 24px; z-index: 20;
+      padding: 8px 0; background: transparent; border: 0; border-radius: 0;
+      pointer-events: none;
+    }
+    .topbar .label, .topbar .status {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent-strong);
+    }
+    .stage-wrap { width: 100vw; height: 100vh; }
+    .stage {
+      width: 100vw;
+      height: 100vh;
+      aspect-ratio: 16 / 9;
+      background: rgba(255, 253, 248, 0.84);
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      overflow: hidden;
+    }
+    .track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.32s ease;
+    }
+    .slide {
+      flex: 0 0 100%;
+      width: 100%;
+      height: 100%;
+      padding: 58px 4vw 46px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+    }
+    .slide-head, .footer-hint {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+    }
+    .slide-num {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--accent-strong);
+    }
+    .content {
+      min-height: 0;
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+    h1, h2, h3, p { margin: 0; }
+    h1 {
+      font-size: clamp(30px, 3.2vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      text-align: center;
+    }
+    h2 {
+      font-size: clamp(23px, 2.2vw, 33px);
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+    h3 {
+      font-size: clamp(16px, 1.35vw, 21px);
+      line-height: 1.25;
+      text-align: center;
+      color: var(--accent-strong);
+    }
+    p, li {
+      font-size: clamp(14px, 1.08vw, 18px);
+      line-height: 1.38;
+      color: var(--ink);
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 4px;
+      text-align: left;
+    }
+    .lead {
+      font-size: clamp(18px, 1.55vw, 24px);
+      line-height: 1.42;
+      font-weight: 700;
+      text-align: center;
+    }
+    .hero, .grid-2, .grid-3, .grid-4, .flow, .matrix {
+      display: grid;
+      gap: 10px;
+      align-items: stretch;
+    }
+    .hero { grid-template-columns: 1.2fr 0.95fr; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .flow { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .matrix { grid-template-columns: 1fr 1.15fr 1.2fr; }
+    .card, .note, .summary-bar, .flow-box, .matrix > div {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 10px 12px;
+    }
+    .card, .note, .flow-box, .matrix > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 7px;
+      min-height: 100%;
+    }
+    .note { background: linear-gradient(180deg, #fff5dc 0%, #ffefcd 100%); }
+    .summary-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      text-align: center;
+      font-size: clamp(14px, 1.05vw, 18px);
+      line-height: 1.35;
+      font-weight: 800;
+    }
+    .summary-bar strong { color: var(--accent-strong); }
+    .mini { font-size: clamp(12px, 0.96vw, 16px); line-height: 1.33; }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
+    }
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #fff6e7;
+      border: 1px solid var(--line);
+      font-size: clamp(12px, 0.95vw, 16px);
+      font-weight: 800;
+      color: var(--accent-strong);
+    }
+    .flow-box { position: relative; font-weight: 800; }
+    .flow-box::after {
+      content: "→";
+      position: absolute;
+      right: -9px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-strong);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .flow-box:last-child::after { display: none; }
+    .matrix .head {
+      background: #fef2d6;
+      color: var(--accent-strong);
+      font-weight: 800;
+    }
+    .footer-hint {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    @media (max-width: 1280px), (max-height: 860px) {
+      .slide { padding: 52px 3vw 34px; gap: 10px; }
+      h1 { font-size: clamp(28px, 2.9vw, 40px); }
+      h2 { font-size: clamp(21px, 2vw, 29px); }
+      h3 { font-size: clamp(15px, 1.2vw, 19px); }
+      p, li { font-size: clamp(13px, 1vw, 16px); line-height: 1.33; }
+      .summary-bar { min-height: 46px; }
+    }
+    @media (max-width: 900px) {
+      .hero, .grid-2, .grid-3, .grid-4, .flow, .matrix { grid-template-columns: 1fr; }
+      .flow-box::after { display: none; }
+      .slide { padding: 48px 3vw 30px; gap: 8px; }
+      h1 { font-size: clamp(24px, 2.5vw, 34px); }
+      h2 { font-size: clamp(19px, 1.8vw, 25px); }
+      p, li { font-size: clamp(12px, 0.95vw, 14px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar">
+      <div class="label">Visa Kernel 3의 이해</div>
+      <div class="status" id="statusText">1 / 25</div>
+    </div>
+    <div class="stage-wrap">
+      <div class="stage">
+        <div class="track" id="slideTrack">
+          <section class="slide"><div class="slide-head"><span class="section-tag">Visa Contactless Standard</span><div class="slide-num">01</div></div><div class="content"><div class="hero"><div class="card"><h1>Visa Kernel 3의 이해</h1><p class="lead">비접촉 결제에서 단말이 무엇을 읽고, 무엇을 판단하고, 어떤 결과를 올리는지에 대한 구조 설명</p><div class="chip-row"><span class="chip">qVSDC</span><span class="chip">TTQ</span><span class="chip">CTQ</span><span class="chip">GPO Cryptogram</span><span class="chip">fDDA</span><span class="chip">Outcome</span></div></div><div class="note"><h3>발표 흐름</h3><ul><li>Kernel 3의 역할</li><li>거래 흐름과 핵심 데이터</li><li>카드 판정과 단말 후처리</li><li>TNP-10 소스 연결</li></ul></div></div><div class="summary-bar"><strong>핵심 질문:</strong> Visa Kernel 3는 짧은 탭 안에서 카드 판정 데이터를 어떻게 확보하고 처리하는가</div></div><div class="footer-hint"><span>좌우 방향키로 이동</span><span>1 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">Kernel의 정체</span><div class="slide-num">02</div></div><div class="content"><h2>Visa Kernel 3는 무엇인가</h2><div class="grid-2"><div class="card"><h3>브랜드 규격 엔진</h3><p>Visa Contactless Book C-3 규칙에 따라 카드 응답을 해석하고 거래 절차를 진행한다.</p></div><div class="card"><h3>비즈니스 판단 계층</h3><p>단순 APDU 전달이 아니라 AID 선택 이후 처리 순서, 검증, 결과 방향을 정리하는 계층이다.</p></div></div><div class="summary-bar"><strong>정리:</strong> Kernel 3는 Visa 비접촉 결제용 L2 판단 엔진이다.</div></div><div class="footer-hint"><span>정의</span><span>2 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">시스템 위치</span><div class="slide-num">03</div></div><div class="content"><h2>결제 단말기 구조에서 Kernel 3의 위치</h2><div class="flow"><div class="flow-box">호스트 앱<br><span class="mini">금액, UI, 승인 서버</span></div><div class="flow-box">Entry Point<br><span class="mini">PPSE, 조합 선택</span></div><div class="flow-box">Kernel 3<br><span class="mini">Visa 전용 처리</span></div><div class="flow-box">APDU 계층<br><span class="mini">명령·응답</span></div><div class="flow-box">NFC·카드<br><span class="mini">RF 통신</span></div></div><div class="summary-bar"><strong>역할:</strong> 하위 RF 통신과 상위 서비스 로직 사이에서 거래 의미를 해석한다.</div></div><div class="footer-hint"><span>위치</span><span>3 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">qVSDC</span><div class="slide-num">04</div></div><div class="content"><h2>qVSDC의 의미</h2><div class="grid-2"><div class="card"><h3>Visa의 비접촉 방식</h3><p>짧은 탭 시간 안에 필요한 데이터를 모으고, 이후 단말이 후속 판단을 이어 가는 구조이다.</p></div><div class="card"><h3>Kernel 3의 전제</h3><p>GPO와 READ RECORD가 빠르게 끝나야 하며, 나머지 판단은 확보한 데이터로 이어진다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> qVSDC는 빠른 데이터 확보와 후속 로컬 판단을 전제로 한다.</div></div><div class="footer-hint"><span>핵심 개념</span><span>4 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">qVSDC</span><div class="slide-num">05</div></div><div class="content"><h2>qVSDC가 중요한 이유</h2><div class="grid-3"><div class="card"><h3>사용자 경험</h3><p>카드를 오래 대지 않아도 된다.</p></div><div class="card"><h3>커널 구조</h3><p>짧은 카드 접촉 시간 안에 읽기 구간을 먼저 끝내도록 설계된다.</p></div><div class="card"><h3>보안 처리</h3><p>후속 검증과 결과 생성이 단말 내부 판단 흐름과 강하게 연결된다.</p></div></div></div><div class="footer-hint"><span>의미</span><span>5 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">큰 흐름</span><div class="slide-num">06</div></div><div class="content"><h2>거래 흐름 전체 보기</h2><div class="flow"><div class="flow-box">AID 선택</div><div class="flow-box">PDOL·TTQ</div><div class="flow-box">GPO<br><span class="mini">Cryptogram 수신</span></div><div class="flow-box">READ RECORD<br><span class="mini">필요할 때만</span></div><div class="flow-box">검증·Outcome</div></div><div class="summary-bar"><strong>핵심:</strong> Kernel 3 일반 거래는 별도 GENERATE AC 명령 없이 GPO 응답에서 Cryptogram과 거래 판정 데이터를 받는다.</div></div><div class="footer-hint"><span>전체 흐름</span><span>6 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">입력 준비</span><div class="slide-num">07</div></div><div class="content"><h2>거래 시작 시 단말이 준비하는 값</h2><div class="grid-3"><div class="card"><h3>금액·통화</h3><p>거래 금액, 통화 코드, 거래 유형</p></div><div class="card"><h3>환경 정보</h3><p>거래 일자, 국가 코드, 단말 정책</p></div><div class="card"><h3>단말 능력</h3><p>TTQ, 온라인 가능 여부, 지원 CVM</p></div></div></div><div class="footer-hint"><span>입력</span><span>7 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">입력 준비</span><div class="slide-num">08</div></div><div class="content"><h2>왜 입력값 정확성이 중요한가</h2><div class="grid-2"><div class="card"><h3>PDOL로 들어감</h3><p>단말 값은 그대로 GPO 데이터 조립에 사용되므로 길이와 순서가 정확해야 한다.</p></div><div class="card"><h3>오류 전파</h3><p>초기 값이 틀리면 카드 선택은 성공해도 후속 처리와 Outcome이 어긋난다.</p></div></div></div><div class="footer-hint"><span>입력 품질</span><span>8 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">AID 선택</span><div class="slide-num">09</div></div><div class="content"><h2>PPSE와 후보 선택</h2><div class="grid-2"><div class="card"><h3>PPSE 조회</h3><p>카드가 제공하는 결제 애플리케이션 목록을 읽는다.</p></div><div class="card"><h3>후보 비교</h3><p>단말 허용 AID와 카드 제공 AID를 대조해 적합한 조합을 고른다.</p></div></div></div><div class="footer-hint"><span>선택 1</span><span>9 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">AID 선택</span><div class="slide-num">10</div></div><div class="content"><h2>최종 SELECT와 얻는 정보</h2><div class="grid-2"><div class="card"><h3>SELECT AID</h3><p>선택된 Visa AID로 최종 진입을 수행한다.</p></div><div class="card"><h3>핵심 산출물</h3><p>FCI와 PDOL이 확보되며, 이후 GPO 조립의 기준이 정해진다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> AID 선택은 거래 진입 경로를 고정한다.</div></div><div class="footer-hint"><span>선택 2</span><span>10 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">TTQ</span><div class="slide-num">11</div></div><div class="content"><h2>TTQ의 정의</h2><div class="grid-2"><div class="card"><h3>Terminal Transaction Qualifiers</h3><p>단말이 어떤 결제 기능과 인증 능력을 제공할 수 있는지 카드에 선언하는 비트 정보이다.</p></div><div class="card"><h3>기능 선언서</h3><p>단말의 온라인 가능 여부, CVM 지원 범위, 비접촉 처리 특성이 요약되어 들어간다.</p></div></div></div><div class="footer-hint"><span>TTQ 1</span><span>11 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">TTQ</span><div class="slide-num">12</div></div><div class="content"><h2>TTQ가 판단에 미치는 영향</h2><div class="grid-3"><div class="card"><h3>거래 능력 선언</h3><p>EMV Mode 지원, 온라인 처리, 서명·온라인 PIN·Consumer Device CVM 지원 여부를 카드에 전달한다.</p></div><div class="card"><h3>CVM Required</h3><p>금액과 Reader CVM Required Limit에 따라 이번 거래에서 CVM이 필요한지를 알린다.</p></div><div class="card"><h3>오설정 위험</h3><p>지원하지 않는 기능을 선언하면 카드의 CTQ와 GPO 판정이 실제 단말 능력과 어긋난다.</p></div></div></div><div class="footer-hint"><span>TTQ 2</span><span>12 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">CTQ</span><div class="slide-num">13</div></div><div class="content"><h2>CTQ의 정의</h2><div class="grid-2"><div class="card"><h3>Card Transaction Qualifiers</h3><p>카드가 이번 거래에서 원하는 처리 조건을 나타내는 비트 정보이다.</p></div><div class="card"><h3>대표 내용</h3><p>서명 필요, 온라인 PIN 필요, CDCVM 수행 여부 같은 요구가 담긴다.</p></div></div></div><div class="footer-hint"><span>CTQ 1</span><span>13 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">CTQ</span><div class="slide-num">14</div></div><div class="content"><h2>TTQ와 CTQ의 관계</h2><div class="grid-2"><div class="card"><h3>TTQ는 단말 능력</h3><p>단말이 제공 가능한 기능의 범위를 카드에 먼저 선언한다.</p></div><div class="card"><h3>CTQ는 카드 요구</h3><p>카드는 그 범위 안에서 자신이 원하는 인증과 처리 조건을 돌려준다.</p></div></div><div class="summary-bar"><strong>관계:</strong> 실제 거래는 단말의 가능 범위와 카드의 요구 조건이 만나는 지점에서 결정된다.</div></div><div class="footer-hint"><span>CTQ 2</span><span>14 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">GPO 준비</span><div class="slide-num">15</div></div><div class="content"><h2>PDOL 조립과 GPO 요청</h2><div class="grid-2"><div class="card"><h3>PDOL 조립</h3><p>카드가 요구한 태그와 길이에 맞춰 단말 값을 순서대로 이어 붙인다.</p></div><div class="card"><h3>GPO 송신</h3><p>보통 Command Template 83 안에 조립값을 싣고 카드 처리 옵션을 요청한다.</p></div></div></div><div class="footer-hint"><span>GPO 1</span><span>15 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">GPO 응답</span><div class="slide-num">16</div></div><div class="content"><h2>GPO 응답이 거래 방향을 먼저 담는다</h2><div class="grid-3"><div class="card"><h3>Cryptogram·CID</h3><p>카드는 GPO 응답에서 AC와 Cryptogram Information Data를 돌려주며 AAC, ARQC, TC 방향을 표시한다.</p></div><div class="card"><h3>IAD·CTQ</h3><p>Issuer Application Data와 Card Transaction Qualifiers가 온라인 처리와 CVM 후속 판단에 사용된다.</p></div><div class="card"><h3>AIP·AFL</h3><p>AIP는 카드 능력을, AFL은 추가 레코드가 있을 때 읽을 위치를 나타낸다.</p></div></div><div class="summary-bar"><strong>구분:</strong> Kernel 3의 AC는 후속 GENERATE AC가 아니라 GPO 응답에서 확보한다.</div></div><div class="footer-hint"><span>GPO 2</span><span>16 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">READ RECORD</span><div class="slide-num">17</div></div><div class="content"><h2>AFL이 있을 때만 READ RECORD를 수행한다</h2><div class="grid-3"><div class="card"><h3>조건부 읽기</h3><p>AFL이 없으면 바로 Card Read Complete로 이동한다. 모든 거래가 레코드 읽기를 요구하지 않는다.</p></div><div class="card"><h3>추가 데이터</h3><p>GPO 크기 제한으로 빠진 서명, 애플리케이션 데이터, 인증 관련 객체를 레코드에서 보완한다.</p></div><div class="card"><h3>완전성 검사</h3><p>GPO와 READ RECORD 전체에서 필수 데이터 누락과 중복 Primitive Data를 검사한다.</p></div></div></div><div class="footer-hint"><span>읽기</span><span>17 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">Card Read Complete</span><div class="slide-num">18</div></div><div class="content"><h2>카드를 먼저 떼고 단말 처리를 계속한다</h2><div class="grid-2"><div class="card"><h3>Card Read OK</h3><p>카드 데이터 수집이 끝나면 Kernel은 Card Read Complete 메시지를 보내고 RF Field에서 카드를 제거할 수 있게 한다.</p></div><div class="card"><h3>후속 처리 분리</h3><p>Processing Restrictions, fDDA, CVM, 온라인 메시지 구성은 이미 확보한 데이터로 계속 수행한다.</p></div></div><div class="summary-bar"><strong>qVSDC의 체감 속도:</strong> 카드와 통신하는 시간과 단말이 판단하는 시간을 분리한다.</div></div><div class="footer-hint"><span>탭 종료</span><span>18 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">검증</span><div class="slide-num">19</div></div><div class="content"><h2>Processing Restrictions와 fDDA</h2><div class="grid-2"><div class="card"><h3>Processing Restrictions</h3><p>만료일, Application Usage Control, 예외 조건을 검사해 카드 애플리케이션 사용 가능성을 판단한다.</p></div><div class="card"><h3>Fast Dynamic Data Authentication</h3><p>fDDA는 카드가 만든 Dynamic Signature를 검증해 복제·변조 카드 위험을 확인한다. 실패는 거래 결과에 반영한다.</p></div></div><div class="summary-bar"><strong>역할:</strong> 카드가 제시한 거래 판정을 그대로 신뢰하지 않고 데이터 유효성과 카드 진위를 확인한다.</div></div><div class="footer-hint"><span>보안</span><span>19 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">CVM</span><div class="slide-num">20</div></div><div class="content"><h2>TTQ와 CTQ로 CVM을 확정한다</h2><div class="grid-4"><div class="card"><h3>No CVM</h3><p>추가 인증 없이 진행한다.</p></div><div class="card"><h3>Consumer Device CVM</h3><p>모바일 기기에서 완료한 인증 결과를 반영한다.</p></div><div class="card"><h3>Online PIN</h3><p>단말과 온라인 호스트가 PIN 검증을 수행한다.</p></div><div class="card"><h3>Signature</h3><p>서명 확인을 상위 단말 동작으로 요청한다.</p></div></div><div class="summary-bar"><strong>판단 기준:</strong> 카드 요구, 단말 지원 능력, CVM Required 조건이 모두 맞아야 한다.</div></div><div class="footer-hint"><span>인증</span><span>20 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">Cryptogram</span><div class="slide-num">21</div></div><div class="content"><h2>GPO 응답의 Cryptogram을 해석한다</h2><div class="grid-3"><div class="card"><h3>CID</h3><p>Cryptogram Information Data가 AAC, ARQC, TC 중 카드가 선택한 방향을 나타낸다.</p></div><div class="card"><h3>Application Cryptogram</h3><p>Tag 9F26은 거래 데이터와 카드 상태를 암호학적으로 결합한 결과물이다.</p></div><div class="card"><h3>IAD·ATC</h3><p>Issuer Application Data와 Application Transaction Counter가 온라인 승인과 발급사 검증에 함께 사용된다.</p></div></div></div><div class="footer-hint"><span>암호 결과</span><span>21 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">거래 방향</span><div class="slide-num">22</div></div><div class="content"><h2>AAC, ARQC, TC의 차이</h2><div class="grid-3"><div class="card"><h3>AAC</h3><p>카드가 거래를 오프라인 거절한 결과이다.</p></div><div class="card"><h3>ARQC</h3><p>발급사 온라인 승인이 필요하다는 요청이다. 단말은 승인 메시지를 구성한다.</p></div><div class="card"><h3>TC</h3><p>카드가 오프라인 승인을 나타낸 결과이다. Reader가 오프라인 거래를 지원할 때 사용된다.</p></div></div><div class="summary-bar"><strong>주의:</strong> Cryptogram 종류는 GPO에서 이미 정해져 돌아오며 단말은 유효성을 검사하고 후속 동작을 선택한다.</div></div><div class="footer-hint"><span>판정</span><span>22 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">선택 기능</span><div class="slide-num">23</div></div><div class="content"><h2>IDS와 Issuer Update는 기본 거래의 확장이다</h2><div class="grid-2"><div class="card"><h3>Integrated Data Storage</h3><p>EXTENDED GPO와 IDS Record를 사용해 결제 과정에서 카드의 비결제 데이터를 읽고 갱신하는 선택 기능이다.</p></div><div class="card"><h3>Issuer Update Processing</h3><p>온라인 거래 후 두 번째 Presentment에서 EXTERNAL AUTHENTICATE와 Issuer Script를 같은 카드에 전달하는 선택 기능이다.</p></div></div><div class="summary-bar"><strong>범위:</strong> 일반 qVSDC 거래 흐름과 구분해 이해해야 한다.</div></div><div class="footer-hint"><span>확장</span><span>23 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">Outcome</span><div class="slide-num">24</div></div><div class="content"><h2>Outcome과 최종 단말 동작</h2><div class="grid-4"><div class="card"><h3>Approved</h3><p>거래 승인 진행</p></div><div class="card"><h3>Declined</h3><p>거래 거절</p></div><div class="card"><h3>Online Request</h3><p>호스트 승인 요청</p></div><div class="card"><h3>Try Another Interface</h3><p>다른 매체 사용 유도</p></div></div><div class="grid-2"><div class="card"><h3>Kernel 역할</h3><p>내부 상태를 표준 의미가 있는 결과 방향으로 정리한다.</p></div><div class="card"><h3>상위 앱 역할</h3><p>화면 표시, 부저, 영수증, 승인 서버 통신 같은 실제 동작을 수행한다.</p></div></div></div><div class="footer-hint"><span>결과</span><span>24 / 25</span></div></section>
+
+          <section class="slide"><div class="slide-head"><span class="section-tag">소스 연결</span><div class="slide-num">25</div></div><div class="content"><h2>TNP-10 소스에서 확인되는 구현 지점</h2><div class="matrix"><div class="head">구간</div><div class="head">대표 함수·데이터</div><div class="head">확인되는 기능</div><div class="mini">설정</div><div class="mini">InitEmvKernal, SetTerminalConfig, Tag 9F66</div><div class="mini">커널 초기화와 TTQ 설정</div><div class="mini">선택·GPO</div><div class="mini">EmvFuncSelectPSE, EmvFuncSelectAID, ParsingPDOL</div><div class="mini">후보 선택, PDOL 확인, GPO 처리</div><div class="mini">판정</div><div class="mini">TTQandCTQ, check_CTQ, Tag 9F6C·9F27</div><div class="mini">TTQ/CTQ 조합과 CID 기반 결과 해석</div></div><div class="summary-bar"><strong>한 문장 정리:</strong> Kernel 3의 핵심은 GPO에서 받은 카드 판정을 검증하고 단말 능력에 맞는 Outcome으로 변환하는 데 있다.</div></div><div class="footer-hint"><span>끝</span><span>25 / 25</span></div></section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const slideTrack = document.getElementById("slideTrack");
+    const statusText = document.getElementById("statusText");
+    let currentIndex = 0;
+    function clamp(index) { return Math.max(0, Math.min(index, slides.length - 1)); }
+    function render() {
+      slideTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+      statusText.textContent = `${currentIndex + 1} / ${slides.length}`;
+    }
+    function goToSlide(index) { currentIndex = clamp(index); render(); }
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") { event.preventDefault(); goToSlide(currentIndex + 1); }
+      if (event.key === "ArrowLeft" || event.key === "PageUp") { event.preventDefault(); goToSlide(currentIndex - 1); }
+      if (event.key === "Home") { event.preventDefault(); goToSlide(0); }
+      if (event.key === "End") { event.preventDefault(); goToSlide(slides.length - 1); }
+    });
+    render();
+  </script>
+</body>
+</html>

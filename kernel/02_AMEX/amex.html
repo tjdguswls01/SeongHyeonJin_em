@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMEX Kernel 4의 이해</title>
+  <style>
+    :root {
+      --bg-top: #f7efe2;
+      --bg-bottom: #ead9bc;
+      --panel: #fffdf8;
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --accent: #b45309;
+      --accent-strong: #92400e;
+      --accent-soft: #fde6bf;
+      --line: #d8c3a1;
+      --shadow: 0 18px 42px rgba(80, 58, 32, 0.10);
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; overflow:hidden; font-family:"Malgun Gothic","Apple SD Gothic Neo",sans-serif; background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-bottom) 100%); color:var(--ink); }
+    .app { width:100vw; height:100vh; position:relative; overflow:hidden; }
+    .topbar { position:fixed; top:12px; left:24px; right:24px; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:8px 0; background:transparent; border:0; border-radius:0; pointer-events:none; }
+    .topbar .label,.topbar .status { font-size:15px; font-weight:800; color:var(--accent-strong); }
+    .stage-wrap { width:100vw; height:100vh; }
+    .stage { width:100vw; height:100vh; aspect-ratio:16 / 9; background:rgba(255,253,248,.84); border:0; border-radius:0; box-shadow:none; overflow:hidden; }
+    .track { display:flex; width:100%; height:100%; transition:transform .32s ease; }
+    .slide { flex:0 0 100%; width:100%; height:100%; padding:58px 4vw 46px; display:grid; grid-template-rows:auto 1fr auto; gap:12px; }
+    .slide-head,.footer-hint { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .section-tag { display:inline-flex; align-items:center; justify-content:center; min-height:30px; padding:5px 11px; border-radius:999px; background:var(--accent-soft); color:var(--accent-strong); font-size:12px; font-weight:800; text-align:center; }
+    .slide-num { font-size:15px; font-weight:800; color:var(--accent-strong); }
+    .content { min-height:0; display:grid; gap:12px; align-content:center; }
+    h1,h2,h3,p { margin:0; }
+    h1 { font-size:clamp(30px,3.2vw,46px); line-height:1.08; letter-spacing:-.03em; text-align:center; }
+    h2 { font-size:clamp(23px,2.2vw,33px); line-height:1.14; letter-spacing:-.02em; text-align:center; }
+    h3 { font-size:clamp(16px,1.35vw,21px); line-height:1.25; text-align:center; color:var(--accent-strong); }
+    p,li { font-size:clamp(14px,1.08vw,18px); line-height:1.38; color:var(--ink); }
+    ul { margin:0; padding-left:18px; display:grid; gap:4px; text-align:left; }
+    .lead { font-size:clamp(18px,1.55vw,24px); line-height:1.42; font-weight:700; text-align:center; }
+    .hero,.grid-2,.grid-3,.grid-4,.flow,.matrix { display:grid; gap:10px; align-items:stretch; }
+    .hero { grid-template-columns:1.2fr .95fr; }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .flow { grid-template-columns:repeat(5,minmax(0,1fr)); }
+    .matrix { grid-template-columns:1fr 1.1fr 1.2fr; }
+    .card,.note,.summary-bar,.flow-box,.matrix > div { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:10px 12px; }
+    .card,.note,.flow-box,.matrix > div { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:7px; min-height:100%; }
+    .note { background:linear-gradient(180deg,#fff5dc 0%,#ffefcd 100%); }
+    .summary-bar { display:flex; align-items:center; justify-content:center; min-height:52px; text-align:center; font-size:clamp(14px,1.05vw,18px); line-height:1.35; font-weight:800; }
+    .summary-bar strong { color:var(--accent-strong); }
+    .mini { font-size:clamp(12px,.96vw,16px); line-height:1.33; }
+    .chip-row { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; }
+    .chip { padding:6px 10px; border-radius:999px; background:#fff6e7; border:1px solid var(--line); font-size:clamp(12px,.95vw,16px); font-weight:800; color:var(--accent-strong); }
+    .flow-box { position:relative; font-weight:800; }
+    .flow-box::after { content:"→"; position:absolute; right:-9px; top:50%; transform:translateY(-50%); color:var(--accent-strong); font-size:18px; font-weight:900; }
+    .flow-box:last-child::after { display:none; }
+    .matrix .head { background:#fef2d6; color:var(--accent-strong); font-weight:800; }
+    .footer-hint { color:var(--muted); font-size:12px; font-weight:700; }
+    @media (max-width:1280px), (max-height:860px) {
+      .slide { padding:52px 3vw 34px; gap:10px; }
+      h1 { font-size:clamp(28px,2.9vw,40px); }
+      h2 { font-size:clamp(21px,2vw,29px); }
+      h3 { font-size:clamp(15px,1.2vw,19px); }
+      p,li { font-size:clamp(13px,1vw,16px); line-height:1.33; }
+      .summary-bar { min-height:46px; }
+    }
+    @media (max-width:900px) {
+      .hero,.grid-2,.grid-3,.grid-4,.flow,.matrix { grid-template-columns:1fr; }
+      .flow-box::after { display:none; }
+      .slide { padding:48px 3vw 30px; gap:8px; }
+      h1 { font-size:clamp(24px,2.5vw,34px); }
+      h2 { font-size:clamp(19px,1.8vw,25px); }
+      p,li { font-size:clamp(12px,.95vw,14px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="topbar"><div class="label">AMEX Kernel 4의 이해</div><div class="status" id="statusText">1 / 25</div></div>
+    <div class="stage-wrap"><div class="stage"><div class="track" id="slideTrack">
+      <section class="slide"><div class="slide-head"><span class="section-tag">American Express Contactless</span><div class="slide-num">01</div></div><div class="content"><div class="hero"><div class="card"><h1>AMEX Kernel 4의 이해</h1><p class="lead">American Express 비접촉 결제에서 Kernel 4가 모드와 한도를 해석하고 첫 Card Action Analysis까지 수행하는 구조 설명</p><div class="chip-row"><span class="chip">EMV Mode</span><span class="chip">Mag-Stripe Mode</span><span class="chip">Mobile CVM</span><span class="chip">Dynamic Limits</span><span class="chip">1st GENERATE AC</span><span class="chip">Outcome</span></div></div><div class="note"><h3>발표 흐름</h3><ul><li>Kernel 4의 역할과 거래 모드</li><li>데이터 수집과 검증</li><li>위험·CVM·첫 AC 판단</li><li>온라인 완료와 특수 거래</li></ul></div></div></div><div class="footer-hint"><span>좌우 방향키로 이동</span><span>1 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Kernel 4</span><div class="slide-num">02</div></div><div class="content"><h2>AMEX Kernel 4는 무엇인가</h2><div class="grid-2"><div class="card"><h3>AMEX 전용 L2 엔진</h3><p>EMV Contactless Book C-4 규칙에 따라 American Express 비접촉 거래를 처리하는 Reader Kernel이다.</p></div><div class="card"><h3>판단 계층</h3><p>카드 응답을 읽고, 위험과 인증을 판단하고, 카드에 어떤 Cryptogram을 요청할지 정하는 계층이다.</p></div></div><div class="summary-bar"><strong>정리:</strong> Kernel 4는 카드 통신 이후의 거래 의미를 결정하는 AMEX 전용 처리 엔진이다.</div></div><div class="footer-hint"><span>정의</span><span>2 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">위치</span><div class="slide-num">03</div></div><div class="content"><h2>시스템 안에서 Kernel 4의 위치</h2><div class="flow"><div class="flow-box">호스트 앱<br><span class="mini">금액, UI, 승인 서버</span></div><div class="flow-box">Entry Point<br><span class="mini">AID·Kernel 선택</span></div><div class="flow-box">Kernel 4<br><span class="mini">AMEX 처리</span></div><div class="flow-box">APDU 계층<br><span class="mini">명령·응답</span></div><div class="flow-box">카드·RF<br><span class="mini">AIP, AFL, AC</span></div></div><div class="summary-bar"><strong>역할:</strong> Entry Point 이후부터 Outcome 반환 전까지의 규칙을 담당한다.</div></div><div class="footer-hint"><span>위치</span><span>3 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">흐름</span><div class="slide-num">04</div></div><div class="content"><h2>Kernel 4 전체 흐름</h2><div class="flow"><div class="flow-box">GPO·모드 결정</div><div class="flow-box">READ DATA·ODA</div><div class="flow-box">Restrictions·CVM</div><div class="flow-box">Risk·1st TAA</div><div class="flow-box">1st GENERATE AC</div></div><div class="summary-bar"><strong>경계:</strong> 카드와의 거래는 1st Card Action Analysis에서 끝나며 온라인 승인 결과를 위한 두 번째 GENERATE AC는 수행하지 않는다.</div></div><div class="footer-hint"><span>전체 흐름</span><span>4 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">모드</span><div class="slide-num">05</div></div><div class="content"><h2>Kernel 4가 보는 거래 조합</h2><div class="grid-3"><div class="card"><h3>EMV Mode</h3><p>ODA, CVM, Risk Management와 Cryptogram으로 오프라인 승인·온라인 요청·거절을 판단한다.</p></div><div class="card"><h3>Mag-Stripe Mode</h3><p>트랙 데이터와 동적 값으로 온라인 승인용 데이터를 만들며 Issuer가 기존 Mag-Stripe 처리 체계를 활용할 수 있게 한다.</p></div><div class="card"><h3>Contactless Mobile</h3><p>Tag 9F71 Mobile CVM Results와 Reader Capability를 함께 확인해 기기 인증 결과를 반영한다.</p></div></div><div class="summary-bar"><strong>추가 분기:</strong> 단말 구성에 따라 Offline, Partial Online, Delayed Authorisation으로 완료 방식이 달라진다.</div></div><div class="footer-hint"><span>조합</span><span>5 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">GPO 준비</span><div class="slide-num">06</div></div><div class="content"><h2>PDOL 조립과 GPO 요청</h2><div class="grid-2"><div class="card"><h3>PDOL 조립</h3><p>카드가 요구한 Terminal Data를 순서와 길이에 맞춰 조립하고 83 Template 안에 넣는다.</p></div><div class="card"><h3>GPO 송신</h3><p>Kernel은 조립된 데이터를 바탕으로 GET PROCESSING OPTIONS를 보내 카드 처리 능력을 묻는다.</p></div></div></div><div class="footer-hint"><span>GPO 1</span><span>6 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">GPO 응답</span><div class="slide-num">07</div></div><div class="content"><h2>AIP와 AFL이 의미하는 것</h2><div class="grid-2"><div class="card"><h3>AIP</h3><p>카드가 어떤 기능을 지원하는지 보여주는 비트 정보이다. ODA, CVM, 후속 처리 경로 판단의 출발점이 된다.</p></div><div class="card"><h3>AFL</h3><p>어떤 SFI와 Record를 읽어야 하는지 알려 주는 지도이다. Read Application Data 단계의 범위를 결정한다.</p></div></div></div><div class="footer-hint"><span>GPO 2</span><span>7 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Capability</span><div class="slide-num">08</div></div><div class="content"><h2>Terminal Type과 Reader Capability</h2><div class="grid-3"><div class="card"><h3>Terminal Type</h3><p>거래 환경, 온라인 가능 여부, 단말 유형을 카드에게 알려 주는 기준 값이다.</p></div><div class="card"><h3>Reader Capability</h3><p>EMV 경로, Mobile 경로, CVM 가능 범위 같은 리더의 기능을 선언한다.</p></div><div class="card"><h3>보정 값</h3><p>Zero Amount, Status Check 같은 특수 거래에서는 Modified Terminal Type 같은 보정 개념이 중요해진다.</p></div></div></div><div class="footer-hint"><span>Capability</span><span>8 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">READ DATA</span><div class="slide-num">09</div></div><div class="content"><h2>AFL 기반 Read Application Data</h2><div class="grid-3"><div class="card"><h3>읽기 순서</h3><p>AFL이 지시한 SFI와 Record 범위를 따라 READ RECORD를 반복한다.</p></div><div class="card"><h3>읽는 이유</h3><p>ODA, CVM, Risk Management, Action Analysis에 필요한 카드 데이터를 확보한다.</p></div><div class="card"><h3>추가 조회</h3><p>필요한 경우 GET DATA로 ATC 같은 보조 데이터를 읽는다.</p></div></div></div><div class="footer-hint"><span>READ 1</span><span>9 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">READ DATA</span><div class="slide-num">10</div></div><div class="content"><h2>읽은 데이터가 중요한 이유</h2><div class="grid-2"><div class="card"><h3>단순 저장 아님</h3><p>읽은 값은 그대로 보관되는 것이 아니라 ODA 입력, CVM 판단, Risk 판단의 재료가 된다.</p></div><div class="card"><h3>파싱 품질 중요</h3><p>Tag 중복, 길이 오류, 필수 데이터 누락을 허용하면 후속 판단 전체가 흔들린다.</p></div></div></div><div class="footer-hint"><span>READ 2</span><span>10 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">ODA</span><div class="slide-num">11</div></div><div class="content"><h2>ODA의 목적</h2><div class="grid-2"><div class="card"><h3>오프라인 진위 검증</h3><p>온라인 호스트에 의존하지 않고 카드와 Issuer 데이터의 진위를 공개키 기반으로 검증한다.</p></div><div class="card"><h3>왜 필요한가</h3><p>위조 카드나 변조 데이터를 빠르게 걸러 내고 TVR에 위험 신호를 남긴다.</p></div></div></div><div class="footer-hint"><span>ODA 1</span><span>11 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">ODA</span><div class="slide-num">12</div></div><div class="content"><h2>ODA에서 보는 것</h2><div class="grid-3"><div class="card"><h3>CA Key</h3><p>RID와 Index로 맞는 공개키를 찾을 수 있는지 확인한다.</p></div><div class="card"><h3>Issuer·ICC 인증서</h3><p>복호, 해시, 만료, PAN 일치 여부를 점검한다.</p></div><div class="card"><h3>CDA 결과</h3><p>GENERATE AC 응답과 결합된 동적 서명 검증 여부를 본다.</p></div></div></div><div class="footer-hint"><span>ODA 2</span><span>12 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Restrictions</span><div class="slide-num">13</div></div><div class="content"><h2>Processing Restrictions의 의미</h2><div class="grid-2"><div class="card"><h3>즉시 승인 단계 아님</h3><p>이 단계는 승인과 거절을 바로 끝내는 것이 아니라 위험 신호를 TVR에 누적하는 과정이다.</p></div><div class="card"><h3>주요 검사</h3><p>버전 일치, 유효기간, AUC, 사용 조건, 허용되지 않는 거래 조합 여부를 확인한다.</p></div></div></div><div class="footer-hint"><span>Restrictions 1</span><span>13 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Limits</span><div class="slide-num">14</div></div><div class="content"><h2>Dynamic Reader Limits</h2><div class="grid-3"><div class="card"><h3>Transaction Limit</h3><p>Contactless 자체를 허용할지 판단한다.</p></div><div class="card"><h3>CVM Required Limit</h3><p>CVM이 필요한 금액대인지 판단한다.</p></div><div class="card"><h3>Floor Limit</h3><p>온라인 전환이 필요한 금액대인지 판단한다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> 한도는 하나가 아니라 거래 허용, 인증 요구, 온라인 전환을 따로 제어한다.</div></div><div class="footer-hint"><span>Limits</span><span>14 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">CVM</span><div class="slide-num">15</div></div><div class="content"><h2>CVM 판단 구조</h2><div class="grid-3"><div class="card"><h3>입력</h3><p>카드 Capability, Reader Capability, 금액, CVM Required Limit, 거래 환경</p></div><div class="card"><h3>가능한 방식</h3><p>No CVM, Signature, Online PIN, Consumer Device CVM</p></div><div class="card"><h3>출력</h3><p>9F34 CVM Results와 TVR 비트로 결과가 기록된다.</p></div></div></div><div class="footer-hint"><span>CVM 1</span><span>15 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Mobile CVM</span><div class="slide-num">16</div></div><div class="content"><h2>Mobile CVM은 왜 별도로 보아야 하는가</h2><div class="grid-2"><div class="card"><h3>9F71 확인</h3><p>기기 인증이 수행되었다는 표시만 보는 것이 아니라 결과 값과 Context를 함께 해석해야 한다.</p></div><div class="card"><h3>Reader Limit와 결합</h3><p>금액 한도와 공통 지원 방식까지 함께 맞아야 Mobile CVM을 유효한 성공으로 볼 수 있다.</p></div></div></div><div class="footer-hint"><span>Mobile CVM</span><span>16 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Risk</span><div class="slide-num">17</div></div><div class="content"><h2>Terminal Risk Management</h2><div class="grid-3"><div class="card"><h3>Floor Limit</h3><p>오프라인 승인 범위를 넘는지 확인한다.</p></div><div class="card"><h3>Random Selection</h3><p>일부 거래를 의도적으로 온라인으로 보내 위험을 분산한다.</p></div><div class="card"><h3>Velocity·Exception</h3><p>연속 오프라인 거래나 예외 목록 같은 위험 조건을 점검한다.</p></div></div></div><div class="footer-hint"><span>Risk 1</span><span>17 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Risk</span><div class="slide-num">18</div></div><div class="content"><h2>Risk 결과는 어떻게 쓰이는가</h2><div class="grid-2"><div class="card"><h3>TVR 누적</h3><p>여러 검사 결과를 단일 Boolean으로 합치지 않고 정해진 TVR 비트에 누적한다.</p></div><div class="card"><h3>Action Analysis 입력</h3><p>이 비트 결과가 IAC와 TAC 비교의 직접 입력이 된다.</p></div></div></div><div class="footer-hint"><span>Risk 2</span><span>18 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">1st Analysis</span><div class="slide-num">19</div></div><div class="content"><h2>1st Terminal Action Analysis</h2><div class="grid-3"><div class="card"><h3>Denial 우선</h3><p>TVR과 IAC/TAC Denial 조건이 맞으면 먼저 AAC 방향을 결정한다.</p></div><div class="card"><h3>Online 판단</h3><p>거절이 아니면 Online Code와 Default Code를 비교해 ARQC 여부를 본다.</p></div><div class="card"><h3>Offline 승인</h3><p>문제가 없고 오프라인 조건이 맞으면 TC 방향을 선택한다.</p></div></div></div><div class="footer-hint"><span>1st TAA</span><span>19 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">1st AC</span><div class="slide-num">20</div></div><div class="content"><h2>1st GENERATE AC와 응답 해석</h2><div class="grid-2"><div class="card"><h3>요청 값</h3><p>단말은 TC, ARQC, AAC 가운데 하나를 요청하지만 카드 응답은 다시 검증해야 한다.</p></div><div class="card"><h3>응답 값</h3><p>CID, ATC, AC, IAD, CDA 결과를 읽어 카드가 실제로 어떤 방향을 선택했는지 해석한다.</p></div></div></div><div class="footer-hint"><span>1st AC</span><span>20 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Online</span><div class="slide-num">21</div></div><div class="content"><h2>Online Processing은 카드 제거 후 이어진다</h2><div class="grid-2"><div class="card"><h3>승인 요청 데이터</h3><p>ARQC, ATC, IAD, TVR, 금액, CVM 결과를 상위 시스템과 Issuer에 전달한다.</p></div><div class="card"><h3>Issuer 최종 판단</h3><p>Partial Online에서는 Issuer의 Authorisation Response Code가 최종 승인·거절을 정한다. 카드를 다시 호출해 최종 AC를 받지 않는다.</p></div></div><div class="summary-bar"><strong>사용자 흐름:</strong> 1st Card Action Analysis가 끝나면 카드를 제거하도록 안내하고 온라인 처리를 계속한다.</div></div><div class="footer-hint"><span>Online</span><span>21 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">완료 방식</span><div class="slide-num">22</div></div><div class="content"><h2>Partial Online과 Delayed Authorisation</h2><div class="grid-2"><div class="card"><h3>Partial Online</h3><p>카드와 Reader의 상호작용은 1st Card Action Analysis에서 끝난다. Issuer 응답을 받아 거래를 승인 또는 거절한다.</p></div><div class="card"><h3>Delayed Authorisation</h3><p>즉시 온라인 연결이 없는 환경에서 첫 GENERATE AC 결과와 구성 정책을 바탕으로 거래를 보관하고 나중에 승인을 요청한다.</p></div></div><div class="summary-bar"><strong>공통점:</strong> 두 방식 모두 카드에 두 번째 GENERATE AC를 보내는 접촉식 EMV 완료 흐름과 다르다.</div></div><div class="footer-hint"><span>완료</span><span>22 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">특수 거래</span><div class="slide-num">23</div></div><div class="content"><h2>Zero Amount와 Status Check</h2><div class="grid-2"><div class="card"><h3>일반 구매와 다름</h3><p>금액만 0인 거래가 아니라 지원 플래그, Modified Terminal Type, 카드 Capability를 별도로 확인해야 한다.</p></div><div class="card"><h3>정책 분리 필요</h3><p>일반 구매의 Floor Limit·CVM 판단을 그대로 재사용하면 인증 결과와 어긋날 수 있다.</p></div></div></div><div class="footer-hint"><span>특수 거래</span><span>23 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">Outcome</span><div class="slide-num">24</div></div><div class="content"><h2>Outcome과 최종 단말 동작</h2><div class="grid-4"><div class="card"><h3>Approved</h3><p>승인 진행</p></div><div class="card"><h3>Declined</h3><p>거절 처리</p></div><div class="card"><h3>Try Another Interface</h3><p>다른 매체 유도</p></div><div class="card"><h3>End Application</h3><p>명세된 종료 처리</p></div></div><div class="grid-2"><div class="card"><h3>Kernel 역할</h3><p>Outcome, UI 관련 정보, Data Record의 의미를 일관되게 반환한다.</p></div><div class="card"><h3>상위 앱 역할</h3><p>화면 표시, 승인 서버 통신, 영수증 출력 같은 실제 동작을 수행한다.</p></div></div></div><div class="footer-hint"><span>결과</span><span>24 / 25</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">소스 연결</span><div class="slide-num">25</div></div><div class="content"><h2>TNP-10 소스에서의 구현 위치와 결론</h2><div class="matrix"><div class="head">구간</div><div class="head">대표 함수·파일</div><div class="head">의미</div><div class="mini">설정</div><div class="mini">SetTerminalConfig</div><div class="mini">금액, 한도, Capability 관련 단말 설정 반영</div><div class="mini">선택·GPO</div><div class="mini">EmvFuncSelectPSE, EmvFuncSelectAID</div><div class="mini">AID 선택, PDOL 조립, GPO 진입</div><div class="mini">거래 중심</div><div class="mini">EmvFuncProcTran, EMV_PROC.C</div><div class="mini">CVM, Risk, Action Analysis, GENERATE AC 처리 중심</div></div><div class="summary-bar"><strong>한 문장 정리:</strong> AMEX Kernel 4를 이해한다는 것은 Capability, 검증, 위험, 승인 판단이 연결되는 구조를 이해한다는 뜻이다.</div></div><div class="footer-hint"><span>끝</span><span>25 / 25</span></div></section>
+    </div></div></div>
+  </div>
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const slideTrack = document.getElementById("slideTrack");
+    const statusText = document.getElementById("statusText");
+    let currentIndex = 0;
+    function clamp(index) { return Math.max(0, Math.min(index, slides.length - 1)); }
+    function render() {
+      slideTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+      statusText.textContent = `${currentIndex + 1} / ${slides.length}`;
+    }
+    function goToSlide(index) { currentIndex = clamp(index); render(); }
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") { event.preventDefault(); goToSlide(currentIndex + 1); }
+      if (event.key === "ArrowLeft" || event.key === "PageUp") { event.preventDefault(); goToSlide(currentIndex - 1); }
+      if (event.key === "Home") { event.preventDefault(); goToSlide(0); }
+      if (event.key === "End") { event.preventDefault(); goToSlide(slides.length - 1); }
+    });
+    render();
+  </script>
+</body>
+</html>

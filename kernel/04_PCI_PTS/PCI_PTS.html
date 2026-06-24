@@ -17,11 +17,7 @@
       --line: #d8c3a1;
       --shadow: 0 18px 42px rgba(80, 58, 32, 0.10);
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -30,944 +26,147 @@
       background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bottom) 100%);
       color: var(--ink);
     }
-
-    .app {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto auto 1fr auto;
-      padding: 12px 18px 18px;
-      gap: 12px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 10px 16px;
-      background: rgba(255, 253, 248, 0.92);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(146, 64, 14, 0.12);
-      border-radius: 18px;
-    }
-
-    .topbar .label {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--accent-strong);
-      letter-spacing: 0.04em;
-    }
-
-    .topbar .status {
-      font-size: 15px;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .progress {
-      height: 6px;
-      background: rgba(180, 83, 9, 0.10);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-bar {
-      width: 5%;
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), #d97706);
-      transition: width 0.25s ease;
-    }
-
-    .stage-wrap {
-      display: grid;
-      place-items: center;
-      min-height: 0;
-    }
-
+    .app { width:100vw; height:100vh; position:relative; overflow:hidden; }
+    .topbar { position:fixed; top:12px; left:24px; right:24px; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:8px 0; background:transparent; border:0; border-radius:0; pointer-events:none; }
+    .topbar .label, .topbar .status { font-size:15px; font-weight:800; color:var(--accent-strong); }
+    .stage-wrap { width:100vw; height:100vh; }
     .stage {
-      position: relative;
-      width: min(96vw, calc((100vh - 180px) * 16 / 9));
+      width: 100vw;
+      height: 100vh;
       aspect-ratio: 16 / 9;
-      background: rgba(255, 253, 248, 0.82);
-      border: 1px solid rgba(216, 195, 161, 0.95);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
+      background: rgba(255, 253, 248, 0.84);
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
       overflow: hidden;
     }
-
-    .track {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      transform: translateX(0);
-      transition: transform 0.32s ease;
+    .track { display:flex; width:100%; height:100%; transition:transform .32s ease; }
+    .slide { flex:0 0 100%; width:100%; height:100%; padding:58px 4vw 46px; display:grid; grid-template-rows:auto 1fr auto; gap:12px; }
+    .slide-head, .footer-hint { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .section-tag { display:inline-flex; align-items:center; justify-content:center; min-height:30px; padding:5px 11px; border-radius:999px; background:var(--accent-soft); color:var(--accent-strong); font-size:12px; font-weight:800; text-align:center; }
+    .slide-num { font-size:15px; font-weight:800; color:var(--accent-strong); }
+    .content { min-height:0; display:grid; gap:12px; align-content:center; }
+    h1, h2, h3, p { margin:0; }
+    h1 { font-size:clamp(30px,3.2vw,46px); line-height:1.08; letter-spacing:-.03em; text-align:center; }
+    h2 { font-size:clamp(23px,2.2vw,33px); line-height:1.14; letter-spacing:-.02em; text-align:center; }
+    h3 { font-size:clamp(16px,1.35vw,21px); line-height:1.25; text-align:center; color:var(--accent-strong); }
+    p, li { font-size:clamp(14px,1.08vw,18px); line-height:1.38; color:var(--ink); }
+    ul { margin:0; padding-left:18px; display:grid; gap:4px; text-align:left; }
+    .lead { font-size:clamp(18px,1.55vw,24px); line-height:1.42; font-weight:700; text-align:center; }
+    .hero, .grid-2, .grid-3, .grid-4, .flow, .matrix { display:grid; gap:10px; align-items:stretch; }
+    .hero { grid-template-columns:1.2fr .95fr; }
+    .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+    .flow { grid-template-columns:repeat(5,minmax(0,1fr)); }
+    .matrix { grid-template-columns:1fr 1.1fr 1.2fr; }
+    .card, .note, .summary-bar, .flow-box, .matrix > div { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:10px 12px; }
+    .card, .note, .flow-box, .matrix > div { display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:7px; min-height:100%; }
+    .note { background:linear-gradient(180deg,#fff5dc 0%,#ffefcd 100%); }
+    .summary-bar { display:flex; align-items:center; justify-content:center; min-height:52px; text-align:center; font-size:clamp(14px,1.05vw,18px); line-height:1.35; font-weight:800; }
+    .summary-bar strong { color:var(--accent-strong); }
+    .mini { font-size:clamp(12px,.96vw,16px); line-height:1.33; }
+    .chip-row { display:flex; flex-wrap:wrap; justify-content:center; gap:7px; }
+    .chip { padding:6px 10px; border-radius:999px; background:#fff6e7; border:1px solid var(--line); font-size:clamp(12px,.95vw,16px); font-weight:800; color:var(--accent-strong); }
+    .flow-box { position:relative; font-weight:800; }
+    .flow-box::after { content:"→"; position:absolute; right:-9px; top:50%; transform:translateY(-50%); color:var(--accent-strong); font-size:18px; font-weight:900; }
+    .flow-box:last-child::after { display:none; }
+    .matrix .head { background:#fef2d6; color:var(--accent-strong); font-weight:800; }
+    .footer-hint { color:var(--muted); font-size:12px; font-weight:700; }
+    @media (max-width:1280px), (max-height:860px) {
+      .slide { padding:52px 3vw 34px; gap:10px; }
+      h1 { font-size:clamp(28px,2.9vw,40px); }
+      h2 { font-size:clamp(21px,2vw,29px); }
+      h3 { font-size:clamp(15px,1.2vw,19px); }
+      p, li { font-size:clamp(13px,1vw,16px); line-height:1.33; }
+      .summary-bar { min-height:46px; }
     }
-
-    .slide {
-      flex: 0 0 100%;
-      width: 100%;
-      height: 100%;
-      padding: 24px 28px 22px;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      gap: 16px;
-    }
-
-    .slide-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .section-tag {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 34px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-strong);
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .slide-num {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--accent-strong);
-      min-width: 48px;
-      text-align: right;
-    }
-
-    .content {
-      min-height: 0;
-      display: grid;
-      gap: 16px;
-      align-content: center;
-    }
-
-    h1, h2, h3, p {
-      margin: 0;
-    }
-
-    h1 {
-      font-size: clamp(34px, 3.8vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: clamp(26px, 2.7vw, 38px);
-      line-height: 1.16;
-      letter-spacing: -0.02em;
-      text-align: center;
-    }
-
-    h3 {
-      font-size: clamp(18px, 1.7vw, 24px);
-      line-height: 1.35;
-      text-align: center;
-    }
-
-    p, li {
-      font-size: clamp(16px, 1.42vw, 24px);
-      line-height: 1.55;
-      color: var(--ink);
-    }
-
-    ul {
-      margin: 0 auto;
-      padding-left: 24px;
-      display: grid;
-      gap: 7px;
-      width: fit-content;
-      max-width: 100%;
-      text-align: left;
-    }
-
-    .lead {
-      font-size: clamp(20px, 1.95vw, 30px);
-      line-height: 1.5;
-      font-weight: 700;
-      color: #18212f;
-      text-align: center;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.24fr 0.92fr;
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .card, .note, .summary-bar, .stat-box {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 14px 16px;
-    }
-
-    .card,
-    .note,
-    .stat-box {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      gap: 10px;
-      min-height: 100%;
-    }
-
-    .summary-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: clamp(16px, 1.3vw, 22px);
-      line-height: 1.45;
-      font-weight: 700;
-      color: #1b2432;
-      text-align: center;
-      min-height: 66px;
-    }
-
-    .summary-bar strong {
-      color: var(--accent-strong);
-    }
-
-    .note {
-      background: linear-gradient(180deg, #fff5dc 0%, #ffefcd 100%);
-    }
-
-    .card h3,
-    .stat-box h3,
-    .note h3 {
-      color: var(--accent-strong);
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-    }
-
-    .chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #fff6e7;
-      border: 1px solid var(--line);
-      font-size: clamp(13px, 1.1vw, 18px);
-      font-weight: 700;
-      color: var(--accent-strong);
-    }
-
-    .big-center {
-      display: grid;
-      place-items: center;
-      text-align: center;
-      min-height: 100%;
-      gap: 18px;
-      padding: 4px 18px;
-    }
-
-    .big-center .lead {
-      max-width: 940px;
-    }
-
-    .matrix {
-      display: grid;
-      grid-template-columns: 0.92fr 1.05fr 1.05fr 1.08fr;
-      gap: 10px;
-      align-items: stretch;
-    }
-
-    .matrix > div {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .matrix .head {
-      background: #fef2d6;
-      color: var(--accent-strong);
-      font-weight: 800;
-      font-size: clamp(14px, 1.15vw, 20px);
-    }
-
-    .mini {
-      font-size: clamp(13px, 1.02vw, 19px);
-      line-height: 1.45;
-    }
-
-    .footer-hint {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .nav button {
-      border: 0;
-      border-radius: 999px;
-      padding: 11px 18px;
-      background: rgba(31, 41, 55, 0.92);
-      color: white;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-    }
-
-    .nav button:hover {
-      background: #111827;
-    }
-
-    .nav button:disabled {
-      cursor: default;
-      opacity: 0.45;
-      background: rgba(75, 85, 99, 0.9);
-    }
-
-    @media (max-width: 1100px), (max-height: 760px) {
-      .app {
-        padding: 8px 10px 12px;
-        gap: 8px;
-      }
-
-      .slide {
-        padding: 16px 18px 14px;
-        gap: 12px;
-      }
-
-      .hero,
-      .grid-2,
-      .grid-3,
-      .matrix {
-        grid-template-columns: 1fr;
-      }
-
-      .content {
-        align-content: start;
-        overflow: auto;
-        padding-right: 4px;
-      }
-
-      .footer-hint {
-        font-size: 12px;
-      }
+    @media (max-width:900px) {
+      .hero, .grid-2, .grid-3, .grid-4, .flow, .matrix { grid-template-columns:1fr; }
+      .flow-box::after { display:none; }
+      .slide { padding:48px 3vw 30px; gap:8px; }
+      h1 { font-size:clamp(24px,2.5vw,34px); }
+      h2 { font-size:clamp(19px,1.8vw,25px); }
+      p, li { font-size:clamp(12px,.95vw,14px); }
     }
   </style>
 </head>
 <body>
   <div class="app">
-    <div class="topbar">
-      <div class="label">PCI PTS 인증의 이해</div>
-      <div class="status" id="statusText">1 / 20</div>
-    </div>
+    <div class="topbar"><div class="label">PCI PTS 인증의 이해</div><div class="status" id="statusText">1 / 27</div></div>
+    <div class="stage-wrap"><div class="stage"><div class="track" id="slideTrack">
+      <section class="slide"><div class="slide-head"><span class="section-tag">Payment Terminal Security</span><div class="slide-num">01</div></div><div class="content"><div class="hero"><div class="card"><h1>PCI PTS 인증의 이해</h1><p class="lead">POI 장치가 PIN, 키, 계정 데이터와 보안 동작을 제품 수명주기 전체에서 보호함을 평가하는 체계</p><div class="chip-row"><span class="chip">POI</span><span class="chip">DTR</span><span class="chip">Attack Potential</span><span class="chip">Key·PIN</span><span class="chip">Open Protocol</span><span class="chip">Life-Cycle</span></div></div><div class="note"><h3>발표 흐름</h3><ul><li>범위와 승인 체계</li><li>물리·논리·인터페이스 보안</li><li>생산·배포 수명주기</li><li>개발·평가 증빙</li></ul></div></div></div><div class="footer-hint"><span>좌우 방향키로 이동</span><span>1 / 27</span></div></section>
 
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
+      <section class="slide"><div class="slide-head"><span class="section-tag">정의</span><div class="slide-num">02</div></div><div class="content"><h2>PCI PTS POI는 무엇을 검증하는가</h2><div class="grid-2"><div class="card"><h3>POI 장치</h3><p>Point of Interaction에서 카드와 사용자의 결제 입력을 받는 장치가 민감 기능을 안전하게 수행하는지 검증한다.</p></div><div class="card"><h3>제품 보안 평가</h3><p>기능 적합성보다 물리 침입, 소프트웨어 변조, 키·PIN 노출, 인터페이스 악용에 견디는지를 평가한다.</p></div></div><div class="summary-bar"><strong>구분:</strong> PCI DSS가 운영 환경을 다룬다면 PCI PTS POI는 장치 자체의 보안 특성을 중심으로 평가한다.</div></div><div class="footer-hint"><span>목적</span><span>2 / 27</span></div></section>
 
-    <div class="stage-wrap">
-      <div class="stage">
-        <div class="track" id="slideTrack">
-          <section class="slide" data-title="제목">
-            <div class="slide-head">
-              <span class="section-tag">결제 단말기 보안의 큰 그림</span>
-              <div class="slide-num">01</div>
-            </div>
-            <div class="content">
-              <div class="hero">
-                <div class="card">
-                  <h1>PCI PTS 인증의 이해</h1>
-                  <p class="lead">결제 단말기를 믿을 수 있게 만들기 위해 무엇을 지키고, 어디를 막고, 어떤 절차를 갖춰야 하는지 한 흐름으로 이해하는 발표</p>
-                  <div class="chip-row">
-                    <span class="chip">보호대상</span>
-                    <span class="chip">공격면</span>
-                    <span class="chip">대응방법</span>
-                    <span class="chip">실무연결</span>
-                  </div>
-                </div>
-                <div class="note">
-                  <h3>오늘의 목표</h3>
-                  <ul>
-                    <li>PCI PTS가 무엇을 요구하는지 이해한다.</li>
-                    <li>단말기 보안을 한 체계로 묶어 본다.</li>
-                    <li>실제 제품과 심사 준비에 연결한다.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="summary-bar"><strong>핵심:</strong>보안 사고방식</div>
-            </div>
-            <div class="footer-hint"><span>좌우 방향키로 이동</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">승인 체계</span><div class="slide-num">03</div></div><div class="content"><h2>누가 무엇을 증명하는가</h2><div class="grid-3"><div class="card"><h3>Vendor</h3><p>장치 설계, 펌웨어, 키·PIN 처리, 제조·배포 절차와 평가 샘플을 제공한다.</p></div><div class="card"><h3>PCI-recognized Laboratory</h3><p>보안 요구사항과 Derived Test Requirements에 따라 문서 검토와 공격 시험을 수행한다.</p></div><div class="card"><h3>PCI SSC</h3><p>평가 결과를 검토하고 승인 제품을 Approved PTS Device 목록과 보안 평가 정보로 공개한다.</p></div></div><div class="summary-bar"><strong>결과:</strong> 승인은 특정 모델, 하드웨어·펌웨어 버전, 기능과 조건에 묶인다.</div></div><div class="footer-hint"><span>관계자</span><span>3 / 27</span></div></section>
 
-          <section class="slide" data-title="목적">
-            <div class="slide-head">
-              <span class="section-tag">출발점</span>
-              <div class="slide-num">02</div>
-            </div>
-            <div class="content">
-              <h2>PCI PTS는 무엇을 위한 기준인가</h2>
-              <div class="grid-3">
-                <div class="stat-box"><h3>신뢰성</h3><p>단말기가 겉으로만 정상처럼 보이지 않고 실제로도 믿을 만해야 한다.</p></div>
-                <div class="stat-box"><h3>민감정보 보호</h3><p>카드정보, PIN, 암호키 같은 핵심 정보가 새지 않아야 한다.</p></div>
-                <div class="stat-box"><h3>지속 가능한 보안</h3><p>출시 순간만이 아니라 생산, 배송, 수리까지 안전해야 한다.</p></div>
-              </div>
-              <div class="summary-bar"><strong>핵심:</strong> PCI PTS는 제품 기능을 평가하는 기준이 아니라 결제 단말기의 신뢰성을 평가하는 기준이다.</div>
-            </div>
-            <div class="footer-hint"><span>단말기가 믿을 만한가를 묻는 기준</span><span>2 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">범위</span><div class="slide-num">04</div></div><div class="content"><h2>장치 유형과 적용 기능을 먼저 정한다</h2><div class="grid-3"><div class="card"><h3>PIN 입력 장치</h3><p>PIN Entry Device와 Encrypting PIN Pad처럼 PIN 입력과 암호화를 수행하는 기능이 핵심 범위이다.</p></div><div class="card"><h3>무인·통합 장치</h3><p>Unattended Payment Terminal과 Integrated POS는 설치 환경과 구성에 따라 물리·운영 위험이 달라진다.</p></div><div class="card"><h3>선택 기능</h3><p>SRED, Open Protocol, Contactless, Secure Card Reader 등 신청 기능에 따라 추가 요구사항이 적용된다.</p></div></div><div class="summary-bar"><strong>출발점:</strong> 모든 장치에 모든 요구사항을 적용하지 않고 제품 기능과 평가 모듈을 먼저 확정한다.</div></div><div class="footer-hint"><span>Scope</span><span>4 / 27</span></div></section>
 
-          <section class="slide" data-title="보호대상">
-            <div class="slide-head">
-              <span class="section-tag">무엇을 지켜야 하나</span>
-              <div class="slide-num">03</div>
-            </div>
-            <div class="content">
-              <h2>무엇을 지켜야 하나</h2>
-              <div class="grid-3">
-                <div class="card"><h3>PAN</h3><p>카드번호다. 노출되면 결제 사기와 개인정보 유출 위험이 커진다.</p></div>
-                <div class="card"><h3>PIN</h3><p>사용자가 입력하는 비밀번호다. 카드번호보다 더 강하게 보호해야 한다.</p></div>
-                <div class="card"><h3>암호키</h3><p>암호화와 인증의 기반이다. 키가 새면 다른 보호장치도 의미가 약해진다.</p></div>
-                <div class="card"><h3>펌웨어</h3><p>단말기 동작을 결정하는 소프트웨어다. 몰래 바뀌면 정상처럼 보여도 위험하다.</p></div>
-                <div class="card"><h3>인터페이스</h3><p>USB, 시리얼, 무선처럼 외부와 만나는 연결 지점이다.</p></div>
-                <div class="card"><h3>정상 동작 신뢰성</h3><p>단말기가 승인된 방식으로만 동작한다는 믿음 자체도 보호대상이다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>보안의 출발점은 보호대상을 분명히 아는 것</span><span>3 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">보호 자산</span><div class="slide-num">05</div></div><div class="content"><h2>무엇을 보호해야 하는가</h2><div class="grid-3"><div class="card"><h3>PIN과 Cryptographic Keys</h3><p>입력 순간부터 암호화·전송·삭제까지 평문 PIN과 비밀키가 노출되지 않아야 한다.</p></div><div class="card"><h3>Sensitive Functions</h3><p>펌웨어, 보안 설정, 키 주입, 관리자 명령과 정상 동작 상태의 무결성을 보호한다.</p></div><div class="card"><h3>Account Data</h3><p>PAN과 Track Data는 SRED를 신청한 장치에서 암호화 범위와 복호화 통제를 포함해 추가 보호한다.</p></div></div><div class="summary-bar"><strong>정확한 범위:</strong> PAN 전체 보호는 모든 PTS 장치의 동일한 기본 요구가 아니라 신청 기능에 따라 달라진다.</div></div><div class="footer-hint"><span>Assets</span><span>5 / 27</span></div></section>
 
-          <section class="slide" data-title="필요성">
-            <div class="slide-head">
-              <span class="section-tag">왜 필요한가</span>
-              <div class="slide-num">04</div>
-            </div>
-            <div class="content">
-              <h2>왜 이런 보호가 필요한가</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>현실의 공격은 여러 방향에서 온다</h3>
-                  <ul>
-                    <li>기계를 열어 내부 회로를 건드릴 수 있다.</li>
-                    <li>부품을 바꾸거나 장치를 덧붙일 수 있다.</li>
-                    <li>펌웨어를 바꿔 정상처럼 속일 수 있다.</li>
-                    <li>포트와 무선을 통해 침투할 수 있다.</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>운영 과정도 공격면이 된다</h3>
-                  <ul>
-                    <li>생산 중 잘못된 이미지가 주입될 수 있다.</li>
-                    <li>배송 중 변조가 일어날 수 있다.</li>
-                    <li>수리 과정에서 데이터가 남을 수 있다.</li>
-                    <li>관리 절차가 약하면 내부 실수도 위험이 된다.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="summary-bar"><strong>핵심:</strong> 결제 단말기 보안은 한 곳만 지켜서는 안 되고 제품 전체 경로를 함께 지켜야 한다.</div>
-            </div>
-            <div class="footer-hint"><span>공격자는 가장 약한 지점을 찾는다</span><span>4 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">요구사항 구조</span><div class="slide-num">06</div></div><div class="content"><h2>Security Requirements와 DTR의 관계</h2><div class="grid-2"><div class="card"><h3>Security Requirements</h3><p>장치가 달성해야 할 보안 목표를 정의하며 적용성은 장치 유형과 신청 기능에 따라 결정된다.</p></div><div class="card"><h3>Derived Test Requirements</h3><p>DTR은 각 요구사항을 평가할 증빙, 시험 조건, 공격 방법과 판정 기준으로 구체화한다.</p></div></div><div class="summary-bar"><strong>실무 의미:</strong> 요구사항과 연결된 DTR, Technical FAQ를 함께 보아야 시험 기대치를 이해할 수 있다.</div></div><div class="footer-hint"><span>DTR</span><span>6 / 27</span></div></section>
 
-          <section class="slide" data-title="공격면">
-            <div class="slide-head">
-              <span class="section-tag">어디서 뚫릴 수 있나</span>
-              <div class="slide-num">05</div>
-            </div>
-            <div class="content">
-              <h2>공격면을 한눈에 보면</h2>
-              <div class="grid-2">
-                <div class="card"><h3>기계</h3><p>케이스, 센서, 회로, 카드리더, 입력부처럼 손으로 만질 수 있는 영역</p></div>
-                <div class="card"><h3>소프트웨어</h3><p>부팅, 펌웨어, 앱, 메모리, 오류 처리, 업데이트 경로</p></div>
-                <div class="card"><h3>연결부</h3><p>USB, RS232, Ethernet, Wi-Fi, Bluetooth 등 외부와 맞닿는 문</p></div>
-                <div class="card"><h3>운영 절차</h3><p>개발, 생산, 보관, 배송, 설치, 수리, 취약점 대응 같은 사람과 공정의 영역</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>PCI PTS는 이 네 영역을 함께 본다</span><span>5 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">전체 구조</span><div class="slide-num">07</div></div><div class="content"><h2>보안 영역은 하나의 체계로 연결된다</h2><div class="grid-4"><div class="card"><h3>Physical Security</h3><p>침입, 관찰, Side-Channel, Tamper 대응</p></div><div class="card"><h3>Logical Security</h3><p>Software Management, Key Management, PIN Management, SRED</p></div><div class="card"><h3>Interface Security</h3><p>외부 포트와 Open Protocol의 인증·암호화·권한 통제</p></div><div class="card"><h3>Life-Cycle Security</h3><p>제조, 키 주입 시설, 배송, 변경과 취약점 대응</p></div></div><div class="summary-bar"><strong>평가 원칙:</strong> 제품 설계와 운영 절차 중 하나라도 끊기면 장치의 최종 보안성이 성립하지 않는다.</div></div><div class="footer-hint"><span>영역</span><span>7 / 27</span></div></section>
 
-          <section class="slide" data-title="기계 공격">
-            <div class="slide-head">
-              <span class="section-tag">공격면 1</span>
-              <div class="slide-num">06</div>
-            </div>
-            <div class="content">
-              <h2>기계는 어떻게 공격당하는가</h2>
-              <div class="grid-3">
-                <div class="card"><h3>뜯기</h3><p>케이스를 열어 내부 회로, 보안부품, 배선을 직접 건드린다.</p></div>
-                <div class="card"><h3>탐침</h3><p>바늘처럼 미세한 도구로 신호를 읽거나 우회점을 찾는다.</p></div>
-                <div class="card"><h3>덧붙이기</h3><p>가짜 리더나 스키밍 부품을 붙여 카드정보를 훔친다.</p></div>
-                <div class="card"><h3>바꿔치기</h3><p>부품이나 모듈을 교체해 보안 기능을 약화시킨다.</p></div>
-                <div class="card"><h3>엿보기</h3><p>표시창, 입력부, 카드 삽입부를 통해 민감정보를 관찰한다.</p></div>
-                <div class="card"><h3>환경 교란</h3><p>전압, 온도, 전자기 환경을 흔들어 비정상 동작을 유도한다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>물리 공격은 생각보다 다양하고 집요하다</span><span>6 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Physical Security</span><div class="slide-num">08</div></div><div class="content"><h2>Tamper 보호는 세 가지 방식으로 구성된다</h2><div class="grid-3"><div class="card"><h3>Tamper Evidence</h3><p>봉인과 외관 변화처럼 침입 시도가 운영자에게 명확한 흔적으로 남는다.</p></div><div class="card"><h3>Tamper Resistance</h3><p>케이스, 차폐, Mesh와 부품 배치가 민감부 접근에 필요한 시간과 기술을 높인다.</p></div><div class="card"><h3>Tamper Detection and Response</h3><p>Switch, Mesh와 센서가 침입을 감지하면 키 삭제나 기능 비활성화 같은 반응을 실행한다.</p></div></div><div class="summary-bar"><strong>설계 기준:</strong> 흔적, 저항, 자동 탐지·반응을 제품 위험과 기능에 맞게 조합한다.</div></div><div class="footer-hint"><span>Tamper</span><span>8 / 27</span></div></section>
 
-          <section class="slide" data-title="소프트웨어 공격">
-            <div class="slide-head">
-              <span class="section-tag">공격면 2</span>
-              <div class="slide-num">07</div>
-            </div>
-            <div class="content">
-              <h2>소프트웨어와 데이터는 어떻게 공격당하는가</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>소프트웨어 관점</h3>
-                  <ul>
-                    <li>승인되지 않은 펌웨어를 올리려 한다.</li>
-                    <li>앱이나 설정을 몰래 바꾸려 한다.</li>
-                    <li>비정상 입력으로 오류나 우회를 노린다.</li>
-                    <li>버퍼에 남은 민감정보를 찾으려 한다.</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>데이터 관점</h3>
-                  <ul>
-                    <li>암호키를 복제하거나 목적 외로 사용하려 한다.</li>
-                    <li>PIN이나 PAN을 평문 상태에서 빼내려 한다.</li>
-                    <li>관리자 권한을 얻어 원격으로 조작하려 한다.</li>
-                    <li>취약한 업데이트 경로를 통해 신뢰를 깨려 한다.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="summary-bar"><strong>핵심:</strong> 기계가 멀쩡해 보여도 소프트웨어가 바뀌면 단말기는 더 이상 믿을 수 없다.</div>
-            </div>
-            <div class="footer-hint"><span>논리 보안은 보이지 않는 영역을 지키는 일</span><span>7 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Attack Evaluation</span><div class="slide-num">09</div></div><div class="content"><h2>Attack Potential은 공격 난이도를 점수화한다</h2><div class="grid-3"><div class="card"><h3>공격 자원</h3><p>공격에 필요한 경과 시간, 전문 지식, 장비, 샘플 수와 접근 기회를 평가한다.</p></div><div class="card"><h3>공격 시나리오</h3><p>식별, 준비, 실행 단계의 비용을 합산해 실현 가능한 공격인지 판단한다.</p></div><div class="card"><h3>판정</h3><p>요구되는 최소 Attack Potential보다 낮은 비용으로 자산을 침해할 수 있으면 보호가 부족하다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> 절대적으로 뚫리지 않는 장치가 아니라 규정된 공격 능력에 견디는 장치를 증명한다.</div></div><div class="footer-hint"><span>Rating</span><span>9 / 27</span></div></section>
 
-          <section class="slide" data-title="연결 공격">
-            <div class="slide-head">
-              <span class="section-tag">공격면 3</span>
-              <div class="slide-num">08</div>
-            </div>
-            <div class="content">
-              <h2>외부 연결은 어떻게 공격당하는가</h2>
-              <div class="grid-3">
-                <div class="card"><h3>유선 포트</h3><p>USB, 시리얼, 네트워크 포트를 통해 명령을 주입하거나 정보를 읽으려 한다.</p></div>
-                <div class="card"><h3>무선 연결</h3><p>Wi-Fi나 Bluetooth 설정이 약하면 외부에서 더 쉽게 접근할 수 있다.</p></div>
-                <div class="card"><h3>입력 이상값</h3><p>깨진 패킷, 긴 길이, 비정상 명령으로 취약점을 찾는다.</p></div>
-                <div class="card"><h3>중간 변조</h3><p>통신 중 데이터를 바꾸거나 재전송해서 인증을 속이려 한다.</p></div>
-                <div class="card"><h3>열린 서비스</h3><p>불필요한 포트나 리스너가 있으면 공격 입구가 늘어난다.</p></div>
-                <div class="card"><h3>관리 채널 악용</h3><p>운영·점검용 인터페이스가 약하면 가장 위험한 뒷문이 된다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>편리한 연결은 공격자에게도 편리하다</span><span>8 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Physical Security</span><div class="slide-num">10</div></div><div class="content"><h2>Side-Channel과 환경 조작도 물리 공격이다</h2><div class="grid-3"><div class="card"><h3>정보 누출</h3><p>전력, 전자기파, 타이밍과 오류 반응에서 PIN 또는 키 연산의 단서를 얻으려 한다.</p></div><div class="card"><h3>Fault Injection</h3><p>전압, Clock, 온도, Laser 같은 비정상 조건으로 보안 검사를 건너뛰거나 비밀을 노출시킨다.</p></div><div class="card"><h3>Monitoring</h3><p>전압·Clock·온도와 보안 센서 상태를 감시하고 허용 범위를 벗어나면 안전 상태로 전환한다.</p></div></div><div class="summary-bar"><strong>대응:</strong> 회로 보호뿐 아니라 측정 결과와 센서 임계값의 근거를 평가 자료로 제시한다.</div></div><div class="footer-hint"><span>Side-Channel</span><span>10 / 27</span></div></section>
 
-          <section class="slide" data-title="운영 위험">
-            <div class="slide-head">
-              <span class="section-tag">공격면 4</span>
-              <div class="slide-num">09</div>
-            </div>
-            <div class="content">
-              <h2>운영 과정은 어떻게 위험해질 수 있는가</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>개발과 생산 단계</h3>
-                  <ul>
-                    <li>누가 어떤 버전을 만들었는지 불명확할 수 있다.</li>
-                    <li>생산용 펌웨어 주입 절차가 느슨할 수 있다.</li>
-                    <li>개별 장치 비밀값 관리가 약할 수 있다.</li>
-                    <li>권한 분리가 안 되면 내부 실수가 커질 수 있다.</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>출하 후 단계</h3>
-                  <ul>
-                    <li>배송 중 변조 흔적을 확인하기 어려울 수 있다.</li>
-                    <li>수리 후 데이터 제거가 빠질 수 있다.</li>
-                    <li>취약점 발견 후 대응 창구가 없을 수 있다.</li>
-                    <li>설치·운영 문서가 약하면 현장 통제가 흔들린다.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>사람과 공정도 보안의 일부다</span><span>9 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Logical Security</span><div class="slide-num">11</div></div><div class="content"><h2>Software Management가 신뢰 실행을 만든다</h2><div class="grid-3"><div class="card"><h3>Authenticity</h3><p>실행 파일과 Firmware가 승인된 주체가 서명한 정식 배포물인지 확인한다.</p></div><div class="card"><h3>Integrity</h3><p>부팅과 실행 중 코드, 설정, 보안 데이터가 변조되지 않았는지 검증한다.</p></div><div class="card"><h3>Version Control</h3><p>버전 식별, Rollback 통제, 변경 이력과 승인된 Software 목록을 유지한다.</p></div></div><div class="summary-bar"><strong>목표:</strong> 승인되지 않은 Software가 설치되거나 실행되는 경로를 제거한다.</div></div><div class="footer-hint"><span>Software Management</span><span>11 / 27</span></div></section>
 
-          <section class="slide" data-title="물리 대응">
-            <div class="slide-head">
-              <span class="section-tag">어떻게 막는가</span>
-              <div class="slide-num">10</div>
-            </div>
-            <div class="content">
-              <h2>단말기 자체를 지키는 방법</h2>
-              <div class="grid-3">
-                <div class="card"><h3>흔적 남기기</h3><p>열면 자국이 남거나 봉인이 손상되도록 만든다.</p></div>
-                <div class="card"><h3>접근 어렵게 하기</h3><p>민감부품과 배선을 쉽게 만질 수 없게 배치한다.</p></div>
-                <div class="card"><h3>탐지와 반응</h3><p>변조가 감지되면 민감정보를 보호하는 동작이 필요하다.</p></div>
-                <div class="card"><h3>차폐</h3><p>전자기, 전력, 탐침 같은 간접 관찰이 어렵게 만든다.</p></div>
-                <div class="card"><h3>입력부 보호</h3><p>PIN 입력부와 카드 삽입부가 쉽게 관찰되지 않게 한다.</p></div>
-                <div class="card"><h3>구조적 저항성</h3><p>공격 시간이 오래 걸리고 비용이 커지도록 설계한다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>물리 보안의 목표는 공격을 어렵고 불리하게 만드는 것</span><span>10 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Logical Security</span><div class="slide-num">12</div></div><div class="content"><h2>Secure Boot와 Update는 하나의 신뢰 사슬이다</h2><div class="grid-2"><div class="card"><h3>Boot Chain</h3><p>변경하기 어려운 Root of Trust에서 Bootloader, OS, Application 순서로 서명과 무결성을 검증한다.</p></div><div class="card"><h3>Secure Update</h3><p>Update Package의 출처·무결성·버전·대상 장치를 확인하고 실패 시 안전하게 복구하거나 실행을 차단한다.</p></div></div><div class="summary-bar"><strong>포함 범위:</strong> 개발·진단 Interface와 비상 복구 경로도 동일한 인증과 권한 통제를 적용한다.</div></div><div class="footer-hint"><span>Firmware</span><span>12 / 27</span></div></section>
 
-          <section class="slide" data-title="소프트웨어 대응">
-            <div class="slide-head">
-              <span class="section-tag">어떻게 막는가</span>
-              <div class="slide-num">11</div>
-            </div>
-            <div class="content">
-              <h2>소프트웨어를 지키는 방법</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>무결성 유지</h3>
-                  <ul>
-                    <li>부팅 시 자기검사와 진위 확인을 한다.</li>
-                    <li>승인된 코드만 실행되도록 한다.</li>
-                    <li>업데이트는 서명과 신뢰사슬로 검증한다.</li>
-                    <li>롤백과 오류 상황도 안전하게 다룬다.</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>취약점 완화</h3>
-                  <ul>
-                    <li>비정상 입력과 논리 오류를 시험한다.</li>
-                    <li>관리 기능에는 강한 인증을 요구한다.</li>
-                    <li>권한을 최소화하고 분리한다.</li>
-                    <li>예외 발생 시 민감상태를 남기지 않는다.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="summary-bar"><strong>핵심:</strong> 단말기는 켜질 때부터 종료될 때까지 자신이 정상 상태임을 증명해야 한다.</div>
-            </div>
-            <div class="footer-hint"><span>정상 코드만 돌아가게 만드는 것이 핵심</span><span>11 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Logical Security</span><div class="slide-num">13</div></div><div class="content"><h2>Key Management는 생성부터 파기까지 이어진다</h2><div class="grid-3"><div class="card"><h3>Key Lifecycle</h3><p>생성, 주입, 저장, 사용, 교체, 백업과 파기 단계마다 비밀성과 무결성을 유지한다.</p></div><div class="card"><h3>Separation</h3><p>서로 다른 목적의 Key를 분리하고 Dual Control, Split Knowledge와 역할 기반 권한을 적용한다.</p></div><div class="card"><h3>Cryptographic Control</h3><p>승인된 Algorithm과 Key Length를 사용하고 Key Check Value, TR-31 Key Block 같은 보호 형식을 적용한다.</p></div></div><div class="summary-bar"><strong>실패 영향:</strong> Key가 노출되면 PIN 암호화와 장치 인증 등 여러 보호 계층이 동시에 무너진다.</div></div><div class="footer-hint"><span>Key Management</span><span>13 / 27</span></div></section>
 
-          <section class="slide" data-title="데이터 대응">
-            <div class="slide-head">
-              <span class="section-tag">어떻게 막는가</span>
-              <div class="slide-num">12</div>
-            </div>
-            <div class="content">
-              <h2>데이터를 지키는 방법</h2>
-              <div class="grid-3">
-                <div class="card"><h3>키 분리</h3><p>암호키는 목적별로 나눠 쓰고 섞이지 않게 관리한다.</p></div>
-                <div class="card"><h3>평문 최소화</h3><p>PIN, PAN, 키는 평문 상태로 오래 남겨두지 않는다.</p></div>
-                <div class="card"><h3>버퍼 정리</h3><p>민감버퍼는 사용 직후와 오류 시 즉시 지운다.</p></div>
-                <div class="card"><h3>인증 강화</h3><p>관리자와 원격관리 기능에는 별도의 신원 확인이 필요하다.</p></div>
-                <div class="card"><h3>용도 제한</h3><p>키와 데이터는 정해진 목적 외로 쓰이지 않게 한다.</p></div>
-                <div class="card"><h3>유출 방지</h3><p>내보내야 한다면 보호된 형식과 절차를 따라야 한다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>데이터 보안은 저장·사용·삭제 전 과정을 본다</span><span>12 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Logical Security</span><div class="slide-num">14</div></div><div class="content"><h2>PIN Management는 입력 순간을 보호한다</h2><div class="grid-3"><div class="card"><h3>Secure Entry</h3><p>키 배열, Touch 입력, Display Prompt와 PIN Buffer가 관찰·주입·재사용 공격에 노출되지 않아야 한다.</p></div><div class="card"><h3>Immediate Protection</h3><p>입력된 PIN은 승인된 PIN Block 형식으로 즉시 암호화하고 평문 복사본과 잔여 데이터를 제거한다.</p></div><div class="card"><h3>Bypass Prevention</h3><p>Non-PIN Prompt, Cancel, Timeout, 오류 경로가 PIN 보호 기능을 우회하거나 값을 노출하지 않아야 한다.</p></div></div><div class="summary-bar"><strong>원칙:</strong> 평문 PIN은 필요한 최소 영역과 최소 시간에만 존재한다.</div></div><div class="footer-hint"><span>PIN Management</span><span>14 / 27</span></div></section>
 
-          <section class="slide" data-title="연결부 대응">
-            <div class="slide-head">
-              <span class="section-tag">어떻게 막는가</span>
-              <div class="slide-num">13</div>
-            </div>
-            <div class="content">
-              <h2>연결부를 지키는 방법</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>입력과 프로토콜</h3>
-                  <ul>
-                    <li>이상한 길이와 명령을 검증한다.</li>
-                    <li>버퍼 오버플로우 같은 취약점을 줄인다.</li>
-                    <li>불필요한 포트와 서비스는 닫아둔다.</li>
-                    <li>관리 채널은 별도로 강하게 보호한다.</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>통신 보호</h3>
-                  <ul>
-                    <li>암호화로 내용을 숨긴다.</li>
-                    <li>인증으로 상대방을 확인한다.</li>
-                    <li>무결성 검증으로 중간 변조를 막는다.</li>
-                    <li>재전송과 세션 탈취도 고려한다.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="summary-bar"><strong>핵심:</strong> 열어야 하는 문은 안전하게 열고, 열 필요 없는 문은 닫아두는 것이 기본 원칙이다.</div>
-            </div>
-            <div class="footer-hint"><span>연결부 보안은 편의보다 통제를 우선한다</span><span>13 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Logical Security</span><div class="slide-num">15</div></div><div class="content"><h2>SRED는 계정 데이터를 읽는 순간부터 암호화한다</h2><div class="grid-3"><div class="card"><h3>Secure Reading</h3><p>Magnetic Stripe, Contact, Contactless Interface에서 읽은 Account Data를 정의된 보호 지점에서 즉시 암호화한다.</p></div><div class="card"><h3>Data Control</h3><p>평문 PAN·Track Data의 저장, 표시, 로그, 진단 출력과 비인가 복호화를 제한한다.</p></div><div class="card"><h3>Key Separation</h3><p>SRED Data Encryption Key를 다른 목적의 Key와 분리하고 암호문과 관련 Metadata의 무결성을 보호한다.</p></div></div><div class="summary-bar"><strong>적용성:</strong> SRED는 선택 평가 모듈이며 신청하지 않은 장치에 동일 범위가 자동 적용되는 것은 아니다.</div></div><div class="footer-hint"><span>SRED</span><span>15 / 27</span></div></section>
 
-          <section class="slide" data-title="운영 대응">
-            <div class="slide-head">
-              <span class="section-tag">어떻게 막는가</span>
-              <div class="slide-num">14</div>
-            </div>
-            <div class="content">
-              <h2>운영과 공급망을 지키는 방법</h2>
-              <div class="grid-3">
-                <div class="card"><h3>변경관리</h3><p>누가 무엇을 바꿨는지 버전과 기록이 남아야 한다.</p></div>
-                <div class="card"><h3>권한 분리</h3><p>중요한 작업은 한 사람이 혼자 끝내지 못하게 한다.</p></div>
-                <div class="card"><h3>생산 통제</h3><p>생산용 이미지, 장비, 절차가 승인된 방식으로 유지되어야 한다.</p></div>
-                <div class="card"><h3>배송 무결성</h3><p>출하 후 변조 여부를 확인할 수 있어야 한다.</p></div>
-                <div class="card"><h3>수리 절차</h3><p>수리 시 데이터 제거와 재검증 절차가 필요하다.</p></div>
-                <div class="card"><h3>취약점 대응</h3><p>문제가 발견되면 받고, 판단하고, 고치고, 알리는 체계가 있어야 한다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>보안은 조직의 절차 품질과도 연결된다</span><span>14 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Logical Security</span><div class="slide-num">16</div></div><div class="content"><h2>취약점은 출시 후에도 관리한다</h2><div class="grid-2"><div class="card"><h3>Vulnerability Mitigation</h3><p>공개 취약점, 사용 Library와 공격 동향을 추적하고 영향 분석, Patch, 고객 통지와 배포 절차를 운영한다.</p></div><div class="card"><h3>Policies and Procedures</h3><p>Secure Development, Code Review, Access Control, Incident Response와 Change Control을 문서화하고 실제 기록을 남긴다.</p></div></div><div class="summary-bar"><strong>평가 관점:</strong> 보안 기능의 존재뿐 아니라 반복 가능한 관리 절차와 책임 주체를 확인한다.</div></div><div class="footer-hint"><span>Vulnerability</span><span>16 / 27</span></div></section>
 
-          <section class="slide" data-title="문서 체계">
-            <div class="slide-head">
-              <span class="section-tag">문서 구조 정리</span>
-              <div class="slide-num">15</div>
-            </div>
-            <div class="content">
-              <h2>다섯 문서는 왜 따로 있지만 함께 봐야 하나</h2>
-              <div class="matrix">
-                <div class="head">문서</div>
-                <div class="head">핵심 관심사</div>
-                <div class="head">앞서 본 위치</div>
-                <div class="head">실무 의미</div>
-                <div class="mini"><strong>Introduction</strong></div>
-                <div class="mini">무엇을 보호하는가</div>
-                <div class="mini">슬라이드 2~4</div>
-                <div class="mini">범위와 언어를 맞춘다</div>
-                <div class="mini"><strong>Physical</strong></div>
-                <div class="mini">기계 공격과 방어</div>
-                <div class="mini">슬라이드 6, 10</div>
-                <div class="mini">구조와 부품 설계를 본다</div>
-                <div class="mini"><strong>Logical</strong></div>
-                <div class="mini">소프트웨어와 데이터</div>
-                <div class="mini">슬라이드 7, 11, 12</div>
-                <div class="mini">무결성과 키 관리를 본다</div>
-                <div class="mini"><strong>Interface</strong></div>
-                <div class="mini">외부 연결면</div>
-                <div class="mini">슬라이드 8, 13</div>
-                <div class="mini">포트와 프로토콜을 본다</div>
-                <div class="mini"><strong>Life-Cycle</strong></div>
-                <div class="mini">사람과 공정</div>
-                <div class="mini">슬라이드 9, 14</div>
-                <div class="mini">생산·배송·수리 절차를 본다</div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>문서는 나뉘어 있어도 실제 제품에서는 동시에 얽힌다</span><span>15 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Interface Security</span><div class="slide-num">17</div></div><div class="content"><h2>Open Protocol은 외부 연결을 신뢰 경계로 본다</h2><div class="grid-3"><div class="card"><h3>Mutual Authentication</h3><p>Network와 외부 장치가 민감 명령을 보내기 전에 통신 상대와 장치의 신원을 확인한다.</p></div><div class="card"><h3>Confidentiality and Integrity</h3><p>Open Protocol 통신을 암호화하고 Message 변조, Replay와 Downgrade를 방지한다.</p></div><div class="card"><h3>Least Privilege</h3><p>서비스, Port, Remote Management와 Debug 기능을 최소화하고 기능별 권한과 Audit Log를 적용한다.</p></div></div><div class="summary-bar"><strong>범위:</strong> USB, Ethernet, Wi-Fi, Cellular 등 외부에서 접근 가능한 Protocol과 관리 기능을 분석한다.</div></div><div class="footer-hint"><span>Open Protocol</span><span>17 / 27</span></div></section>
 
-          <section class="slide" data-title="개발 연결">
-            <div class="slide-head">
-              <span class="section-tag">실제 제품에 연결하기</span>
-              <div class="slide-num">16</div>
-            </div>
-            <div class="content">
-              <h2>실제 카드단말기 개발에 대입하면</h2>
-              <div class="grid-3">
-                <div class="card"><h3>하드웨어</h3><p>케이스, 센서, 카드리더, 디버그 포트, 민감부품 배치가 중요하다.</p></div>
-                <div class="card"><h3>펌웨어</h3><p>부팅 검증, 서명 업데이트, 안전한 오류 처리, 로그 정책이 중요하다.</p></div>
-                <div class="card"><h3>통신</h3><p>USB, 시리얼, 무선, 원격관리 명령 세트를 안전하게 설계해야 한다.</p></div>
-                <div class="card"><h3>키 관리</h3><p>생성, 주입, 저장, 교체, 폐기 흐름이 추적 가능해야 한다.</p></div>
-                <div class="card"><h3>생산공정</h3><p>승인된 이미지와 절차로 장치를 출하해야 한다.</p></div>
-                <div class="card"><h3>심사 대응</h3><p>코드만이 아니라 설계 근거와 운영 절차도 함께 설명해야 한다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>개발은 코드만이 아니라 제품 전체를 보는 일</span><span>16 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Life-Cycle Security</span><div class="slide-num">18</div></div><div class="content"><h2>제조 단계에서 장치 신뢰가 시작된다</h2><div class="grid-3"><div class="card"><h3>Controlled Manufacturing</h3><p>승인된 부품, Firmware와 생산 Tool을 사용하고 작업자·공정·샘플의 추적성을 유지한다.</p></div><div class="card"><h3>Secure Personalisation</h3><p>Device Identity와 초기 Key·Certificate 주입을 통제된 환경과 Dual Control 아래 수행한다.</p></div><div class="card"><h3>Inventory and Reconciliation</h3><p>생산 수량, 불량품, 폐기품, 보안 부품과 Key Material의 이동을 대조해 유실과 대체를 탐지한다.</p></div></div><div class="summary-bar"><strong>목표:</strong> 평가된 설계와 실제 출하 제품이 동일하다는 Chain of Custody를 만든다.</div></div><div class="footer-hint"><span>Manufacturing</span><span>18 / 27</span></div></section>
 
-          <section class="slide" data-title="TIT-ICRFReader">
-            <div class="slide-head">
-              <span class="section-tag">저장소 예시</span>
-              <div class="slide-num">17</div>
-            </div>
-            <div class="content">
-              <h2>TIT-ICRFReader 관점 예시</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>보이는 구성요소</h3>
-                  <ul>
-                    <li>MCU: STM32F103xG / GD32F103xG</li>
-                    <li>NFC IC: PN5180</li>
-                    <li>호스트 연결: USB CCID, RS232</li>
-                    <li>주요 코드: EMV, NFC_Control, interface, smartcard</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>PCI PTS 관점 질문</h3>
-                  <ul>
-                    <li>펌웨어 무결성 검사는 어디서 하는가</li>
-                    <li>USB와 RS232 명령은 어떻게 검증하는가</li>
-                    <li>디버그 포트와 부트 경로는 통제되는가</li>
-                    <li>암호키와 민감버퍼는 어디에 남는가</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="summary-bar"><strong>포인트:</strong> 저장소 구조를 읽는 것만으로도 PCI PTS 질문을 실제 설계 질문으로 바꿀 수 있다.</div>
-            </div>
-            <div class="footer-hint"><span>TIT-ICRFReader는 개념을 실무 질문으로 연결하는 예시다</span><span>17 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Life-Cycle Security</span><div class="slide-num">19</div></div><div class="content"><h2>제조사에서 KIF와 고객까지 신뢰를 이어 간다</h2><div class="grid-3"><div class="card"><h3>Secure Shipment</h3><p>포장, 봉인, Serial Number, 운송 기록과 수령 확인으로 이동 중 교체·개봉을 탐지한다.</p></div><div class="card"><h3>Key Injection Facility</h3><p>KIF는 Key 주입 대상 장치와 작업 권한을 확인하고 Key가 평문으로 노출되지 않도록 통제한다.</p></div><div class="card"><h3>Deployment and Repair</h3><p>설치 전 식별·외관을 확인하고 수리·반품 장치의 Key와 민감 데이터를 제거한 뒤 재평가 조건을 판단한다.</p></div></div><div class="summary-bar"><strong>핵심:</strong> 평가실을 나온 뒤에도 장치 식별과 보안 상태가 추적되어야 한다.</div></div><div class="footer-hint"><span>KIF·Distribution</span><span>19 / 27</span></div></section>
 
-          <section class="slide" data-title="증빙">
-            <div class="slide-head">
-              <span class="section-tag">심사 준비</span>
-              <div class="slide-num">18</div>
-            </div>
-            <div class="content">
-              <h2>심사 준비에서 필요한 것</h2>
-              <div class="grid-2">
-                <div class="card">
-                  <h3>기술 증빙</h3>
-                  <ul>
-                    <li>아키텍처 설명</li>
-                    <li>보안 기능 설계서</li>
-                    <li>키 관리 흐름도</li>
-                    <li>업데이트와 무결성 검증 방식</li>
-                  </ul>
-                </div>
-                <div class="card">
-                  <h3>운영 증빙</h3>
-                  <ul>
-                    <li>변경관리 기록</li>
-                    <li>생산, 보관, 배송 절차</li>
-                    <li>수리와 폐기 절차</li>
-                    <li>취약점 공개와 대응 프로세스</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="note">
-                <p class="lead">심사에서는 좋은 코드만 보는 것이 아니라 좋은 코드가 계속 유지될 체계가 있는지까지 본다.</p>
-              </div>
-            </div>
-            <div class="footer-hint"><span>문서화 능력도 보안 역량의 일부</span><span>18 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Security Response</span><div class="slide-num">20</div></div><div class="content"><h2>공격을 감지하면 안전한 상태로 전환한다</h2><div class="grid-3"><div class="card"><h3>Zeroisation</h3><p>민감 Key와 평문 PIN·Account Data를 복구하기 어렵게 제거한다.</p></div><div class="card"><h3>Inoperative State</h3><p>보안 기능을 우회한 상태로 결제를 계속하지 못하도록 민감 동작과 Interface를 차단한다.</p></div><div class="card"><h3>Controlled Recovery</h3><p>복구와 재활성화는 인증된 절차, 권한, Firmware와 Key 재주입을 통해서만 가능하게 한다.</p></div></div><div class="summary-bar"><strong>Fail Secure:</strong> 오류나 전원 이상에서도 보호 수준이 낮아지는 방향으로 실패하면 안 된다.</div></div><div class="footer-hint"><span>Response</span><span>20 / 27</span></div></section>
 
-          <section class="slide" data-title="핵심 메시지">
-            <div class="slide-head">
-              <span class="section-tag">기억할 것</span>
-              <div class="slide-num">19</div>
-            </div>
-            <div class="content">
-              <h2>꼭 기억할 핵심 메시지</h2>
-              <div class="grid-3">
-                <div class="card"><h3>보호대상부터 본다</h3><p>카드번호만이 아니라 PIN, 키, 펌웨어와 신뢰성도 함께 본다.</p></div>
-                <div class="card"><h3>공격면은 여러 곳이다</h3><p>기계, 소프트웨어, 연결부, 운영 절차가 모두 위험 지점이다.</p></div>
-                <div class="card"><h3>물리와 논리는 함께 간다</h3><p>하드웨어만 좋아도 부족하고 소프트웨어만 좋아도 부족하다.</p></div>
-                <div class="card"><h3>연결부는 특히 조심한다</h3><p>편리한 포트와 무선은 가장 흔한 공격 입구가 된다.</p></div>
-                <div class="card"><h3>공급망도 보안 범위다</h3><p>공장, 창고, 배송, 수리 절차가 흔들리면 제품 신뢰도 흔들린다.</p></div>
-                <div class="card"><h3>심사는 체계를 본다</h3><p>보안 기능, 절차, 기록, 증빙이 한 세트로 준비되어야 한다.</p></div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>이 여섯 문장을 기억하면 전체 틀을 잡은 것</span><span>19 / 20</span></div>
-          </section>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Approval</span><div class="slide-num">21</div></div><div class="content"><h2>Approved PTS Device 정보는 범위를 확인하는 문서다</h2><div class="grid-3"><div class="card"><h3>Identification</h3><p>모델명, Hardware·Firmware Version, Approval Number와 만료·상태를 확인한다.</p></div><div class="card"><h3>Approved Functions</h3><p>PIN, SRED, Open Protocol 등 실제 승인된 기능과 사용 조건을 확인한다.</p></div><div class="card"><h3>Security Policy</h3><p>설치, 운영, Key 관리, Tamper 확인과 배포 제한 등 사용자가 지켜야 할 조건을 확인한다.</p></div></div><div class="summary-bar"><strong>주의:</strong> 외형이 같거나 제품명이 비슷해도 승인된 Version과 기능이 다르면 같은 승인으로 볼 수 없다.</div></div><div class="footer-hint"><span>Approved PTS Device</span><span>21 / 27</span></div></section>
 
-          <section class="slide" data-title="결론">
-            <div class="slide-head">
-              <span class="section-tag">마무리</span>
-              <div class="slide-num">20</div>
-            </div>
-            <div class="content">
-              <div class="big-center">
-                <h2>한 장으로 끝내는 결론</h2>
-                <p class="lead">PCI PTS는 문서 이름을 외우는 일이 아니라, 결제 단말기를 끝까지 믿을 수 있게 만드는 전체 규율을 이해하는 일이다.</p>
-                <div class="grid-2" style="width:100%;">
-                  <div class="card">
-                    <h3>보안의 대상</h3>
-                    <p>정보와 장치와 동작과 절차를 함께 지킨다.</p>
-                  </div>
-                  <div class="card">
-                    <h3>보안의 범위</h3>
-                    <p>설계부터 운영과 수리까지 제품의 전체 생애주기를 본다.</p>
-                  </div>
-                </div>
-                <div class="summary-bar"><strong>마지막 한마디:</strong> PCI PTS 인증의 핵심은 안전한 기능이 아니라 신뢰할 수 있는 결제 단말기다.</div>
-              </div>
-            </div>
-            <div class="footer-hint"><span>끝</span><span>20 / 20</span></div>
-          </section>
-        </div>
-      </div>
-    </div>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Evaluation Evidence</span><div class="slide-num">22</div></div><div class="content"><h2>평가는 주장보다 추적 가능한 증빙을 본다</h2><div class="grid-3"><div class="card"><h3>Design Evidence</h3><p>Architecture, Data Flow, Trust Boundary, 회로도, 부품 목록, Tamper Mechanism과 Key Flow를 설명한다.</p></div><div class="card"><h3>Implementation Evidence</h3><p>Source·Binary Mapping, Build·Signing 기록, Software Version, 설정과 시험 결과를 연결한다.</p></div><div class="card"><h3>Operational Evidence</h3><p>제조, Key Injection, 출하, 권한, 변경, 취약점과 Incident 처리 기록을 제시한다.</p></div></div><div class="summary-bar"><strong>추적성:</strong> Requirement → Design → Implementation → Test Result의 연결이 명확해야 한다.</div></div><div class="footer-hint"><span>Evidence</span><span>22 / 27</span></div></section>
 
-    <div class="nav">
-      <button type="button" id="prevBtn">이전</button>
-      <button type="button" id="nextBtn">다음</button>
-    </div>
+      <section class="slide"><div class="slide-head"><span class="section-tag">Change Control</span><div class="slide-num">23</div></div><div class="content"><h2>승인 후 변경도 보안 영향으로 판단한다</h2><div class="grid-3"><div class="card"><h3>Change Identification</h3><p>Hardware, Firmware, Library, 공급업체, 제조 위치와 보안 절차 변경을 식별한다.</p></div><div class="card"><h3>Impact Analysis</h3><p>보호 자산, Attack Surface, 승인 Version과 기존 시험 결과에 미치는 영향을 분석한다.</p></div><div class="card"><h3>Approval Path</h3><p>변경 수준에 따라 문서 갱신, Delta Evaluation, 재시험 또는 신규 평가 필요 여부를 Laboratory와 확인한다.</p></div></div><div class="summary-bar"><strong>원칙:</strong> 기능이 같아 보여도 보안 경계에 영향을 주는 변경을 임의로 승인 범위에 포함시키지 않는다.</div></div><div class="footer-hint"><span>Maintenance</span><span>23 / 27</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">개발 적용</span><div class="slide-num">24</div></div><div class="content"><h2>개발 단계에서 보안 요구를 설계 항목으로 바꾼다</h2><div class="grid-3"><div class="card"><h3>Asset and Boundary</h3><p>PIN, Key, Account Data, Firmware가 어디에서 생성·이동·저장·삭제되는지와 신뢰 경계를 표시한다.</p></div><div class="card"><h3>Threat and Control</h3><p>침입, Side-Channel, Debug, Update, Network, 공급망 위협마다 예방·탐지·반응 통제를 배치한다.</p></div><div class="card"><h3>Evidence by Design</h3><p>Requirement ID를 설계, Source, Test Case와 문서에 연결해 평가 직전에 증빙을 다시 만들지 않게 한다.</p></div></div><div class="summary-bar"><strong>효율:</strong> 보안을 마지막 시험 단계가 아니라 Architecture와 개발 산출물의 구조로 관리한다.</div></div><div class="footer-hint"><span>Engineering</span><span>24 / 27</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">적용성 확인</span><div class="slide-num">25</div></div><div class="content"><h2>TIT-ICRFReader는 제품 역할부터 확인해야 한다</h2><div class="grid-3"><div class="card"><h3>현재 확인되는 역할</h3><p>STM32F103xG, PN5180, USB CCID·RS232와 EMV·NFC 처리 기능을 가진 Contactless Reader Firmware이다.</p></div><div class="card"><h3>PTS POI 여부</h3><p>독립적으로 PIN 입력, Key 관리, SRED 같은 POI 기능을 수행하지 않는 Reader Component라면 전체 PCI PTS POI 대상과 동일하지 않을 수 있다.</p></div><div class="card"><h3>확인할 질문</h3><p>최종 판매 제품의 경계, PIN·Account Data 처리, Key 보유, 관리 Interface와 신청 모듈을 정한 뒤 적용 요구사항을 확정한다.</p></div></div><div class="summary-bar"><strong>주의:</strong> MCU와 NFC Reader가 존재한다는 사실만으로 PCI PTS 인증 대상 또는 충족 여부를 단정할 수 없다.</div></div><div class="footer-hint"><span>Product Scope</span><span>25 / 27</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">핵심 메시지</span><div class="slide-num">26</div></div><div class="content"><h2>기억해야 할 핵심</h2><div class="grid-3"><div class="card"><h3>범위를 먼저 정한다</h3><p>POI 유형과 PIN, SRED, Open Protocol 등 신청 기능에 따라 적용 요구사항이 달라진다.</p></div><div class="card"><h3>공격을 비용으로 평가한다</h3><p>Physical, Logical, Interface 공격이 요구된 Attack Potential 이상이 되도록 설계한다.</p></div><div class="card"><h3>수명주기와 증빙을 연결한다</h3><p>제조·KIF·배송·변경·취약점 대응까지 통제하고 DTR에 맞는 증빙을 유지한다.</p></div></div></div><div class="footer-hint"><span>정리</span><span>26 / 27</span></div></section>
+
+      <section class="slide"><div class="slide-head"><span class="section-tag">결론</span><div class="slide-num">27</div></div><div class="content"><h2>PCI PTS를 한 문장으로 정리하면</h2><div class="summary-bar"><strong>결론:</strong> PCI PTS는 평가된 POI 장치가 현실적인 공격과 운영 변화 속에서도 PIN, Key와 신청된 민감 기능을 계속 보호함을 증명하는 제품 보안 체계이다.</div><div class="grid-2"><div class="card"><h3>평가의 축</h3><p>Security Requirements, DTR, Attack Testing, Approved Device 정보</p></div><div class="card"><h3>신뢰의 축</h3><p>제품 설계, Software·Key·PIN 통제, Interface, 제조·배포·변경 관리</p></div></div></div><div class="footer-hint"><span>끝</span><span>27 / 27</span></div></section>
+    </div></div></div>
   </div>
-
   <script>
     const slides = Array.from(document.querySelectorAll(".slide"));
     const slideTrack = document.getElementById("slideTrack");
     const statusText = document.getElementById("statusText");
-    const progressBar = document.getElementById("progressBar");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
     let currentIndex = 0;
-
-    function clamp(index) {
-      return Math.max(0, Math.min(index, slides.length - 1));
-    }
-
-    function updateNavState() {
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === slides.length - 1;
-    }
-
+    function clamp(index) { return Math.max(0, Math.min(index, slides.length - 1)); }
     function render() {
       slideTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
       statusText.textContent = `${currentIndex + 1} / ${slides.length}`;
-      progressBar.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
-      updateNavState();
     }
-
-    function goToSlide(index) {
-      currentIndex = clamp(index);
-      render();
-    }
-
-    prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
-    nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
-
+    function goToSlide(index) { currentIndex = clamp(index); render(); }
     document.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
-        event.preventDefault();
-        goToSlide(currentIndex + 1);
-      }
-      if (event.key === "ArrowLeft" || event.key === "PageUp") {
-        event.preventDefault();
-        goToSlide(currentIndex - 1);
-      }
-      if (event.key === "Home") {
-        event.preventDefault();
-        goToSlide(0);
-      }
-      if (event.key === "End") {
-        event.preventDefault();
-        goToSlide(slides.length - 1);
-      }
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") { event.preventDefault(); goToSlide(currentIndex + 1); }
+      if (event.key === "ArrowLeft" || event.key === "PageUp") { event.preventDefault(); goToSlide(currentIndex - 1); }
+      if (event.key === "Home") { event.preventDefault(); goToSlide(0); }
+      if (event.key === "End") { event.preventDefault(); goToSlide(slides.length - 1); }
     });
-
     render();
   </script>
 </body>
