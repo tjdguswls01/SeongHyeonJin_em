@@ -1,0 +1,771 @@
+{"kind":"deck","id":"pr/upkvlk","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/2x4nap4r","slide":1,"title":"VISA KERNEL 3 · TECHNICAL REVIEW","textShapes":4}
+{"kind":"shape","id":"sh/nap4r65w","slide":1,"bbox":[0,0,16,720]}
+{"kind":"textbox","id":"sh/cvixczed","slide":1,"text":"VISA KERNEL 3 · TECHNICAL REVIEW","textPreview":"VISA KERNEL 3 · TECHNICAL REVIEW","textChars":32,"textLines":1,"bbox":[72,70,520,30]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":1,"text":"Visa Kernel 3의 구조와\nTNP-10 소스 활용","textPreview":"Visa Kernel 3의 구조와 | TNP-10 소스 활용","textChars":31,"textLines":2,"bbox":[72,170,590,180]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":1,"text":"1부 · PDF 문서 요약\n2부 · TNP-10 실제 소스 코드 해설","textPreview":"1부 · PDF 문서 요약 | 2부 · TNP-10 실제 소스 코드 해설","textChars":38,"textLines":2,"bbox":[76,392,500,90]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":1,"text":"40분 · 기술 발표용","textPreview":"40분 · 기술 발표용","textChars":12,"textLines":1,"bbox":[76,590,420,30]}
+{"kind":"image","id":"im/twra5gbq","slide":1,"name":"","bbox":[650,185.6,570,320.8]}
+{"kind":"notes","id":"nt/2x4nap4r","slide":1,"text":"[슬라이드 1] Visa Kernel 3의 구조와 TNP-10 소스 활용\n기본 대본 권장 시간 0:35\n\n[기본 대본]\n오늘 발표는 두 부분으로 나눕니다. 1부에서는 Visa Book C-3를 요약해 Kernel 3의 구조와 표준 거래 흐름만 설명합니다. 2부에서는 TNP-10의 실제 소스 코드를 열어 1부의 각 단계가 어떤 함수와 APDU로 구현됐는지 연결하겠습니다.\n\n[보충 설명 - 시간 여유 시]\n발표를 시작할 때는 구현 세부로 바로 들어가지 않고, 먼저 문서가 정의한 Kernel의 책임 경계를 잡겠다고 안내합니다. 청중이 기억해야 할 기준은 두 가지입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘발표 구성’입니다."}
+{"kind":"slide","id":"sl/pg3ex0nu","slide":2,"title":"OVERVIEW","textShapes":11}
+{"kind":"shape","id":"sh/yxobm58z","slide":2,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":2,"text":"OVERVIEW","textPreview":"OVERVIEW","textChars":8,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":2,"text":"발표 구성","textPreview":"발표 구성","textChars":5,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/ylc7u54z","slide":2,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":2,"text":"전체 흐름","textPreview":"전체 흐름","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":2,"text":"1부 · Visa Kernel 3 문서 요약\n- 구조와 책임 경계\n- 표준 거래 처리 순서\n- 판단 데이터와 Outcome","textPreview":"1부 · Visa Kernel 3 문서 요약 | - 구조와 책임 경계 | - 표준 거래 처리 순서 | - 판단 데이터와 Outcome","textChars":68,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/rytsvu9k","slide":2,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":2,"text":"목표","textPreview":"목표","textChars":2,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":2,"text":"문서와 코드를 같은 페이지에서 억지로 대응하지 않고, 먼저 구조를 이해한 뒤 코드로 내려간다.","textPreview":"문서와 코드를 같은 페이지에서 억지로 대응하지 않고, 먼저 구조를 이해한 뒤 코드로 내려간다.","textChars":52,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/lwval87e","slide":2,"text":"권장 시간","textPreview":"권장 시간","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":2,"text":"1부 약 20분\n2부 약 18분\n정리·질문 약 2분","textPreview":"1부 약 20분 | 2부 약 18분 | 정리·질문 약 2분","textChars":28,"textLines":3,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":2,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":2,"text":"2부 · TNP-10 소스 코드 해설\n- 외부 명령 진입\n- Kernel 함수와 APDU\n- RF 전달과 구현 범위","textPreview":"2부 · TNP-10 소스 코드 해설 | - 외부 명령 진입 | - Kernel 함수와 APDU | - RF 전달과 구현 범위","textChars":64,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/pg3ex0nu","slide":2,"text":"[슬라이드 2] 발표 구성\n기본 대본 권장 시간 0:40\n\n[기본 대본]\n발표 구조는 단순합니다. 앞쪽 1부는 Visa Kernel 3 문서의 요약입니다. 여기서는 소스 파일이나 함수 이름을 거의 언급하지 않습니다. 뒤쪽 2부에서 실제 코드를 제시하고, 코드가 1부의 어떤 처리 단계에 해당하는지 설명합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘전체 흐름’ 영역을 봅니다. 이 영역의 핵심은 1부 · Visa Kernel 3 문서 요약, 구조와 책임 경계, 표준 거래 처리 순서, 판단 데이터와 Outcome입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘1부 · Visa Kernel 3 문서 요약’입니다."}
+{"kind":"slide","id":"sl/s72x4nap","slide":3,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/vmtwra5g","slide":3,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":3,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":3,"text":"1부 · Visa Kernel 3 문서 요약","textPreview":"1부 · Visa Kernel 3 문서 요약","textChars":24,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/vy90je9c","slide":3,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":3,"text":"이번 부의 질문","textPreview":"이번 부의 질문","textChars":8,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":3,"text":"Kernel 3는 결제 시스템에서 어디에 있고,\n무엇을 입력받아 어떤 판단을 내리는가?","textPreview":"Kernel 3는 결제 시스템에서 어디에 있고, | 무엇을 입력받아 어떤 판단을 내리는가?","textChars":48,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/6hcrmhk3","slide":3,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":3,"text":"사용 문서","textPreview":"사용 문서","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":3,"text":"EMV Contactless Book C-3\nKernel 3 Specification v2.10","textPreview":"EMV Contactless Book C-3 | Kernel 3 Specification v2.10","textChars":53,"textLines":2,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":3,"text":"보조 비교","textPreview":"보조 비교","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":3,"text":"MIR 문서는 커널 공통 구조를 확인하는 보조 자료로만 사용","textPreview":"MIR 문서는 커널 공통 구조를 확인하는 보조 자료로만 사용","textChars":33,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":3,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/vmtwra5g","slide":3,"text":"SELECT 이후 GPO, READ RECORD, 검증,\nCVM, 온라인 처리와 Outcome은\n어떤 순서로 이어지는가?","textPreview":"SELECT 이후 GPO, READ RECORD, 검증, | CVM, 온라인 처리와 Outcome은 | 어떤 순서로 이어지는가?","textChars":67,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/s72x4nap","slide":3,"text":"[슬라이드 3] 1부 · Visa Kernel 3 문서 요약\n기본 대본 권장 시간 0:35\n\n[기본 대본]\n1부에서는 Visa Book C-3 자체를 요약합니다. Kernel 3의 위치와 책임, 거래의 시작과 종료, 핵심 데이터와 판단 순서를 먼저 이해합니다. MIR 문서는 선택, GPO, 레코드 읽기, CVM과 결과라는 공통 구조를 확인하는 비교 자료로만 사용합니다.\n\n[보충 설명 - 시간 여유 시]\n1부에서는 코드 파일을 보지 않고 Visa C-3가 정의한 책임 경계와 처리 순서부터 잡습니다. 질문은 세 가지입니다. Kernel 3는 어디서 시작하는가, 어떤 카드 데이터를 수집하는가, 그리고 어떤 Outcome을 상위 계층으로 반환하는가입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel 3를 한 문장으로 정의’입니다."}
+{"kind":"slide","id":"sl/val87ed8","slide":4,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/1gvy90je","slide":4,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":4,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":4,"text":"Kernel 3를 한 문장으로 정의","textPreview":"Kernel 3를 한 문장으로 정의","textChars":19,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/xs72x4na","slide":4,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":4,"text":"정의","textPreview":"정의","textChars":2,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":4,"text":"Visa Kernel 3는 카드 응답을 Visa 규칙으로 해석해\n거래의 다음 방향을 결정하는 EMV Contactless L2 모듈이다.","textPreview":"Visa Kernel 3는 카드 응답을 Visa 규칙으로 해석해 | 거래의 다음 방향을 결정하는 EMV Contactless L2 모듈이다.","textChars":76,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":4,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":4,"text":"핵심 입력","textPreview":"핵심 입력","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":4,"text":"단말 거래 조건\n선택된 애플리케이션\n카드 응답 데이터","textPreview":"단말 거래 조건 | 선택된 애플리케이션 | 카드 응답 데이터","textChars":29,"textLines":3,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":4,"text":"핵심 출력","textPreview":"핵심 출력","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":4,"text":"Online Request\nApproved / Declined\nTry Again / Select Next\nTry Another Interface","textPreview":"Online Request | Approved / Declined | Try Again / Select Next | Try Another Interface","textChars":80,"textLines":4,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":4,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":4,"text":"단순 APDU 전송 모듈이 아니라\n데이터 구성, 검증, CVM·인증 판단,\nOutcome 생성을 포함한다.","textPreview":"단순 APDU 전송 모듈이 아니라 | 데이터 구성, 검증, CVM·인증 판단, | Outcome 생성을 포함한다.","textChars":59,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/val87ed8","slide":4,"text":"[슬라이드 4] Kernel 3를 한 문장으로 정의\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nKernel 3는 카드와 통신하는 함수의 집합이 아닙니다. 단말 조건을 카드에 전달하고, 카드가 돌려준 데이터를 Visa 규칙에 따라 검증해 다음 거래 방향을 결정하는 L2 모듈입니다. 따라서 입력, 내부 상태, 판단 규칙, Outcome을 하나의 흐름으로 봐야 합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘정의’ 영역을 봅니다. 이 영역의 핵심은 Visa Kernel 3는 카드 응답을 Visa 규칙으로 해석해, 거래의 다음 방향을 결정하는 EMV Contactless L2 모듈이다.입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel 구조를 보는 다섯 관점’입니다."}
+{"kind":"slide","id":"sl/mlkjm1cf","slide":5,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/vahoza1g","slide":5,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":5,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":5,"text":"Kernel 구조를 보는 다섯 관점","textPreview":"Kernel 구조를 보는 다섯 관점","textChars":19,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":5,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":5,"text":"구조 관점","textPreview":"구조 관점","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":5,"text":"1. 시스템 계층\n2. 책임 경계\n3. 처리 상태\n4. 데이터 구조\n5. 입출력 인터페이스","textPreview":"1. 시스템 계층 | 2. 책임 경계 | 3. 처리 상태 | 4. 데이터 구조 | 5. 입출력 인터페이스","textChars":50,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":5,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":5,"text":"이 관점의 장점","textPreview":"이 관점의 장점","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":5,"text":"문서의 상태 흐름과 소스의 함수 호출을 같은 기준으로 비교할 수 있다.","textPreview":"문서의 상태 흐름과 소스의 함수 호출을 같은 기준으로 비교할 수 있다.","textChars":39,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":5,"text":"주의","textPreview":"주의","textChars":2,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":5,"text":"함수가 존재한다는 사실과 활성 거래 경로에 연결됐다는 사실은 다르다.","textPreview":"함수가 존재한다는 사실과 활성 거래 경로에 연결됐다는 사실은 다르다.","textChars":38,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":5,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":5,"text":"파일 목록이 아니라\n‘누가 시작하고, 누가 판단하고,\n누가 실제 RF를 전송하는가’를 기준으로 본다.","textPreview":"파일 목록이 아니라 | ‘누가 시작하고, 누가 판단하고, | 누가 실제 RF를 전송하는가’를 기준으로 본다.","textChars":56,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/mlkjm1cf","slide":5,"text":"[슬라이드 5] Kernel 구조를 보는 다섯 관점\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nKernel 구조를 파일명으로만 설명하면 책임 경계가 보이지 않습니다. 시스템 계층, 책임, 상태, 데이터, 인터페이스의 다섯 관점으로 봐야 합니다. 이 기준을 먼저 세워야 2부에서 함수가 어느 계층의 어느 상태를 구현하는지 정확히 말할 수 있습니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘구조 관점’ 영역을 봅니다. 이 영역의 핵심은 1. 시스템 계층, 2. 책임 경계, 3. 처리 상태, 4. 데이터 구조, 5. 입출력 인터페이스입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘EMV L1 · L2 · L3’입니다."}
+{"kind":"slide","id":"sl/58z25kb6","slide":6,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/9cvixcze","slide":6,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":6,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":6,"text":"EMV L1 · L2 · L3","textPreview":"EMV L1 · L2 · L3","textChars":16,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/5o7qpg3e","slide":6,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":6,"text":"계층","textPreview":"계층","textChars":2,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":6,"text":"L3 · 결제 애플리케이션\n금액·거래 유형 준비, UI, 호스트 승인\n\nL2 · Visa Kernel 3\n카드 데이터 해석과 거래 규칙 수행\n\nL1 · RF 통신\n카드 탐색, ISO 14443 송수신","textPreview":"L3 · 결제 애플리케이션 | 금액·거래 유형 준비, UI, 호스트 승인 |  | L2 · Visa Kernel 3 | 카드 데이터 해석과 거래 규칙 수행 |  | L1 · RF 통신 | 카드 탐색, ISO 14443 송수신","textChars":111,"textLines":8,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/g7adsji5","slide":6,"text":"Kernel 3는 RF 드라이버도,\n온라인 승인 서버도 아니다.","textPreview":"Kernel 3는 RF 드라이버도, | 온라인 승인 서버도 아니다.","textChars":35,"textLines":2,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":6,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":6,"text":"L2의 중심 역할","textPreview":"L2의 중심 역할","textChars":9,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":6,"text":"APDU의 의미를 이해하고\n거래 상태를 다음 단계로 전이한다.","textPreview":"APDU의 의미를 이해하고 | 거래 상태를 다음 단계로 전이한다.","textChars":34,"textLines":2,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":6,"text":"경계가 중요한 이유","textPreview":"경계가 중요한 이유","textChars":10,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":6,"text":"문제 발생 시 RF 오류, Kernel 규칙 오류, 상위 업무 오류를 분리할 수 있다.","textPreview":"문제 발생 시 RF 오류, Kernel 규칙 오류, 상위 업무 오류를 분리할 수 있다.","textChars":48,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":6,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/58z25kb6","slide":6,"text":"[슬라이드 6] EMV L1 · L2 · L3\n기본 대본 권장 시간 0:50\n\n[기본 대본]\nL1은 RF 통신, L2는 Kernel 규칙, L3는 결제 애플리케이션입니다. 오늘의 Kernel 3는 L2입니다. 카드 탐색이나 안테나 제어를 직접 하지 않고, 호스트 승인이나 화면 표시도 직접 하지 않습니다. 대신 카드 데이터의 의미를 해석하고 다음 상태를 결정합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘계층’ 영역을 봅니다. 이 영역의 핵심은 L3 · 결제 애플리케이션, 금액·거래 유형 준비, UI, 호스트 승인, , L2 · Visa Kernel 3, 카드 데이터 해석과 거래 규칙 수행, , L1 · RF 통신, 카드 탐색, ISO 14443 송수신입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘결제 시스템에서 Kernel 3의 위치’입니다."}
+{"kind":"slide","id":"sl/0z61032l","slide":7,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":7}
+{"kind":"shape","id":"sh/qd4vmtwr","slide":7,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":7,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":7,"text":"결제 시스템에서 Kernel 3의 위치","textPreview":"결제 시스템에서 Kernel 3의 위치","textChars":21,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":7,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":7,"text":"핵심 구조","textPreview":"핵심 구조","textChars":5,"textLines":1,"bbox":[64,181,250,28]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":7,"text":"Host → Kernel → APDU Transport → RF → Card","textPreview":"Host → Kernel → APDU Transport → RF → Card","textChars":42,"textLines":1,"bbox":[64,220,440,150]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":7,"text":"Kernel은 거래 규칙과 APDU 의미를 담당하고, 실제 RF 송수신은 하위 계층에 위임한다.","textPreview":"Kernel은 거래 규칙과 APDU 의미를 담당하고, 실제 RF 송수신은 하위 계층에 위임한다.","textChars":53,"textLines":1,"bbox":[64,530,1120,70]}
+{"kind":"textbox","id":"sh/svu9knih","slide":7,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"image","id":"im/m1cfa9w3","slide":7,"name":"","bbox":[540,195.77,676,380.45]}
+{"kind":"notes","id":"nt/0z61032l","slide":7,"text":"[슬라이드 7] 결제 시스템에서 Kernel 3의 위치\n기본 대본 권장 시간 0:45\n\n[기본 대본]\n이 그림은 전체 계층을 한 번에 보여줍니다. 호스트가 거래를 시작하면 Kernel이 필요한 APDU를 구성하고 전송 계층에 요청합니다. 응답은 반대 방향으로 올라오며 Kernel에서 해석됩니다. Kernel과 RF 사이의 경계가 구현 분석의 핵심 기준입니다.\n\n[보충 설명 - 시간 여유 시]\n그림은 한 번에 전부 설명하지 않고 시작점, 카드와 명령을 주고받는 구간, 카드 제거 이후의 내부 판단 구간 순서로 나눠 읽습니다. 화면의 핵심 문장은 ‘Host → Kernel → APDU Transport → RF → Card’입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel 3의 책임’입니다."}
+{"kind":"slide","id":"sl/fu18jqh0","slide":8,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/1032lszq","slide":8,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":8,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/judg7ads","slide":8,"text":"Kernel 3의 책임","textPreview":"Kernel 3의 책임","textChars":12,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/1orytsvu","slide":8,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":8,"text":"핵심 책임","textPreview":"핵심 책임","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":8,"text":"- 거래 초기화\n- 단말 데이터 구성\n- 카드 데이터 수집\n- 필수값·중복·형식 검증","textPreview":"- 거래 초기화 | - 단말 데이터 구성 | - 카드 데이터 수집 | - 필수값·중복·형식 검증","textChars":47,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/cvixczed","slide":8,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":8,"text":"카드와 통신 중","textPreview":"카드와 통신 중","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":8,"text":"GPO와 READ RECORD로 필요한 데이터를 확보한다.","textPreview":"GPO와 READ RECORD로 필요한 데이터를 확보한다.","textChars":32,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":8,"text":"카드 통신 후","textPreview":"카드 통신 후","textChars":7,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":8,"text":"수집한 데이터를 종합해 거래 방향을 결정한다.","textPreview":"수집한 데이터를 종합해 거래 방향을 결정한다.","textChars":25,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":8,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":8,"text":"- 제한 검사\n- 오프라인 인증\n- CVM 판단\n- 온라인 처리와 Outcome","textPreview":"- 제한 검사 | - 오프라인 인증 | - CVM 판단 | - 온라인 처리와 Outcome","textChars":44,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/fu18jqh0","slide":8,"text":"[슬라이드 8] Kernel 3의 책임\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nKernel 3의 책임은 거래 초기화부터 Outcome까지 이어집니다. 카드가 RF 필드에 있을 때 GPO와 READ RECORD로 데이터를 모으고, 이후에는 제한 검사, 인증, CVM, 온라인 처리 판단을 수행합니다. 카드 읽기와 거래 판단을 하나의 상태 흐름으로 관리합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘핵심 책임’ 영역을 봅니다. 이 영역의 핵심은 거래 초기화, 단말 데이터 구성, 카드 데이터 수집, 필수값·중복·형식 검증입니다. 아래쪽 내용은 제한 검사, 오프라인 인증, CVM 판단, 온라인 처리와 Outcome라는 의미이므로, 위의 개념과 분리하지 말고 같은 처리 흐름으로 연결합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel 3가 직접 하지 않는 일’입니다."}
+{"kind":"slide","id":"sl/qh0fepkz","slide":9,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/vahoza1g","slide":9,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":9,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":9,"text":"Kernel 3가 직접 하지 않는 일","textPreview":"Kernel 3가 직접 하지 않는 일","textChars":20,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":9,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":9,"text":"Kernel 밖의 책임","textPreview":"Kernel 밖의 책임","textChars":12,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":9,"text":"RF 아날로그 제어\n카드 탐색과 활성화\n온라인 호스트 통신\n화면·부저·영수증\n정산·원장 관리","textPreview":"RF 아날로그 제어 | 카드 탐색과 활성화 | 온라인 호스트 통신 | 화면·부저·영수증 | 정산·원장 관리","textChars":51,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/6dcbulwv","slide":9,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":9,"text":"하위 계층","textPreview":"하위 계층","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":9,"text":"RF 드라이버와 ISO 14443 전송","textPreview":"RF 드라이버와 ISO 14443 전송","textChars":21,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/y90je9cv","slide":9,"text":"상위 계층","textPreview":"상위 계층","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":9,"text":"UI, 승인 서버, 거래 기록과 업무 정책","textPreview":"UI, 승인 서버, 거래 기록과 업무 정책","textChars":23,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":9,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":9,"text":"Kernel은 필요한 행동을 Outcome으로 요청하지만\n상위 시스템의 실제 업무 처리를 대신하지 않는다.","textPreview":"Kernel은 필요한 행동을 Outcome으로 요청하지만 | 상위 시스템의 실제 업무 처리를 대신하지 않는다.","textChars":59,"textLines":2,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/qh0fepkz","slide":9,"text":"[슬라이드 9] Kernel 3가 직접 하지 않는 일\n기본 대본 권장 시간 0:40\n\n[기본 대본]\nKernel의 책임을 명확히 하려면 하지 않는 일도 봐야 합니다. RF 칩을 직접 제어하지 않고, 온라인 승인 서버와 직접 통신하지 않습니다. Kernel은 결과와 요청을 상위에 전달하고, 실제 사용자 메시지나 승인 업무는 L3가 수행합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘Kernel 밖의 책임’ 영역을 봅니다. 이 영역의 핵심은 RF 아날로그 제어, 카드 탐색과 활성화, 온라인 호스트 통신, 화면·부저·영수증, 정산·원장 관리입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel의 입력’입니다."}
+{"kind":"slide","id":"sl/29gr2p8n","slide":10,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/2p8nqxs7","slide":10,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/9gr2p8nq","slide":10,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":10,"text":"Kernel의 입력","textPreview":"Kernel의 입력","textChars":10,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":10,"text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/2hwfyxob","slide":10,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/94fu18jq","slide":10,"text":"거래 입력","textPreview":"거래 입력","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":10,"text":"금액 · 날짜 · 거래 유형\n국가 · 통화 · 단말 한도\n선택된 AID · 단말 기능","textPreview":"금액 · 날짜 · 거래 유형 | 국가 · 통화 · 단말 한도 | 선택된 AID · 단말 기능","textChars":47,"textLines":3,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/rqd4vmtw","slide":10,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":10,"text":"입력의 용도","textPreview":"입력의 용도","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":10,"text":"PDOL 값 구성\nTTQ 비트 결정\n검증 조건 선택","textPreview":"PDOL 값 구성 | TTQ 비트 결정 | 검증 조건 선택","textChars":28,"textLines":3,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":10,"text":"오류 영향","textPreview":"오류 영향","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":10,"text":"입력이 잘못되면 APDU가 성공해도 카드가 다른 처리 경로를 선택할 수 있다.","textPreview":"입력이 잘못되면 APDU가 성공해도 카드가 다른 처리 경로를 선택할 수 있다.","textChars":43,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":10,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/83itgfml","slide":10,"text":"카드 입력\nSELECT 응답 · PDOL\nGPO 응답 · Application Records","textPreview":"카드 입력 | SELECT 응답 · PDOL | GPO 응답 · Application Records","textChars":51,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/29gr2p8n","slide":10,"text":"[슬라이드 10] Kernel의 입력\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nKernel 입력은 단말에서 준비한 거래 조건과 카드가 반환한 데이터로 나뉩니다. 금액과 한도는 TTQ와 거래 정책에 영향을 주고, SELECT 응답의 PDOL은 GPO 데이터 구성에 사용됩니다. 입력 오류는 통신 성공 여부와 별개로 잘못된 거래 결과를 만들 수 있습니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘거래 입력’ 영역을 봅니다. 이 영역의 핵심은 금액 · 날짜 · 거래 유형, 국가 · 통화 · 단말 한도, 선택된 AID · 단말 기능입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel의 내부 상태’입니다."}
+{"kind":"slide","id":"sl/re1w7mp0","slide":11,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/dg7adsji","slide":11,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":11,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":11,"text":"Kernel의 내부 상태","textPreview":"Kernel의 내부 상태","textChars":13,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":11,"text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/d8v6psfi","slide":11,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":11,"text":"내부 데이터","textPreview":"내부 데이터","textChars":6,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":11,"text":"Terminal Data\nICC / Card Data\nAIP · AFL\nTTQ · CTQ\nCID · Application Cryptogram · IAD","textPreview":"Terminal Data | ICC / Card Data | AIP · AFL | TTQ · CTQ | CID · Application Cryptogram · IAD","textChars":84,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/oj2t83it","slide":11,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":11,"text":"왜 상태가 필요한가","textPreview":"왜 상태가 필요한가","textChars":10,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":11,"text":"각 단계의 결과가 다음 단계의 조건과 최종 Outcome에 누적된다.","textPreview":"각 단계의 결과가 다음 단계의 조건과 최종 Outcome에 누적된다.","textChars":38,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/sji5snel","slide":11,"text":"관리 원칙","textPreview":"관리 원칙","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":11,"text":"거래 시작 시 초기화하고 오류 경로에서도 일관되게 유지해야 한다.","textPreview":"거래 시작 시 초기화하고 오류 경로에서도 일관되게 유지해야 한다.","textChars":36,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":11,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":11,"text":"처리 상태\nTVR · TSI · CVM Results\n오류 상태와 Outcome 파라미터","textPreview":"처리 상태 | TVR · TSI · CVM Results | 오류 상태와 Outcome 파라미터","textChars":49,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/re1w7mp0","slide":11,"text":"[슬라이드 11] Kernel의 내부 상태\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nKernel은 거래 동안 단말 데이터와 카드 데이터를 분리해 저장하고 처리 상태를 누적합니다. AIP와 AFL은 후속 처리를 안내하고, TTQ와 CTQ는 CVM과 온라인 방향을 결정합니다. TVR과 오류 상태는 최종 결과에 반영됩니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘내부 데이터’ 영역을 봅니다. 이 영역의 핵심은 Terminal Data, ICC / Card Data, AIP · AFL, TTQ · CTQ, CID · Application Cryptogram · IAD입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel의 출력: Outcome’입니다."}
+{"kind":"slide","id":"sl/4fu18jqh","slide":12,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/3m94fu18","slide":12,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/s72x4nap","slide":12,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/lszqtcj6","slide":12,"text":"Kernel의 출력: Outcome","textPreview":"Kernel의 출력: Outcome","textChars":19,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":12,"text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/3ylc7u54","slide":12,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/sji5snel","slide":12,"text":"주요 결과","textPreview":"주요 결과","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":12,"text":"Approved / Declined\nOnline Request\nTry Again\nSelect Next\nTry Another Interface\nEnd Application","textPreview":"Approved / Declined | Online Request | Try Again | Select Next | Try Another Interface | End Application","textChars":94,"textLines":6,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/ap4r65wj","slide":12,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/za1gvy90","slide":12,"text":"상위 계층의 역할","textPreview":"상위 계층의 역할","textChars":9,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/z61032ls","slide":12,"text":"화면 표시, 카드 재제시, 다른 인터페이스 안내, 온라인 승인 수행","textPreview":"화면 표시, 카드 재제시, 다른 인터페이스 안내, 온라인 승인 수행","textChars":37,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":12,"text":"구현 관점","textPreview":"구현 관점","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":12,"text":"오류 코드와 TLV만 반환한다면 표준 Outcome 전체와의 대응을 따로 검토해야 한다.","textPreview":"오류 코드와 TLV만 반환한다면 표준 Outcome 전체와의 대응을 따로 검토해야 한다.","textChars":49,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":12,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":12,"text":"Outcome은 단순 성공·실패가 아니라\n상위 계층이 다음에 수행해야 할 행동이다.","textPreview":"Outcome은 단순 성공·실패가 아니라 | 상위 계층이 다음에 수행해야 할 행동이다.","textChars":46,"textLines":2,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/4fu18jqh","slide":12,"text":"[슬라이드 12] Kernel의 출력: Outcome\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nKernel 출력은 성공과 실패 두 개가 아닙니다. 온라인 승인을 요청하거나 다시 시도하고, 다음 애플리케이션을 선택하거나 다른 인터페이스로 전환하는 구체적인 행동을 제공합니다. 2부에서는 소스 반환 데이터가 이 Outcome 개념과 얼마나 연결되는지 확인합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘주요 결과’ 영역을 봅니다. 이 영역의 핵심은 Approved / Declined, Online Request, Try Again, Select Next, Try Another Interface, End Application입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘지원 범위와 선택 기능’입니다."}
+{"kind":"slide","id":"sl/lwval87e","slide":13,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/ed8bat47","slide":13,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":13,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":13,"text":"지원 범위와 선택 기능","textPreview":"지원 범위와 선택 기능","textChars":12,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":13,"text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/eloj2t83","slide":13,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":13,"text":"기본 흐름","textPreview":"기본 흐름","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":13,"text":"EMV Mode\nCombination Selection\nGPO · READ RECORD\n검증 · CVM · 온라인 처리","textPreview":"EMV Mode | Combination Selection | GPO · READ RECORD | 검증 · CVM · 온라인 처리","textChars":66,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/7adsji5s","slide":13,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":13,"text":"문서의 의미","textPreview":"문서의 의미","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":13,"text":"fDDA는 오프라인 거래 지원 여부에 따라 필수이며, Issuer Update와 IDS는 구현 선택이다.","textPreview":"fDDA는 오프라인 거래 지원 여부에 따라 필수이며, Issuer Update와 IDS는 구현 선택이다.","textChars":58,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":13,"text":"분석 원칙","textPreview":"분석 원칙","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":13,"text":"규격의 Mandatory·Conditional·Optional을 구분해 구현 범위를 평가한다.","textPreview":"규격의 Mandatory·Conditional·Optional을 구분해 구현 범위를 평가한다.","textChars":52,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":13,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":13,"text":"조건부·선택 기능\nfDDA · 오프라인 가능 Reader는 필수\nIssuer Update · 구현 선택\nIDS · 구현 선택","textPreview":"조건부·선택 기능 | fDDA · 오프라인 가능 Reader는 필수 | Issuer Update · 구현 선택 | IDS · 구현 선택","textChars":69,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/lwval87e","slide":13,"text":"[슬라이드 13] 지원 범위와 선택 기능\n기본 대본 권장 시간 0:40\n\n[기본 대본]\nBook C-3는 기능별 요구 수준이 다릅니다. 오프라인 거래를 지원하는 Reader는 fDDA를 지원해야 합니다. 반면 Issuer Update와 IDS는 구현 선택입니다. 따라서 부록에 있다는 이유만으로 모두 선택 기능으로 묶지 않고, Mandatory, Conditional, Optional을 구분해 소스 구현 범위를 평가해야 합니다.\n\n[보충 설명 - 시간 여유 시]\nVisa C-3 5.6.1.1은 오프라인 가능 Reader가 fDDA를 지원해야 한다고 명시합니다. 온라인 거래에서 fDDA를 사용할지는 설정 선택이지만, 오프라인 지원 제품에서 fDDA 전체를 선택 기능이라고 설명하면 요구 수준을 낮춰 말하게 됩니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Figure 2-1 · 전체 거래 흐름’입니다."}
+{"kind":"slide","id":"sl/25kb6xkf","slide":14,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":7}
+{"kind":"shape","id":"sh/val87ed8","slide":14,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":14,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":14,"text":"Figure 2-1 · 전체 거래 흐름","textPreview":"Figure 2-1 · 전체 거래 흐름","textChars":21,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/2x4nap4r","slide":14,"text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/vixczed8","slide":14,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":14,"text":"읽는 순서","textPreview":"읽는 순서","textChars":5,"textLines":1,"bbox":[64,181,250,28]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":14,"text":"Entry Point → GPO → READ RECORD → Card Read Complete → 판단 → Outcome","textPreview":"Entry Point → GPO → READ RECORD → Card Read Complete → 판단 → Outcome","textChars":67,"textLines":1,"bbox":[64,220,440,150]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":14,"text":"카드가 RF 필드에 있는 구간과, 카드를 제거한 뒤 Reader 내부에서 계속되는 판단 구간을 구분한다.","textPreview":"카드가 RF 필드에 있는 구간과, 카드를 제거한 뒤 Reader 내부에서 계속되는 판단 구간을 구분한다.","textChars":58,"textLines":1,"bbox":[64,530,1120,70]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":14,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"image","id":"im/hk3q5o7q","slide":14,"name":"","bbox":[735.94,176,284.12,420]}
+{"kind":"notes","id":"nt/25kb6xkf","slide":14,"text":"[슬라이드 14] Figure 2-1 · 전체 거래 흐름\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nVisa Figure 2-1이 1부 전체를 요약합니다. Entry Point가 사전 처리와 선택을 수행하고, Kernel은 GPO와 READ RECORD로 데이터를 수집합니다. Card Read Complete 이후에는 제한 검사, 인증, CVM, 온라인 처리와 완료가 이어집니다. 카드 통신 구간과 내부 판단 구간이 구분됩니다.\n\n[보충 설명 - 시간 여유 시]\n그림은 한 번에 전부 설명하지 않고 시작점, 카드와 명령을 주고받는 구간, 카드 제거 이후의 내부 판단 구간 순서로 나눠 읽습니다. 화면의 핵심 문장은 ‘Entry Point → GPO → READ RECORD → Card Read Complete → 판단 → Outcome’입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Entry Point와 Kernel의 책임 경계’입니다."}
+{"kind":"slide","id":"sl/7y1kre1w","slide":15,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/90je9cvi","slide":15,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":15,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":15,"text":"Entry Point와 Kernel의 책임 경계","textPreview":"Entry Point와 Kernel의 책임 경계","textChars":26,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/g7adsji5","slide":15,"text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/9s36hcrm","slide":15,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":15,"text":"Entry Point","textPreview":"Entry Point","textChars":11,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":15,"text":"Pre-Processing\nProtocol Activation\nCombination Selection\nKernel Activation을 위한 인계","textPreview":"Pre-Processing | Protocol Activation | Combination Selection | Kernel Activation을 위한 인계","textChars":81,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/g3ex0nux","slide":15,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":15,"text":"인계 데이터","textPreview":"인계 데이터","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":15,"text":"성공한 SELECT AID 응답\nPDOL\n단말 거래 조건","textPreview":"성공한 SELECT AID 응답 | PDOL | 단말 거래 조건","textChars":31,"textLines":3,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/cvixczed","slide":15,"text":"핵심 경계","textPreview":"핵심 경계","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/nap4r65w","slide":15,"text":"Kernel 3의 새 거래 처리는 GPO 명령에서 시작한다.","textPreview":"Kernel 3의 새 거래 처리는 GPO 명령에서 시작한다.","textChars":33,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":15,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/54zidony","slide":15,"text":"Kernel 3\nGPO로 거래 시작\n카드 데이터 수집과 검증\n거래 방향 판단","textPreview":"Kernel 3 | GPO로 거래 시작 | 카드 데이터 수집과 검증 | 거래 방향 판단","textChars":42,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/7y1kre1w","slide":15,"text":"[슬라이드 15] Entry Point와 Kernel의 책임 경계\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nVisa 문서는 Entry Point와 Kernel을 명확히 나눕니다. Entry Point가 사전 처리, 프로토콜 활성화, 조합 선택을 수행합니다. 성공한 SELECT AID 응답과 PDOL을 넘겨받은 Kernel 3는 GPO 명령으로 실제 거래 처리를 시작합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘Entry Point’ 영역을 봅니다. 이 영역의 핵심은 Pre-Processing, Protocol Activation, Combination Selection, Kernel Activation을 위한 인계입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Combination Selection’입니다."}
+{"kind":"slide","id":"sl/8z25kb6x","slide":16,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/epkzupwb","slide":16,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":16,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/wval87ed","slide":16,"text":"Combination Selection","textPreview":"Combination Selection","textChars":21,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":16,"text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/e1w7mp0b","slide":16,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":16,"text":"선택 순서","textPreview":"선택 순서","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":16,"text":"1. SELECT PPSE\n2. 지원 애플리케이션 목록 확인\n3. 단말·카드 조합 평가\n4. SELECT AID","textPreview":"1. SELECT PPSE | 2. 지원 애플리케이션 목록 확인 | 3. 단말·카드 조합 평가 | 4. SELECT AID","textChars":62,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/7u54zido","slide":16,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":16,"text":"Reader 책임","textPreview":"Reader 책임","textChars":9,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":16,"text":"지원 AID와 우선순위를 해석하고 사용할 조합을 선택","textPreview":"지원 AID와 우선순위를 해석하고 사용할 조합을 선택","textChars":29,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":16,"text":"Card 책임","textPreview":"Card 책임","textChars":7,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":16,"text":"지원 애플리케이션과 FCI, PDOL 정보를 제공","textPreview":"지원 애플리케이션과 FCI, PDOL 정보를 제공","textChars":27,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":16,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":16,"text":"선택 결과는 Kernel Activation의 입력이 된다.","textPreview":"선택 결과는 Kernel Activation의 입력이 된다.","textChars":33,"textLines":1,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/8z25kb6x","slide":16,"text":"[슬라이드 16] Combination Selection\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nCombination Selection은 먼저 PPSE를 선택하고, 카드가 제공한 애플리케이션 목록에서 지원 조합을 평가한 뒤 AID를 선택하는 단계입니다. 이 과정은 Entry Point의 책임이며, 선택된 AID와 FCI, PDOL이 Kernel 3로 인계됩니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘선택 순서’ 영역을 봅니다. 이 영역의 핵심은 1. SELECT PPSE, 2. 지원 애플리케이션 목록 확인, 3. 단말·카드 조합 평가, 4. SELECT AID입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Kernel Activation’입니다."}
+{"kind":"slide","id":"sl/54zidony","slide":17,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/m94fu18j","slide":17,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":17,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":17,"text":"Kernel Activation","textPreview":"Kernel Activation","textChars":17,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":17,"text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/qxs72x4n","slide":17,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":17,"text":"활성화 입력","textPreview":"활성화 입력","textChars":6,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/83itgfml","slide":17,"text":"선택된 AID\n거래 데이터\n단말 설정\n성공한 SELECT 응답과 PDOL","textPreview":"선택된 AID | 거래 데이터 | 단말 설정 | 성공한 SELECT 응답과 PDOL","textChars":40,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/fepkzupw","slide":17,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/mtwra5gb","slide":17,"text":"시작 조건","textPreview":"시작 조건","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":17,"text":"Entry Point가 최종 SELECT 응답을 검증한 뒤 Kernel로 인계","textPreview":"Entry Point가 최종 SELECT 응답을 검증한 뒤 Kernel로 인계","textChars":43,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/d4vmtwra","slide":17,"text":"첫 Kernel 명령","textPreview":"첫 Kernel 명령","textChars":11,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/6dcbulwv","slide":17,"text":"GET PROCESSING OPTIONS","textPreview":"GET PROCESSING OPTIONS","textChars":22,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/vy90je9c","slide":17,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/o7qpg3ex","slide":17,"text":"활성화 작업\n내부 버퍼 초기화\n거래별 상태 생성\nGPO 준비","textPreview":"활성화 작업 | 내부 버퍼 초기화 | 거래별 상태 생성 | GPO 준비","textChars":33,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/54zidony","slide":17,"text":"[슬라이드 17] Kernel Activation\n기본 대본 권장 시간 0:40\n\n[기본 대본]\nKernel Activation은 선택된 애플리케이션과 거래 조건을 Kernel 내부 상태로 옮기는 단계입니다. 거래별 데이터를 초기화하고 PDOL을 해석해 GPO를 준비합니다. Visa Book C-3에서 새 거래의 Kernel 처리는 GPO 전송으로 시작됩니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘활성화 입력’ 영역을 봅니다. 이 영역의 핵심은 선택된 AID, 거래 데이터, 단말 설정, 성공한 SELECT 응답과 PDOL입니다. 아래쪽 내용은 활성화 작업, 내부 버퍼 초기화, 거래별 상태 생성, GPO 준비라는 의미이므로, 위의 개념과 분리하지 말고 같은 처리 흐름으로 연결합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Initiate Application Processing’입니다."}
+{"kind":"slide","id":"sl/m58z25kb","slide":18,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/mhk3q5o7","slide":18,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":18,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":18,"text":"Initiate Application Processing","textPreview":"Initiate Application Processing","textChars":31,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":18,"text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/m58z25kb","slide":18,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/twra5gbq","slide":18,"text":"목적","textPreview":"목적","textChars":2,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":18,"text":"카드가 요구한 PDOL 값으로 GPO를 구성하고\n카드의 초기 처리 결과를 받는다.","textPreview":"카드가 요구한 PDOL 값으로 GPO를 구성하고 | 카드의 초기 처리 결과를 받는다.","textChars":45,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/bm58z25k","slide":18,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/m1cfa9w3","slide":18,"text":"정상 경로","textPreview":"정상 경로","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/cfa9w3m9","slide":18,"text":"GPO 전송 → SW 9000 → 응답 형식 검증 → 데이터 저장","textPreview":"GPO 전송 → SW 9000 → 응답 형식 검증 → 데이터 저장","textChars":36,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/1032lszq","slide":18,"text":"오류 분기","textPreview":"오류 분기","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":18,"text":"Select Next\nTry Another Interface\nTry Again\nEnd Application","textPreview":"Select Next | Try Another Interface | Try Again | End Application","textChars":59,"textLines":4,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/judg7ads","slide":18,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":18,"text":"성공 응답에서 AIP, AFL과 거래 판단 데이터가 제공될 수 있다.","textPreview":"성공 응답에서 AIP, AFL과 거래 판단 데이터가 제공될 수 있다.","textChars":38,"textLines":1,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/m58z25kb","slide":18,"text":"[슬라이드 18] Initiate Application Processing\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nInitiate Application Processing의 중심은 GPO입니다. Reader는 카드가 PDOL에서 요청한 단말 데이터를 정해진 순서로 넣어 전송합니다. 응답 상태와 형식을 검사하고 AIP, AFL, 암호 결과 같은 후속 데이터를 저장합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘목적’ 영역을 봅니다. 이 영역의 핵심은 카드가 요구한 PDOL 값으로 GPO를 구성하고, 카드의 초기 처리 결과를 받는다.입니다. 아래쪽 내용은 성공 응답에서 AIP, AFL과 거래 판단 데이터가 제공될 수 있다.라는 의미이므로, 위의 개념과 분리하지 말고 같은 처리 흐름으로 연결합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Figure 5-1 · GPO 상태 흐름’입니다."}
+{"kind":"slide","id":"sl/bat47y1k","slide":19,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":7}
+{"kind":"shape","id":"sh/1gvy90je","slide":19,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":19,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":19,"text":"Figure 5-1 · GPO 상태 흐름","textPreview":"Figure 5-1 · GPO 상태 흐름","textChars":22,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":19,"text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/xs72x4na","slide":19,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":19,"text":"핵심 질문","textPreview":"핵심 질문","textChars":5,"textLines":1,"bbox":[64,181,250,28]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":19,"text":"9000 · 계속 처리\n6984 · Try Another Interface\n6985 · Select Next\n6986 · Try Again\n기타 · End Application","textPreview":"9000 · 계속 처리 | 6984 · Try Another Interface | 6985 · Select Next | 6986 · Try Again | 기타 · End Application","textChars":98,"textLines":5,"bbox":[64,220,440,150]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":19,"text":"GPO 상태어는 단순 성공·실패 값이 아니라 Entry Point로 돌아갈 위치와 사용자 안내를 결정한다.","textPreview":"GPO 상태어는 단순 성공·실패 값이 아니라 Entry Point로 돌아갈 위치와 사용자 안내를 결정한다.","textChars":59,"textLines":1,"bbox":[64,530,1120,70]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":19,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"image","id":"im/rmhk3q5o","slide":19,"name":"","bbox":[729.45,176,297.09,420]}
+{"kind":"notes","id":"nt/bat47y1k","slide":19,"text":"[슬라이드 19] Figure 5-1 · GPO 상태 흐름\n기본 대본 권장 시간 0:50\n\n[기본 대본]\nFigure 5-1은 GPO 상태어를 Outcome으로 변환합니다. 9000은 정상 처리, 6984는 Try Another Interface, 6985는 Select Next, 6986은 Try Again입니다. 그 밖의 상태어는 End Application으로 종료합니다. 구현 검토에서는 이 다섯 분기가 서로 다른 결과로 보존되는지 확인해야 합니다.\n\n[보충 설명 - 시간 여유 시]\n예를 들어 6985는 단순 오류가 아닙니다. 현재 조합을 후보 목록에서 제거하고 Entry Point의 Combination Selection으로 돌아가라는 의미입니다. 6986은 약 1.3초 동안 RF 전원을 끊고 같은 카드를 다시 읽도록 요청하는 별도 재시도 경로입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘PDOL · 카드가 요구하는 단말 데이터’입니다."}
+{"kind":"slide","id":"sl/j2t83itg","slide":20,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/t83itgfm","slide":20,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":20,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":20,"text":"PDOL · 카드가 요구하는 단말 데이터","textPreview":"PDOL · 카드가 요구하는 단말 데이터","textChars":22,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/4byhgn29","slide":20,"text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/twra5gbq","slide":20,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":20,"text":"정의","textPreview":"정의","textChars":2,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":20,"text":"PDOL은 카드가 GPO 전에 요구하는\n단말 데이터의 태그·길이·순서 목록이다.","textPreview":"PDOL은 카드가 GPO 전에 요구하는 | 단말 데이터의 태그·길이·순서 목록이다.","textChars":44,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":20,"text":"대표 데이터\nTTQ 9F66\nAmount 9F02\nUN 9F37\nDate · Country · Currency","textPreview":"대표 데이터 | TTQ 9F66 | Amount 9F02 | UN 9F37 | Date · Country · Currency","textChars":61,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/tsvu9kni","slide":20,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":20,"text":"구성 원칙","textPreview":"구성 원칙","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":20,"text":"태그를 보내는 것이 아니라 각 태그의 값을 요청 순서와 길이에 맞춰 연결","textPreview":"태그를 보내는 것이 아니라 각 태그의 값을 요청 순서와 길이에 맞춰 연결","textChars":40,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":20,"text":"GPO 포장","textPreview":"GPO 포장","textChars":6,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":20,"text":"구성한 값은 Command Template 83에 넣는다.","textPreview":"구성한 값은 Command Template 83에 넣는다.","textChars":32,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/9s36hcrm","slide":20,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/j2t83itg","slide":20,"text":"[슬라이드 20] PDOL · 카드가 요구하는 단말 데이터\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nPDOL은 태그 목록이지만 GPO에는 태그 자체를 넣지 않습니다. 카드가 지정한 순서와 길이에 맞춰 각 단말 데이터의 값만 연결하고 83 템플릿으로 감쌉니다. TTQ, 승인 금액, 예측 불가능 수 등이 대표 항목입니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘정의’ 영역을 봅니다. 이 영역의 핵심은 PDOL은 카드가 GPO 전에 요구하는, 단말 데이터의 태그·길이·순서 목록이다.입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘GPO 명령’입니다."}
+{"kind":"slide","id":"sl/mhk3q5o7","slide":21,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/z25kb6xk","slide":21,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":21,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/d8v6psfi","slide":21,"text":"GPO 명령","textPreview":"GPO 명령","textChars":6,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":21,"text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/vahoza1g","slide":21,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":21,"text":"명령 구조","textPreview":"명령 구조","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/dg7adsji","slide":21,"text":"CLA 80 · INS A8 · P1 00 · P2 00\nLc · 83 · PDOL Related Data · Le","textPreview":"CLA 80 · INS A8 · P1 00 · P2 00 | Lc · 83 · PDOL Related Data · Le","textChars":64,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/61032lsz","slide":21,"text":"예시\n80 A8 00 00 10 83 0E\n36000000 000000001000 11223344 00","textPreview":"예시 | 80 A8 00 00 10 83 0E | 36000000 000000001000 11223344 00","textChars":57,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/vmtwra5g","slide":21,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":21,"text":"전달하는 것","textPreview":"전달하는 것","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":21,"text":"이번 거래의 단말 능력과 조건","textPreview":"이번 거래의 단말 능력과 조건","textChars":16,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/t83itgfm","slide":21,"text":"받는 것","textPreview":"받는 것","textChars":4,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":21,"text":"카드 기능, 레코드 위치, 암호 결과와 판단 데이터","textPreview":"카드 기능, 레코드 위치, 암호 결과와 판단 데이터","textChars":28,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":21,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/mhk3q5o7","slide":21,"text":"[슬라이드 21] GPO 명령\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nGPO 명령은 80 A8로 시작합니다. 데이터 필드에는 83 템플릿과 PDOL Related Data가 들어갑니다. 이 명령으로 단말은 이번 거래 조건을 카드에 전달하고, 카드는 초기 처리 결과를 반환합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘명령 구조’ 영역을 봅니다. 이 영역의 핵심은 CLA 80 · INS A8 · P1 00 · P2 00, Lc · 83 · PDOL Related Data · Le입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘GPO 응답과 두 가지 형식’입니다."}
+{"kind":"slide","id":"sl/5wjudg7a","slide":22,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/yxobm58z","slide":22,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":22,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":22,"text":"Visa GPO 응답과 소스 호환 분기","textPreview":"Visa GPO 응답과 소스 호환 분기","textChars":21,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":22,"text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/ylc7u54z","slide":22,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":22,"text":"규격과 구현 구분","textPreview":"규격과 구현 구분","textChars":9,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":22,"text":"Visa C-3 필수\nFormat 2 · Template 77 · BER-TLV\n\nTNP-10 호환 분기\nFormat 1 · Template 80 · 위치 기반","textPreview":"Visa C-3 필수 | Format 2 · Template 77 · BER-TLV |  | TNP-10 호환 분기 | Format 1 · Template 80 · 위치 기반","textChars":89,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/rytsvu9k","slide":22,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":22,"text":"대표 데이터","textPreview":"대표 데이터","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":22,"text":"AIP · AFL · CID\nApplication Cryptogram\nIAD · CTQ · 9F69","textPreview":"AIP · AFL · CID | Application Cryptogram | IAD · CTQ · 9F69","textChars":55,"textLines":3,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/lwval87e","slide":22,"text":"상태어","textPreview":"상태어","textChars":3,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":22,"text":"정상 응답은 SW1 SW2 = 90 00","textPreview":"정상 응답은 SW1 SW2 = 90 00","textChars":22,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":22,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":22,"text":"Template 80 지원은 소스 호환 범위이며 Visa C-3 필수 요구로 보지 않는다.","textPreview":"Template 80 지원은 소스 호환 범위이며 Visa C-3 필수 요구로 보지 않는다.","textChars":50,"textLines":1,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/5wjudg7a","slide":22,"text":"[슬라이드 22] Visa GPO 응답과 소스 호환 분기\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nVisa C-3 5.2.1.2가 요구하는 GPO 응답 형식은 EMV Format 2, 즉 Template 77입니다. TNP-10 소스에는 Template 80을 처리하는 Format 1 분기도 있지만, 이것은 범용 EMV 또는 기존 카드와의 호환 코드로 구분해야 합니다. Visa 요구 충족의 직접 근거는 Template 77 처리 경로입니다.\n\n[보충 설명 - 시간 여유 시]\nTemplate 77에서는 82, 94, 9F27, 9F26, 9F10, 9F6C 같은 BER-TLV 데이터를 함께 받을 수 있습니다. 따라서 AIP와 AFL만 고정 위치에서 읽는 Template 80보다 태그 길이, 중복, 필수 데이터 검사가 더 중요합니다.\n\n[전환 멘트]\n이제 Template 77 안에서 후속 레코드 읽기를 결정하는 AIP와 AFL을 보겠습니다."}
+{"kind":"slide","id":"sl/crmhk3q5","slide":23,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":23,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":23,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":23,"text":"AIP와 AFL","textPreview":"AIP와 AFL","textChars":8,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":23,"text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":23,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":23,"text":"AIP · Tag 82","textPreview":"AIP · Tag 82","textChars":12,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":23,"text":"카드가 지원하는 애플리케이션 기능을 나타낸다.","textPreview":"카드가 지원하는 애플리케이션 기능을 나타낸다.","textChars":25,"textLines":1,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":23,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":23,"text":"AFL 엔트리","textPreview":"AFL 엔트리","textChars":7,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/0z61032l","slide":23,"text":"SFI\nStart Record\nEnd Record\nODA Record Count","textPreview":"SFI | Start Record | End Record | ODA Record Count","textChars":44,"textLines":4,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":23,"text":"분기","textPreview":"분기","textChars":2,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":23,"text":"AFL이 있으면 READ RECORD\n없으면 Card Read Complete","textPreview":"AFL이 있으면 READ RECORD | 없으면 Card Read Complete","textChars":43,"textLines":2,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":23,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":23,"text":"AFL · Tag 94\n읽어야 할 SFI와 Record 범위,\n오프라인 인증에 사용할 레코드 수를 제공한다.","textPreview":"AFL · Tag 94 | 읽어야 할 SFI와 Record 범위, | 오프라인 인증에 사용할 레코드 수를 제공한다.","textChars":60,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/crmhk3q5","slide":23,"text":"[슬라이드 23] AIP와 AFL\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nAIP는 카드의 기능을, AFL은 후속 데이터의 위치를 설명합니다. AFL의 각 4바이트 엔트리에는 SFI, 시작과 끝 레코드, 오프라인 인증 레코드 수가 들어 있습니다. Kernel은 AFL을 순회하며 READ RECORD를 수행합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘AIP · Tag 82’ 영역을 봅니다. 이 영역의 핵심은 카드가 지원하는 애플리케이션 기능을 나타낸다.입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Read Application Data’입니다."}
+{"kind":"slide","id":"sl/bq1oryts","slide":24,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/9s36hcrm","slide":24,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":24,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":24,"text":"Read Application Data","textPreview":"Read Application Data","textChars":21,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":24,"text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/90je9cvi","slide":24,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":24,"text":"처리","textPreview":"처리","textChars":2,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":24,"text":"AFL의 각 SFI와 Record 범위를 순회해\nREAD RECORD 명령을 반복한다.","textPreview":"AFL의 각 SFI와 Record 범위를 순회해 | READ RECORD 명령을 반복한다.","textChars":48,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":24,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":24,"text":"수집 데이터","textPreview":"수집 데이터","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/tovahoza","slide":24,"text":"PAN/Track 2 Equivalent\n유효기간\nCDOL\n발급사·인증 관련 태그","textPreview":"PAN/Track 2 Equivalent | 유효기간 | CDOL | 발급사·인증 관련 태그","textChars":45,"textLines":4,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/032lszqt","slide":24,"text":"완료 조건","textPreview":"완료 조건","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":24,"text":"필요한 레코드를 모두 읽거나 오류가 발생하면 반복 종료","textPreview":"필요한 레코드를 모두 읽거나 오류가 발생하면 반복 종료","textChars":30,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":24,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":24,"text":"예시\nAFL 10 01 02 00\n→ SFI 2, Record 1~2\n→ 00 B2 01 14 00","textPreview":"예시 | AFL 10 01 02 00 | → SFI 2, Record 1~2 | → 00 B2 01 14 00","textChars":55,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/bq1oryts","slide":24,"text":"[슬라이드 24] Read Application Data\n기본 대본 권장 시간 0:50\n\n[기본 대본]\nRead Application Data에서는 AFL을 4바이트 단위로 읽고 각 레코드를 요청합니다. 예를 들어 SFI 2의 첫 번째 레코드는 00 B2 01 14 00 명령으로 읽습니다. 성공한 응답의 TLV는 Kernel 내부 카드 데이터로 저장됩니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘처리’ 영역을 봅니다. 이 영역의 핵심은 AFL의 각 SFI와 Record 범위를 순회해, READ RECORD 명령을 반복한다.입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Card Read Complete’입니다."}
+{"kind":"slide","id":"sl/61032lsz","slide":25,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/byhgn29g","slide":25,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":25,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":25,"text":"Card Read Complete","textPreview":"Card Read Complete","textChars":18,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/il0rqd4v","slide":25,"text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":25,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":25,"text":"검사 항목","textPreview":"검사 항목","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":25,"text":"필수 데이터 누락\nPrimitive 태그 중복\n길이·형식 오류\n알 수 없는 데이터 처리\nCID · IAD · CTQ 조건","textPreview":"필수 데이터 누락 | Primitive 태그 중복 | 길이·형식 오류 | 알 수 없는 데이터 처리 | CID · IAD · CTQ 조건","textChars":67,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/ixczed8v","slide":25,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":25,"text":"RF 경계","textPreview":"RF 경계","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":25,"text":"필요한 카드 데이터를 읽은 뒤 카드 제거를 안내할 수 있다.","textPreview":"필요한 카드 데이터를 읽은 뒤 카드 제거를 안내할 수 있다.","textChars":33,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":25,"text":"이후 처리","textPreview":"이후 처리","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/90je9cvi","slide":25,"text":"Reader 내부에서 제한 검사, 인증, CVM과 Outcome 판단을 계속한다.","textPreview":"Reader 내부에서 제한 검사, 인증, CVM과 Outcome 판단을 계속한다.","textChars":45,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":25,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":25,"text":"카드 읽기가 끝났다는 사실과\n거래 데이터가 유효하다는 판단은 별개다.","textPreview":"카드 읽기가 끝났다는 사실과 | 거래 데이터가 유효하다는 판단은 별개다.","textChars":38,"textLines":2,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/61032lsz","slide":25,"text":"[슬라이드 25] Card Read Complete\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nCard Read Complete는 단순한 통신 종료가 아닙니다. GPO와 READ RECORD에서 모은 데이터에 필수값 누락, 중복, 길이와 형식 문제가 없는지 확인합니다. 이 검사가 끝나면 카드가 RF 필드에서 제거돼도 Reader 내부 판단을 계속할 수 있습니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘검사 항목’ 영역을 봅니다. 이 영역의 핵심은 필수 데이터 누락, Primitive 태그 중복, 길이·형식 오류, 알 수 없는 데이터 처리, CID · IAD · CTQ 조건입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Processing Restrictions’입니다."}
+{"kind":"slide","id":"sl/psfil0rq","slide":26,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/1gvy90je","slide":26,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":26,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":26,"text":"Processing Restrictions","textPreview":"Processing Restrictions","textChars":23,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":26,"text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/xs72x4na","slide":26,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":26,"text":"검사 대상","textPreview":"검사 대상","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":26,"text":"Application Expiration Date\nTerminal Exception File · 선택\nApplication Usage Control\nManual Cash · Cashback 조건","textPreview":"Application Expiration Date | Terminal Exception File · 선택 | Application Usage Control | Manual Cash · Cashback 조건","textChars":108,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/8jqh0fep","slide":26,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":26,"text":"결과 영향","textPreview":"결과 영향","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":26,"text":"계속 처리\nTry Another Interface\nDecline 또는 다른 Outcome","textPreview":"계속 처리 | Try Another Interface | Decline 또는 다른 Outcome","textChars":49,"textLines":3,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/8bat47y1","slide":26,"text":"핵심","textPreview":"핵심","textChars":2,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/jqh0fepk","slide":26,"text":"통신 성공과 거래 허용은 서로 다른 판단이다.","textPreview":"통신 성공과 거래 허용은 서로 다른 판단이다.","textChars":25,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/q5o7qpg3","slide":26,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":26,"text":"기술적으로 읽힌 카드라도\n거래 조건에 맞지 않으면 승인 경로로 갈 수 없다.","textPreview":"기술적으로 읽힌 카드라도 | 거래 조건에 맞지 않으면 승인 경로로 갈 수 없다.","textChars":42,"textLines":2,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/psfil0rq","slide":26,"text":"[슬라이드 26] Processing Restrictions\n기본 대본 권장 시간 0:40\n\n[기본 대본]\nVisa C-3의 Processing Restrictions는 Application Expiration Date를 확인하고, 구현한 경우 Terminal Exception File을 검사합니다. 또한 Application Usage Control로 Manual Cash와 Cashback 거래 허용 여부를 판단합니다. 카드 통신 성공과 거래 허용은 서로 다른 판단입니다.\n\n[보충 설명 - 시간 여유 시]\n일반 접촉식 EMV 설명에서 자주 언급하는 Application Version과 Effective Date를 이 슬라이드에 그대로 가져오지 않습니다. 이번 발표의 근거인 Visa C-3 v2.10 5.5절에 맞춰 만료일, 선택적 예외 파일, AUC 기반 현금·캐시백 검사만 설명합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘CVM · TTQ와 CTQ’입니다."}
+{"kind":"slide","id":"sl/gfmlkjm1","slide":27,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/fyxobm58","slide":27,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":27,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":27,"text":"CVM · TTQ와 CTQ","textPreview":"CVM · TTQ와 CTQ","textChars":14,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":27,"text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/fa9w3m94","slide":27,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":27,"text":"TTQ · Reader → Card","textPreview":"TTQ · Reader → Card","textChars":19,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":27,"text":"단말이 지원하는 기능과 이번 거래 조건\nOnline PIN · Signature · CDCVM · Online Required","textPreview":"단말이 지원하는 기능과 이번 거래 조건 | Online PIN · Signature · CDCVM · Online Required","textChars":70,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":27,"text":"CTQ · Card → Reader\n카드가 요구하거나 수행한 처리\nOnline PIN · Signature · CDCVM · Interface Switch","textPreview":"CTQ · Card → Reader | 카드가 요구하거나 수행한 처리 | Online PIN · Signature · CDCVM · Interface Switch","textChars":86,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/je9cvixc","slide":27,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/nih4byhg","slide":27,"text":"판단 방식","textPreview":"판단 방식","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/yxobm58z","slide":27,"text":"단말 지원 능력과 카드 요구의 조합으로 공통 CVM을 선택","textPreview":"단말 지원 능력과 카드 요구의 조합으로 공통 CVM을 선택","textChars":32,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":27,"text":"불일치","textPreview":"불일치","textChars":3,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/g3ex0nux","slide":27,"text":"지원하지 않는 요구는 다른 CVM, 온라인, 거절 또는 인터페이스 전환으로 연결","textPreview":"지원하지 않는 요구는 다른 CVM, 온라인, 거절 또는 인터페이스 전환으로 연결","textChars":44,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":27,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/gfmlkjm1","slide":27,"text":"[슬라이드 27] CVM · TTQ와 CTQ\n기본 대본 권장 시간 0:50\n\n[기본 대본]\nTTQ는 단말의 능력과 이번 거래 조건을 카드에 전달하고, CTQ는 카드의 요구나 수행 결과를 Reader에 전달합니다. Kernel은 두 값을 조합해 공통 CVM을 선택합니다. 단순히 CTQ를 따르는 것이 아니라 단말 지원 여부와 함께 판단합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘TTQ · Reader → Card’ 영역을 봅니다. 이 영역의 핵심은 단말이 지원하는 기능과 이번 거래 조건, Online PIN · Signature · CDCVM · Online Required입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘온라인 처리와 Outcome’입니다."}
+{"kind":"slide","id":"sl/vahoza1g","slide":28,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/94fu18jq","slide":28,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/2hwfyxob","slide":28,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/r2p8nqxs","slide":28,"text":"온라인 처리와 Outcome","textPreview":"온라인 처리와 Outcome","textChars":15,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":28,"text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/9gr2p8nq","slide":28,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":28,"text":"카드 결과","textPreview":"카드 결과","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/ra5gbq1o","slide":28,"text":"ARQC · 온라인 승인 요청\nTC · 승인 완료 가능\nAAC · 거절","textPreview":"ARQC · 온라인 승인 요청 | TC · 승인 완료 가능 | AAC · 거절","textChars":39,"textLines":3,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/kzupwb2h","slide":28,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/9knih4by","slide":28,"text":"Outcome 예","textPreview":"Outcome 예","textChars":9,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":28,"text":"Online Request\nApproved\nDeclined\nTry Again","textPreview":"Online Request | Approved | Declined | Try Again","textChars":42,"textLines":4,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":28,"text":"L3로 전달","textPreview":"L3로 전달","textChars":6,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":28,"text":"호스트 승인, UI와 후속 업무는 상위 애플리케이션이 수행","textPreview":"호스트 승인, UI와 후속 업무는 상위 애플리케이션이 수행","textChars":32,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/ih4byhgn","slide":28,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":28,"text":"Kernel은 CID, Application Cryptogram, IAD와\n누적 상태를 종합해 Outcome을 구성한다.","textPreview":"Kernel은 CID, Application Cryptogram, IAD와 | 누적 상태를 종합해 Outcome을 구성한다.","textChars":67,"textLines":2,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/vahoza1g","slide":28,"text":"[슬라이드 28] 온라인 처리와 Outcome\n기본 대본 권장 시간 0:45\n\n[기본 대본]\n온라인 처리 방향은 CID와 Application Cryptogram만으로 끝나지 않습니다. IAD, TTQ와 CTQ, 검증 상태를 함께 종합해 Outcome을 만듭니다. 상위 애플리케이션은 이 결과를 받아 온라인 승인이나 화면 안내를 수행합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘카드 결과’ 영역을 봅니다. 이 영역의 핵심은 ARQC · 온라인 승인 요청, TC · 승인 완료 가능, AAC · 거절입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘fDDA와 선택 기능’입니다."}
+{"kind":"slide","id":"sl/a1gvy90j","slide":29,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":7}
+{"kind":"shape","id":"sh/ji5snelo","slide":29,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":29,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":29,"text":"fDDA와 선택 기능","textPreview":"fDDA와 선택 기능","textChars":11,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/ulwval87","slide":29,"text":"29","textPreview":"29","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/j6tovaho","slide":29,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/crmhk3q5","slide":29,"text":"fDDA 검증 체인","textPreview":"fDDA 검증 체인","textChars":10,"textLines":1,"bbox":[64,181,250,28]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":29,"text":"CA Key → Issuer Certificate → ICC Certificate → SDAD 검증","textPreview":"CA Key → Issuer Certificate → ICC Certificate → SDAD 검증","textChars":55,"textLines":1,"bbox":[64,220,440,150]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":29,"text":"오프라인 가능 Reader의 fDDA는 필수다. Issuer Update와 IDS는 구현 선택이며 활성 호출과 결과 반영을 따로 확인한다.","textPreview":"오프라인 가능 Reader의 fDDA는 필수다. Issuer Update와 IDS는 구현 선택이며 활성 호출과 결과 반영을 따로 확인한다.","textChars":77,"textLines":1,"bbox":[64,530,1120,70]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":29,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"image","id":"im/donyd0z6","slide":29,"name":"","bbox":[729.45,176,297.09,420]}
+{"kind":"notes","id":"nt/a1gvy90j","slide":29,"text":"[슬라이드 29] fDDA와 선택 기능\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nfDDA는 CA 공개키, Issuer 인증서, ICC 인증서와 SDAD를 검증합니다. Visa C-3에서 오프라인 가능 Reader는 fDDA를 지원해야 합니다. Issuer Update와 IDS는 구현 선택이므로 별도로 평가합니다. 2부에서는 함수 이름의 존재가 아니라 실제 거래 경로 호출과 결과 반영을 구현 근거로 사용합니다.\n\n[보충 설명 - 시간 여유 시]\nfDDA용 동적 서명은 GPO 시점에 카드가 생성하고, AFL이 가리키는 레코드에서 인증서와 정적 인증 데이터를 읽은 뒤 Reader가 검증합니다. 실패 시 CTQ에 따라 온라인 전환, 다른 인터페이스 또는 거절 방향을 선택합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘1부 요약 · Kernel 3 처리 순서’입니다."}
+{"kind":"slide","id":"sl/kre1w7mp","slide":30,"title":"PART 1 · DOCUMENT SUMMARY","textShapes":11}
+{"kind":"shape","id":"sh/ap4r65wj","slide":30,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":30,"text":"PART 1 · DOCUMENT SUMMARY","textPreview":"PART 1 · DOCUMENT SUMMARY","textChars":25,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/svu9knih","slide":30,"text":"1부 요약 · Kernel 3 처리 순서","textPreview":"1부 요약 · Kernel 3 처리 순서","textChars":22,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":30,"text":"30","textPreview":"30","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/a1gvy90j","slide":30,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":30,"text":"Entry Point","textPreview":"Entry Point","textChars":11,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":30,"text":"Pre-Processing\nProtocol Activation\nCombination Selection\nKernel Activation","textPreview":"Pre-Processing | Protocol Activation | Combination Selection | Kernel Activation","textChars":74,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/3m94fu18","slide":30,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":30,"text":"핵심 데이터","textPreview":"핵심 데이터","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":30,"text":"PDOL · TTQ · AIP · AFL\nCID · AC · IAD · CTQ","textPreview":"PDOL · TTQ · AIP · AFL | CID · AC · IAD · CTQ","textChars":43,"textLines":2,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/d0z61032","slide":30,"text":"2부의 질문","textPreview":"2부의 질문","textChars":6,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":30,"text":"이 순서가 TNP-10의 어떤 파일, 함수와 APDU로 구현되는가?","textPreview":"이 순서가 TNP-10의 어떤 파일, 함수와 APDU로 구현되는가?","textChars":37,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":30,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/knih4byh","slide":30,"text":"Kernel 3\nGPO → AFL / READ RECORD → 검증\n→ 제한·인증·CVM → Online / Outcome","textPreview":"Kernel 3 | GPO → AFL / READ RECORD → 검증 | → 제한·인증·CVM → Online / Outcome","textChars":68,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/kre1w7mp","slide":30,"text":"[슬라이드 30] 1부 요약 · Kernel 3 처리 순서\n기본 대본 권장 시간 0:40\n\n[기본 대본]\n1부를 한 줄로 요약하면 Entry Point가 거래를 준비하고 애플리케이션을 선택한 뒤, Kernel 3가 GPO부터 시작해 카드 데이터를 읽고 검증하며 Outcome을 결정합니다. 이제 2부에서 이 순서가 TNP-10 소스에 어떻게 나타나는지 확인하겠습니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘Entry Point’ 영역을 봅니다. 이 영역의 핵심은 Pre-Processing, Protocol Activation, Combination Selection, Kernel Activation입니다.\n\n[전환 멘트]\n여기까지가 PDF 문서 요약입니다. 이제 2부로 넘어가서 같은 흐름이 TNP-10의 실제 파일과 함수에서 어떻게 구현됐는지 확인하겠습니다."}
+{"kind":"slide","id":"sl/h0fepkzu","slide":31,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/9s36hcrm","slide":31,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/y1kre1w7","slide":31,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/rmhk3q5o","slide":31,"text":"2부 · TNP-10 소스 코드 해설","textPreview":"2부 · TNP-10 소스 코드 해설","textChars":20,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/gfmlkjm1","slide":31,"text":"31","textPreview":"31","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/90je9cvi","slide":31,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/yd0z6103","slide":31,"text":"코드 읽는 순서","textPreview":"코드 읽는 순서","textChars":8,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/rytsvu9k","slide":31,"text":"1. 외부 명령 정의\n2. interface.c 진입\n3. EmvTranProc() 디스패치\n4. EmvFuncSelectAID() 처리","textPreview":"1. 외부 명령 정의 | 2. interface.c 진입 | 3. EmvTranProc() 디스패치 | 4. EmvFuncSelectAID() 처리","textChars":76,"textLines":4,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/gr2p8nqx","slide":31,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":31,"text":"연결 기준","textPreview":"연결 기준","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/tovahoza","slide":31,"text":"각 코드가 1부의 어느 상태와 책임에 해당하는지 설명","textPreview":"각 코드가 1부의 어느 상태와 책임에 해당하는지 설명","textChars":29,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/032lszqt","slide":31,"text":"구현 판단","textPreview":"구현 판단","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":31,"text":"활성 호출과 결과 반환까지 확인된 경로만 구현 근거로 사용","textPreview":"활성 호출과 결과 반환까지 확인된 경로만 구현 근거로 사용","textChars":32,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":31,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":31,"text":"5. SELECT / GPO / READ RECORD APDU\n6. 데이터 검증과 결과 구성\n7. NFC_Control.c RF 전달","textPreview":"5. SELECT / GPO / READ RECORD APDU | 6. 데이터 검증과 결과 구성 | 7. NFC_Control.c RF 전달","textChars":74,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/h0fepkzu","slide":31,"text":"[슬라이드 31] 2부 · TNP-10 소스 코드 해설\n기본 대본 권장 시간 0:35\n\n[기본 대본]\n2부는 외부 명령에서 시작해 RF 전달까지 실제 호출 순서로 읽습니다. 각 슬라이드 왼쪽에는 코드 조각을, 오른쪽에는 1부의 대응 단계와 구현 의미를 제시합니다. 비활성 조건부 컴파일 코드는 활성 구현과 구분합니다.\n\n[보충 설명 - 시간 여유 시]\n화면에서는 먼저 왼쪽의 ‘코드 읽는 순서’ 영역을 봅니다. 이 영역의 핵심은 1. 외부 명령 정의, 2. interface.c 진입, 3. EmvTranProc() 디스패치, 4. EmvFuncSelectAID() 처리입니다. 아래쪽 내용은 5. SELECT / GPO / READ RECORD APDU, 6.\n\n[전환 멘트]\n먼저 전체 코드베이스를 파일별 책임으로 나눈 뒤, 외부 명령에서 RF 전송까지 아래 방향으로 따라가겠습니다."}
+{"kind":"slide","id":"sl/yhgn29gr","slide":32,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/ed8bat47","slide":32,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":32,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":32,"text":"코드베이스의 실제 계층","textPreview":"코드베이스의 실제 계층","textChars":12,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":32,"text":"32","textPreview":"32","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/eloj2t83","slide":32,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":32,"text":"파일 역할","textPreview":"파일 역할","textChars":5,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":32,"text":"EMV_DEFINE.H\n외부 명령 코드와 데이터 정의\n\ninterface.c\n프레임 수신·파싱·Kernel 호출","textPreview":"EMV_DEFINE.H | 외부 명령 코드와 데이터 정의 |  | interface.c | 프레임 수신·파싱·Kernel 호출","textChars":62,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/7adsji5s","slide":32,"text":"EMV_PROC.C\nKernel 절차·데이터 검증·APDU 생성\n\nNFC_Control.c\nISO 14443-4 / PN5180 RF 교환","textPreview":"EMV_PROC.C | Kernel 절차·데이터 검증·APDU 생성 |  | NFC_Control.c | ISO 14443-4 / PN5180 RF 교환","textChars":77,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/epkzupwb","slide":32,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":32,"text":"1부 대응","textPreview":"1부 대응","textChars":5,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/x4nap4r6","slide":32,"text":"L3 Host → L2 Kernel → L1 RF 경계","textPreview":"L3 Host → L2 Kernel → L1 RF 경계","textChars":30,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/qd4vmtwr","slide":32,"text":"분석 시작점","textPreview":"분석 시작점","textChars":6,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/fyxobm58","slide":32,"text":"기준 버전: EMV2_231016 + TIT PN5180 project 소스","textPreview":"기준 버전: EMV2_231016 + TIT PN5180 project 소스","textChars":42,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":32,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/yhgn29gr","slide":32,"text":"[슬라이드 32] 코드베이스의 실제 계층\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nTNP-10 소스는 네 파일을 중심으로 읽을 수 있습니다. EMV_DEFINE.H는 명령, interface.c는 외부 프레임과 Kernel의 연결, EMV_PROC.C는 핵심 거래 처리, NFC_Control.c는 RF 교환을 담당합니다. 이 계층이 1부의 L3, L2, L1 경계와 대응합니다.\n\n[보충 설명 - 시간 여유 시]\n이번 분석의 정확한 기준은 EMV2_231016의 EMV_DEFINE.H와 EMV_PROC.C, 그리고 TIT_DiscreteAntPn5180 프로젝트의 interface.c와 NFC_Control.c입니다. 같은 저장소에 다른 변형이 있으므로 파일명만이 아니라 이 기준 경로를 함께 밝혀야 합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘VCAS 명령 코드가 Kernel 진입점을 정의’입니다."}
+{"kind":"slide","id":"sl/3ex0nuxc","slide":33,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/ex0nuxc3","slide":33,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":33,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":33,"text":"VCAS 명령 코드가 Kernel 진입점을 정의","textPreview":"VCAS 명령 코드가 Kernel 진입점을 정의","textChars":26,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":33,"text":"33","textPreview":"33","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/e9cvixcz","slide":33,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/lwval87e","slide":33,"text":"EMV_DEFINE.H · 100-105 · 원문 발췌","textPreview":"EMV_DEFINE.H · 100-105 · 원문 발췌","textChars":30,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":33,"text":"#define AP_VCAS_GETCONFIG          0x80\n#define AP_VCAS_SETCONFIG_DEFAULT  0x81\n#define AP_VCAS_SETCONFIG          0x82","textPreview":"#define AP_VCAS_GETCONFIG          0x80 | #define AP_VCAS_SETCONFIG_DEFAULT  0x81 | #define AP_VCAS_SETCONFIG          0x82","textChars":119,"textLines":3,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":33,"text":"#define AP_PREPARETRANSACTION      0x83\n#define AP_STARTTRANSACTION        0x84\n#define AP_STARTTRANSACTIONASYNC   0x85","textPreview":"#define AP_PREPARETRANSACTION      0x83 | #define AP_STARTTRANSACTION        0x84 | #define AP_STARTTRANSACTIONASYNC   0x85","textChars":119,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/ahoza1gv","slide":33,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/cj6tovah","slide":33,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/54zidony","slide":33,"text":"1부 · Kernel Activation 이전","textPreview":"1부 · Kernel Activation 이전","textChars":25,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":33,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":33,"text":"상위 Host가 설정과 거래 준비를 전달하고 0x84/0x85로 Kernel 거래를 시작한다.","textPreview":"상위 Host가 설정과 거래 준비를 전달하고 0x84/0x85로 Kernel 거래를 시작한다.","textChars":52,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/cvixczed","slide":33,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/3ex0nuxc","slide":33,"text":"[슬라이드 33] VCAS 명령 코드가 Kernel 진입점을 정의\n기본 대본 권장 시간 0:50\n\n[기본 대본]\n먼저 외부 명령 코드입니다. 80부터 82는 설정, 83은 거래 준비, 84와 85는 거래 시작입니다. 이 값이 interface.c의 분기 기준이 됩니다. 1부 기준으로는 L3가 거래 데이터를 준비하고 Kernel Activation으로 인계하는 인터페이스입니다.\n\n[보충 설명 - 시간 여유 시]\n0x83은 거래 데이터를 준비하는 명령이고 0x84와 0x85가 동기·비동기 거래 시작입니다. 이 값들은 EMV 표준 APDU가 아니라 TNP-10 Host와 펌웨어 사이의 사설 명령 코드이며, 이후 interface.c의 switch 분기에 사용됩니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘interface.c · StartTransaction 분기’입니다."}
+{"kind":"slide","id":"sl/kb6xkf6d","slide":34,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/itgfmlkj","slide":34,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":34,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/0z61032l","slide":34,"text":"interface.c · StartTransaction 분기","textPreview":"interface.c · StartTransaction 분기","textChars":33,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/72x4nap4","slide":34,"text":"34","textPreview":"34","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/ih4byhgn","slide":34,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/p8nqxs72","slide":34,"text":"interface.c · 1307-1315 · 가독성을 위해 변수명 축약","textPreview":"interface.c · 1307-1315 · 가독성을 위해 변수명 축약","textChars":40,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":34,"text":"case 0x84: // AP_STARTTRANSACTION\ncase 0x85: // AP_STARTTRANSACTIONASYNC\n    if (SetVCASDataParsing(&rxbuf[12], rxlen-12))\n    {\n        EmvTranProc(0xA2, NULL, 0, rsp, &rspLen);","textPreview":"case 0x84: // AP_STARTTRANSACTION | case 0x85: // AP_STARTTRANSACTIONASYNC |     if (SetVCASDataParsing(&rxbuf[12], rxlen-12)) |     { | ...","textChars":178,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/7y1kre1w","slide":34,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/ed8v6psf","slide":34,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/8v6psfil","slide":34,"text":"1부 · Combination Selection → Kernel Activation","textPreview":"1부 · Combination Selection → Kernel Activation","textChars":46,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/xczed8v6","slide":34,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/qpg3ex0n","slide":34,"text":"TNP-10은 Host 거래 시작 경로에서 PPSE 선택과 Kernel 처리를 연속 호출한다. 규격의 Entry Point·Kernel 경계가 코드 모듈로 완전히 분리된 구조는 아니다.","textPreview":"TNP-10은 Host 거래 시작 경로에서 PPSE 선택과 Kernel 처리를 연속 호출한다. 규격의 Entry Point·Kernel 경계가 코드 모듈로 완전히 분리된 구조는 아니다.","textChars":103,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":34,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/8jqh0fep","slide":34,"text":"        EmvTranProc(rxbuf[11], &rxbuf[12], rxlen-12,\n                    rsp, &rspLen);\n        ESC_SendFrame_emv(rsp, rspLen, port_num);\n    }","textPreview":"EmvTranProc(rxbuf[11], &rxbuf[12], rxlen-12, |                     rsp, &rspLen); |         ESC_SendFrame_emv(rsp, rspLen, port_num); |  ...","textChars":143,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/kb6xkf6d","slide":34,"text":"[슬라이드 34] interface.c · StartTransaction 분기\n기본 대본 권장 시간 0:55\n\n[기본 대본]\ninterface.c의 84와 85 분기입니다. VCAS 거래 데이터를 파싱한 뒤 0xA2로 PPSE 선택을 호출하고, 이어서 원래 거래 시작 명령을 EmvTranProc에 전달합니다. Visa 규격에서는 Combination Selection이 Entry Point 책임이지만, TNP-10은 선택과 Kernel 처리를 한 실행 경로에 연속 배치했습니다.\n\n[보충 설명 - 시간 여유 시]\n화면 코드는 원문의 icptr->rxbuf와 DataBuffer를 짧은 변수명으로 바꾼 축약본입니다. 실제 순서는 SetVCASDataParsing, EmvTranProc(0xA2), EmvTranProc(0x84 또는 0x85), ESC_SendFrame_emv입니다. 0xA2 호출 하나만으로 표준 Combination Selection 전체가 입증되는 것은 아닙니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘EmvTranProc() · 활성 함수 디스패치’입니다."}
+{"kind":"slide","id":"sl/xs72x4na","slide":35,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/twra5gbq","slide":35,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/m58z25kb","slide":35,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/bq1oryts","slide":35,"text":"EmvTranProc() · 활성 함수 디스패치","textPreview":"EmvTranProc() · 활성 함수 디스패치","textChars":26,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/4nap4r65","slide":35,"text":"35","textPreview":"35","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/t83itgfm","slide":35,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":35,"text":"EMV_PROC.C · 1462-1486 · 원문 발췌","textPreview":"EMV_PROC.C · 1462-1486 · 원문 발췌","textChars":30,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/b2hwfyxo","slide":35,"text":"switch (Cmd_code)\n{\ncase AP_RF_PSE_FILE_SEL:\n    EmvFuncSelectPSE(pCmd, nCmdlen, pRsp, nRsplen);\n    break;\ncase AP_RF_AID_FILE_SEL:\ncase AP_STARTTRANSACTION:","textPreview":"switch (Cmd_code) | { | case AP_RF_PSE_FILE_SEL: |     EmvFuncSelectPSE(pCmd, nCmdlen, pRsp, nRsplen); |     break; | case AP_RF_AID_FILE...","textChars":158,"textLines":7,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/4vmtwra5","slide":35,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":35,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/xc3ylc7u","slide":35,"text":"1부 · Entry Point와 Kernel 책임 경계","textPreview":"1부 · Entry Point와 Kernel 책임 경계","textChars":30,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":35,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/f6dcbulw","slide":35,"text":"PSE 선택은 별도 함수로, AID 선택 이후의 핵심 거래는 EmvFuncSelectAID()로 집중된다.","textPreview":"PSE 선택은 별도 함수로, AID 선택 이후의 핵심 거래는 EmvFuncSelectAID()로 집중된다.","textChars":59,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/mlkjm1cf","slide":35,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":35,"text":"case AP_STARTTRANSACTIONASYNC:\n    EmvFuncSelectAID(pCmd, nCmdlen, pRsp, nRsplen);\n    break;\ncase AP_RF_TRAN_END:\n    EmvFuncEndTran(pCmd, nCmdlen, pRsp, nRsplen);\n}","textPreview":"case AP_STARTTRANSACTIONASYNC: |     EmvFuncSelectAID(pCmd, nCmdlen, pRsp, nRsplen); |     break; | case AP_RF_TRAN_END: |     EmvFuncEnd...","textChars":166,"textLines":6,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/xs72x4na","slide":35,"text":"[슬라이드 35] EmvTranProc() · 활성 함수 디스패치\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nEmvTranProc은 외부 명령을 실제 처리 함수로 연결합니다. PSE 선택은 EmvFuncSelectPSE, AID 선택과 StartTransaction은 EmvFuncSelectAID로 들어갑니다. 이 디스패치는 어떤 함수가 활성 거래 경로에 있는지 확인하는 가장 직접적인 근거입니다.\n\n[보충 설명 - 시간 여유 시]\nAP_RF_PSE_FILE_SEL은 EmvFuncSelectPSE로 가고 AID 선택과 StartTransaction은 EmvFuncSelectAID로 합쳐집니다. 즉 규격 단계별로 독립 상태 머신을 둔 형태보다, 외부 명령을 큰 절차형 함수로 전달하는 디스패치 구조에 가깝습니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘EmvFuncSelectAID() · 거래 상태 초기화’입니다."}
+{"kind":"slide","id":"sl/i5sneloj","slide":36,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/fmlkjm1c","slide":36,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":36,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":36,"text":"EmvFuncSelectAID() · 거래 상태 초기화","textPreview":"EmvFuncSelectAID() · 거래 상태 초기화","textChars":30,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":36,"text":"36","textPreview":"36","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/je9cvixc","slide":36,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":36,"text":"EMV_PROC.C · 1883-1918 · 함수 선언 축약","textPreview":"EMV_PROC.C · 1883-1918 · 함수 선언 축약","textChars":33,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":36,"text":"bool EmvFuncSelectAID(...)\n{\n    BYTE AFLdata[253];\n    BYTE dll_err = ERR_NONE;\n    BYTE pDolData[255];","textPreview":"bool EmvFuncSelectAID(...) | { |     BYTE AFLdata[253]; |     BYTE dll_err = ERR_NONE; |     BYTE pDolData[255];","textChars":104,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/qpg3ex0n","slide":36,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/fa9w3m94","slide":36,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/je9cvixc","slide":36,"text":"1부 · Kernel Activation","textPreview":"1부 · Kernel Activation","textChars":22,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/qtcj6tov","slide":36,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/1gvy90je","slide":36,"text":"AFL, PDOL, GPO 응답과 오류 상태를 거래 시작 시 초기화한다. 이후 핵심 흐름이 이 함수 안에서 이어진다.","textPreview":"AFL, PDOL, GPO 응답과 오류 상태를 거래 시작 시 초기화한다. 이후 핵심 흐름이 이 함수 안에서 이어진다.","textChars":65,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":36,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":36,"text":"    BYTE lGPOData[364];\n    memset(AFLdata, 0x00, sizeof(AFLdata));\n    memset(icRetData, 0x00, sizeof(icRetData));\n    memset(pDolData, 0x00, sizeof(pDolData));\n    formCheck[5] = 0x00;","textPreview":"BYTE lGPOData[364]; |     memset(AFLdata, 0x00, sizeof(AFLdata)); |     memset(icRetData, 0x00, sizeof(icRetData)); |     memset(pDolData...","textChars":186,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/i5sneloj","slide":36,"text":"[슬라이드 36] EmvFuncSelectAID() · 거래 상태 초기화\n기본 대본 권장 시간 0:50\n\n[기본 대본]\nEmvFuncSelectAID의 시작 부분은 거래별 상태를 초기화합니다. AFL, PDOL, GPO 응답 저장 버퍼와 오류 상태를 준비합니다. 1부의 Kernel Activation에서 설명한 내부 상태 생성에 해당합니다. 전역 데이터가 많기 때문에 초기화 누락 여부가 중요한 검토 지점입니다.\n\n[보충 설명 - 시간 여유 시]\nAFLdata, pDolData, lGPOData는 이번 거래에서만 사용할 임시 버퍼지만 stICC와 formCheck 같은 상태는 전역 구조체와 배열에 남습니다. 따라서 재시도나 중단 뒤 이전 거래 값이 남지 않도록 모든 관련 필드가 초기화되는지 검토해야 합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘SELECT APDU · 선택 단계의 실제 바이트’입니다."}
+{"kind":"slide","id":"sl/nuxc3ylc","slide":37,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/1032lszq","slide":37,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/u9knih4b","slide":37,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/judg7ads","slide":37,"text":"SELECT APDU · 선택 단계의 실제 바이트","textPreview":"SELECT APDU · 선택 단계의 실제 바이트","textChars":27,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/c7u54zid","slide":37,"text":"37","textPreview":"37","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/1orytsvu","slide":37,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/u18jqh0f","slide":37,"text":"EMV_PROC.C · 9582-9604 · 원문 발췌","textPreview":"EMV_PROC.C · 9582-9604 · 원문 발췌","textChars":30,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":37,"text":"data[len++] = 0x00;\ndata[len++] = 0xA4;\ndata[len++] = 0x04;\ndata[len++] = p1;\ndata[len++] = IDlen;","textPreview":"data[len++] = 0x00; | data[len++] = 0xA4; | data[len++] = 0x04; | data[len++] = p1; | data[len++] = IDlen;","textChars":98,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/cvixczed","slide":37,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":37,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/18jqh0fe","slide":37,"text":"1부 · Entry Point 선택 APDU","textPreview":"1부 · Entry Point 선택 APDU","textChars":24,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/8nqxs72x","slide":37,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/j2t83itg","slide":37,"text":"SELECT PPSE와 SELECT AID는 같은 전송 함수를 사용한다. 이 함수는 APDU 생성 근거이며 우선순위·후보 조합 평가 전체의 근거는 아니다.","textPreview":"SELECT PPSE와 SELECT AID는 같은 전송 함수를 사용한다. 이 함수는 APDU 생성 근거이며 우선순위·후보 조합 평가 전체의 근거는 아니다.","textChars":86,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/qh0fepkz","slide":37,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/1w7mp0bi","slide":37,"text":"memcpy(&data[len], FileID, IDlen);\nlen += IDlen;\ndata[len++] = 0x00;\nSendRcvICCAPDU(data, len, pRxData, nRxlen, pSW);","textPreview":"memcpy(&data[len], FileID, IDlen); | len += IDlen; | data[len++] = 0x00; | SendRcvICCAPDU(data, len, pRxData, nRxlen, pSW);","textChars":117,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/nuxc3ylc","slide":37,"text":"[슬라이드 37] SELECT APDU · 선택 단계의 실제 바이트\n기본 대본 권장 시간 0:50\n\n[기본 대본]\n이 코드는 SELECT 명령을 실제 바이트 배열로 만듭니다. CLA 00, INS A4, P1 04와 데이터 길이, PPSE 또는 AID, Le를 넣습니다. 다만 SELECT APDU를 전송할 수 있다는 사실과 표준 Combination Selection의 후보 구성, 우선순위, 재선택 규칙을 모두 구현했다는 사실은 구분해야 합니다.\n\n[보충 설명 - 시간 여유 시]\n실제 PPSE 예시는 00 A4 04 00 0E 325041592E5359532E4444463031 00입니다. Visa AID A0000000031010을 선택한다면 00 A4 04 00 07 A0000000031010 00이 됩니다. FileID만 바뀌고 APDU 생성 함수는 동일합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘EmvFuncSelectAID() 내부 처리 순서’입니다."}
+{"kind":"slide","id":"sl/kjm1cfa9","slide":38,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":7}
+{"kind":"shape","id":"sh/2x4nap4r","slide":38,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":38,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/k3q5o7qp","slide":38,"text":"EmvFuncSelectAID() 내부 처리 순서","textPreview":"EmvFuncSelectAID() 내부 처리 순서","textChars":27,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/val87ed8","slide":38,"text":"38","textPreview":"38","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/6psfil0r","slide":38,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/dcbulwva","slide":38,"text":"핵심 흐름","textPreview":"핵심 흐름","textChars":5,"textLines":1,"bbox":[64,181,250,28]}
+{"kind":"textbox","id":"sh/kre1w7mp","slide":38,"text":"SELECT AID → PDOL 구성 → GPO → AFL → READ RECORD → 검증 → 결과 반환","textPreview":"SELECT AID → PDOL 구성 → GPO → AFL → READ RECORD → 검증 → 결과 반환","textChars":59,"textLines":1,"bbox":[64,220,440,150]}
+{"kind":"textbox","id":"sh/2lszqtcj","slide":38,"text":"문서의 여러 상태가 하나의 큰 절차형 함수에 집중되어 있어 로그와 오류 위치를 단계별로 구분해야 한다.","textPreview":"문서의 여러 상태가 하나의 큰 절차형 함수에 집중되어 있어 로그와 오류 위치를 단계별로 구분해야 한다.","textChars":57,"textLines":1,"bbox":[64,530,1120,70]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":38,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"image","id":"im/2t83itgf","slide":38,"name":"","bbox":[540,195.77,676,380.45]}
+{"kind":"notes","id":"nt/kjm1cfa9","slide":38,"text":"[슬라이드 38] EmvFuncSelectAID() 내부 처리 순서\n기본 대본 권장 시간 0:45\n\n[기본 대본]\n이 그림은 EmvFuncSelectAID 내부의 큰 흐름을 요약합니다. SELECT AID 이후 PDOL을 만들고 GPO를 수행하며, AFL이 있으면 READ RECORD를 반복합니다. 이후 데이터 검증과 TTQ, CTQ 판단, 결과 반환까지 한 함수에 집중돼 있습니다.\n\n[보충 설명 - 시간 여유 시]\n규격상 SELECT AID까지는 Entry Point이고 Kernel 3의 첫 명령은 GPO입니다. 이 그림은 TNP-10 함수 내부 순서이므로 SELECT AID가 앞에 포함돼 있습니다. 문서 상태와 소스 함수 경계가 일대일로 나뉘지 않는 대표 사례입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘DoldataSetting() · PDOL 값 구성’입니다."}
+{"kind":"slide","id":"sl/hgn29gr2","slide":39,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/d8v6psfi","slide":39,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":39,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/z25kb6xk","slide":39,"text":"DoldataSetting() · PDOL 값 구성","textPreview":"DoldataSetting() · PDOL 값 구성","textChars":28,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":39,"text":"39","textPreview":"39","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/dg7adsji","slide":39,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":39,"text":"EMV_PROC.C · 6554, 6620-6634 · 조건 분기 축약","textPreview":"EMV_PROC.C · 6554, 6620-6634 · 조건 분기 축약","textChars":39,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/vahoza1g","slide":39,"text":"void DoldataSetting(UINT tp, BYTE *pDolData, UINT *nDolLen)\n{\n    ...\n    if (tmpdol[i] == 0x9F && tmpdol[i+1] == 0x02)\n    {\n        ValueToBCD(tmpAmount, stAPP.AuthAmount, 6);","textPreview":"void DoldataSetting(UINT tp, BYTE *pDolData, UINT *nDolLen) | { |     ... |     if (tmpdol[i] == 0x9F && tmpdol[i+1] == 0x02) |     { |  ...","textChars":177,"textLines":6,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/o7qpg3ex","slide":39,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/dsji5sne","slide":39,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/pwb2hwfy","slide":39,"text":"1부 · PDOL","textPreview":"1부 · PDOL","textChars":9,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/0bi9s36h","slide":39,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/7qpg3ex0","slide":39,"text":"카드가 요청한 태그와 길이를 읽고 단말의 실제 값을 DOL 순서로 연결한다. 화면 예시는 승인 금액 9F02 처리다.","textPreview":"카드가 요청한 태그와 길이를 읽고 단말의 실제 값을 DOL 순서로 연결한다. 화면 예시는 승인 금액 9F02 처리다.","textChars":65,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/i5sneloj","slide":39,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/p4r65wju","slide":39,"text":"        memcpy(&dolData[dolLen], tmpAmount, tmpdol[i+2]);\n        dolLen += tmpdol[i+2];\n    }\n    ...\n}","textPreview":"memcpy(&dolData[dolLen], tmpAmount, tmpdol[i+2]); |         dolLen += tmpdol[i+2]; |     } |     ... | }","textChars":104,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/hgn29gr2","slide":39,"text":"[슬라이드 39] DoldataSetting() · PDOL 값 구성\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nDoldataSetting은 PDOL을 실제 값 배열로 바꾸는 함수입니다. 예시 구간은 승인 금액 9F02를 BCD 6바이트로 변환해 DOL 버퍼에 붙입니다. 1부에서 설명한 ‘태그가 아니라 값만 순서대로 연결한다’는 규칙이 코드로 나타납니다.\n\n[보충 설명 - 시간 여유 시]\n실제 원문은 카드가 요구한 9F02 길이가 6보다 큰지, 같은지, 작은지에 따라 왼쪽 패딩 또는 복사 길이를 조정합니다. 화면은 핵심 원리만 보여 주는 축약 코드이며, ParseSelectAIDRsp에서 PDOL 9F38을 읽은 뒤 DoldataSetting(3, ...)으로 호출됩니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Host에서 Card까지 실제 소프트웨어 계층’입니다."}
+{"kind":"slide","id":"sl/5gbq1ory","slide":40,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":7}
+{"kind":"shape","id":"sh/y90je9cv","slide":40,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/5wjudg7a","slide":40,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/gbq1oryt","slide":40,"text":"Host에서 Card까지 실제 소프트웨어 계층","textPreview":"Host에서 Card까지 실제 소프트웨어 계층","textChars":25,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/n29gr2p8","slide":40,"text":"40","textPreview":"40","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/yhgn29gr","slide":40,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/58z25kb6","slide":40,"text":"호출 경로","textPreview":"호출 경로","textChars":5,"textLines":1,"bbox":[64,181,250,28]}
+{"kind":"textbox","id":"sh/gn29gr2p","slide":40,"text":"Host → interface.c → EMV_PROC.C → SendRcvICCAPDU → NFC_Control.c → PN5180 / Card","textPreview":"Host → interface.c → EMV_PROC.C → SendRcvICCAPDU → NFC_Control.c → PN5180 / Card","textChars":80,"textLines":1,"bbox":[64,220,440,150]}
+{"kind":"textbox","id":"sh/ytsvu9kn","slide":40,"text":"상위 프레임, Kernel 규칙, APDU 전송, RF 교환이 계층별로 분리되어 있다.","textPreview":"상위 프레임, Kernel 규칙, APDU 전송, RF 교환이 계층별로 분리되어 있다.","textChars":48,"textLines":1,"bbox":[64,530,1120,70]}
+{"kind":"textbox","id":"sh/83itgfml","slide":40,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"image","id":"im/uxc3ylc7","slide":40,"name":"","bbox":[540,195.77,676,380.45]}
+{"kind":"notes","id":"nt/5gbq1ory","slide":40,"text":"[슬라이드 40] Host에서 Card까지 실제 소프트웨어 계층\n기본 대본 권장 시간 0:45\n\n[기본 대본]\n이 계층도는 소스의 실제 호출 방향입니다. interface.c가 외부 명령을 받고, EMV_PROC.C가 Kernel 규칙과 APDU를 처리합니다. SendRcvICCAPDU를 지나 NFC_Control.c에서 ISO 14443-4 교환으로 내려갑니다. 1부의 L3, L2, L1 구조와 직접 대응합니다.\n\n[보충 설명 - 시간 여유 시]\n실제 전달 경로는 EMV_PROC.C의 SendRcvICCAPDU가 RF_Menu_Proc_EMV를 호출하고, interface.c의 RF_Menu_Proc_EMV가 __CCID_CmdDecode로 전달한 뒤 NFC_Control.c의 EmvcoDataExchange와 phpalI14443p4_Exchange로 내려갑니다. 화면은 중간 어댑터를 생략한 계층도입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘SendICCGetPorcOpt() · GPO APDU 생성’입니다."}
+{"kind":"slide","id":"sl/ovahoza1","slide":41,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/r2p8nqxs","slide":41,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/kjm1cfa9","slide":41,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/94fu18jq","slide":41,"text":"SendICCGetPorcOpt() · GPO APDU 생성","textPreview":"SendICCGetPorcOpt() · GPO APDU 생성","textChars":33,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/2p8nqxs7","slide":41,"text":"41","textPreview":"41","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/ra5gbq1o","slide":41,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/gvy90je9","slide":41,"text":"EMV_PROC.C · 9630-9675 · 원문 발췌","textPreview":"EMV_PROC.C · 9630-9675 · 원문 발췌","textChars":30,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/9gr2p8nq","slide":41,"text":"data[len++] = 0x80;\ndata[len++] = 0xA8;\ndata[len++] = 0x00;\ndata[len++] = 0x00;\ndata[len++] = m_dataLen + 2 + copyLen;\ndata[len++] = 0x83;","textPreview":"data[len++] = 0x80; | data[len++] = 0xA8; | data[len++] = 0x00; | data[len++] = 0x00; | data[len++] = m_dataLen + 2 + copyLen; | data[len...","textChars":138,"textLines":6,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/2t83itgf","slide":41,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/re1w7mp0","slide":41,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/bulwval8","slide":41,"text":"1부 · GPO 명령","textPreview":"1부 · GPO 명령","textChars":11,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":41,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":41,"text":"80 A8 헤더 뒤에 Command Template 83과 PDOL Related Data를 넣고 Le 00으로 전송한다.","textPreview":"80 A8 헤더 뒤에 Command Template 83과 PDOL Related Data를 넣고 Le 00으로 전송한다.","textChars":68,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":41,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":41,"text":"data[len++] = m_dataLen;\nmemcpy(&data[len], m_data, m_dataLen);\nlen += m_dataLen;\ndata[len++] = 0x00;\nSendRcvICCAPDU(data, len, pRxData, nRxlen, pSW);","textPreview":"data[len++] = m_dataLen; | memcpy(&data[len], m_data, m_dataLen); | len += m_dataLen; | data[len++] = 0x00; | SendRcvICCAPDU(data, len, p...","textChars":150,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/ovahoza1","slide":41,"text":"[슬라이드 41] SendICCGetPorcOpt() · GPO APDU 생성\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nSendICCGetPorcOpt가 GPO 명령을 구성합니다. 80 A8 00 00 헤더 뒤에 Lc, 83 템플릿, PDOL 값과 Le를 붙입니다. 1부의 GPO 명령 구조가 코드의 바이트 배열과 정확히 연결되는 지점입니다.\n\n[보충 설명 - 시간 여유 시]\nPDOL 값이 14바이트라면 데이터 필드는 83 0E 뒤에 14바이트 값이 오고 Lc는 태그와 길이를 포함해 10 hex가 됩니다. 예시는 80 A8 00 00 10 83 0E 36000000 000000001000 11223344 00입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘GPO 호출과 상태어 처리’입니다."}
+{"kind":"slide","id":"sl/byhgn29g","slide":42,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/m1cfa9w3","slide":42,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/tsvu9kni","slide":42,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/47y1kre1","slide":42,"text":"GPO 호출과 상태어 처리","textPreview":"GPO 호출과 상태어 처리","textChars":14,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/bat47y1k","slide":42,"text":"42","textPreview":"42","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/mp0bi9s3","slide":42,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/tgfmlkjm","slide":42,"text":"EMV_PROC.C · 2047-2069, 2454-2460 · 발췌","textPreview":"EMV_PROC.C · 2047-2069, 2454-2460 · 발췌","textChars":38,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/4vmtwra5","slide":42,"text":"if (nDolLen == 0)\n    SendICCGetPorcOpt(pDolData, nDolLen, FALSE,\n                      icRetData, &icRetLen, pSW12);\nelse\n    SendICCGetPorcOpt(pDolData, nDolLen, TRUE,\n                      icRetData, &icRetLen, pSW12);","textPreview":"if (nDolLen == 0) |     SendICCGetPorcOpt(pDolData, nDolLen, FALSE, |                       icRetData, &icRetLen, pSW12); | else |     Se...","textChars":221,"textLines":6,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/b2hwfyxo","slide":42,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/mhk3q5o7","slide":42,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/0z61032l","slide":42,"text":"1부 · Initiate Application Processing","textPreview":"1부 · Initiate Application Processing","textChars":36,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/pkzupwb2","slide":42,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/itgfmlkj","slide":42,"text":"9000은 정상 처리한다. 6985는 별도 오류로, 6984·6986·기타는 공통 오류로 처리되어 Visa 표준 Outcome 구분이 그대로 보존되지는 않는다.","textPreview":"9000은 정상 처리한다. 6985는 별도 오류로, 6984·6986·기타는 공통 오류로 처리되어 Visa 표준 Outcome 구분이 그대로 보존되지는 않는다.","textChars":89,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/7ed8bat4","slide":42,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/0nuxc3yl","slide":42,"text":"\nif (pSW12[0] == 0x90 && pSW12[1] == 0x00)\n{\n    memcpy(lGPOData, icRetData, icRetLen);\n    lGPODataLen = icRetLen;\n}","textPreview":"| if (pSW12[0] == 0x90 && pSW12[1] == 0x00) | { |     memcpy(lGPOData, icRetData, icRetLen); |     lGPODataLen = icRetLen; | }","textChars":117,"textLines":6,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/byhgn29g","slide":42,"text":"[슬라이드 42] GPO 호출과 상태어 처리\n기본 대본 권장 시간 0:50\n\n[기본 대본]\n이 구간은 PDOL 길이에 따라 GPO를 전송하고 9000 응답을 저장합니다. 그러나 하단 상태어 분기를 보면 6985만 ICC_FILE_SEL_ERR로 처리하고, 6984와 6986을 포함한 나머지는 ICC_SW_ERROR로 합칩니다. 따라서 Visa Figure 5-1의 Try Another Interface, Select Next, Try Again, End Application 구분이 이 함수 반환값에 그대로 나타나지는 않습니다.\n\n[보충 설명 - 시간 여유 시]\n규격 적합성을 높이려면 상태어별로 서로 다른 내부 결과를 만들고 상위 계층에서 표준 Outcome과 UI Request로 매핑해야 합니다. 특히 6985는 후보 조합 제거, 6986은 RF Field Off와 재시작 요청이 필요하므로 일반 오류 코드만으로는 정보가 부족합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Template 80 · 위치 기반 파싱’입니다."}
+{"kind":"slide","id":"sl/mp0bi9s3","slide":43,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/7adsji5s","slide":43,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/wval87ed","slide":43,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/pg3ex0nu","slide":43,"text":"Template 80 · 위치 기반 파싱","textPreview":"Template 80 · 위치 기반 파싱","textChars":22,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":43,"text":"43","textPreview":"43","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":43,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/w7mp0bi9","slide":43,"text":"EMV_PROC.C · 2087-2113","textPreview":"EMV_PROC.C · 2087-2113","textChars":22,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/psfil0rq","slide":43,"text":"if (icRetData[i] == 0x80)\n{\n    if ((icRetData[i+1] - 2) % 4 != 0)\n        dll_err = GOP_RSP_ERR;\n    SFI_cnt = (icRetData[i+1] - 2) / 4;","textPreview":"if (icRetData[i] == 0x80) | { |     if ((icRetData[i+1] - 2) % 4 != 0) |         dll_err = GOP_RSP_ERR; |     SFI_cnt = (icRetData[i+1] -...","textChars":137,"textLines":5,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/ed8bat47","slide":43,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/7u54zido","slide":43,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/3q5o7qpg","slide":43,"text":"소스 호환 분기 · EMV Format 1","textPreview":"소스 호환 분기 · EMV Format 1","textChars":23,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":43,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/lwval87e","slide":43,"text":"소스는 Template 80도 파싱하지만 Visa C-3가 필수로 요구하는 응답 형식은 Template 77이다.","textPreview":"소스는 Template 80도 파싱하지만 Visa C-3가 필수로 요구하는 응답 형식은 Template 77이다.","textChars":63,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/wb2hwfyx","slide":43,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":43,"text":"    memcpy(AIPdata, &icRetData[i+2], 2);\n    AIPcheck(AIPdata);\n    memcpy(AFLdata, &icRetData[i+4],\n           icRetData[i+1] - 2);\n}","textPreview":"memcpy(AIPdata, &icRetData[i+2], 2); |     AIPcheck(AIPdata); |     memcpy(AFLdata, &icRetData[i+4], |            icRetData[i+1] - 2); | }","textChars":134,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/mp0bi9s3","slide":43,"text":"[슬라이드 43] Template 80 · 위치 기반 파싱\n기본 대본 권장 시간 0:50\n\n[기본 대본]\nTemplate 80은 위치 기반으로 AIP 2바이트와 AFL을 읽습니다. 이 코드는 실제로 활성화되어 있지만 Visa C-3 5.2.1.2의 필수 근거는 아닙니다. 발표에서는 범용 EMV 또는 기존 구현 호환을 위한 Format 1 분기라고 설명하고, 다음 Template 77을 Visa 규격 대응 경로로 구분합니다.\n\n[보충 설명 - 시간 여유 시]\n길이에서 AIP 2바이트를 뺀 값이 4의 배수인지 확인하는 이유는 AFL 엔트리 하나가 SFI, 시작 레코드, 종료 레코드, ODA 레코드 수의 4바이트이기 때문입니다. 이 분기를 보여 주되 Visa 필수 동작으로 표현하지 않는 것이 핵심입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘Template 77 · BER-TLV 파싱’입니다."}
+{"kind":"slide","id":"sl/loj2t83i","slide":44,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/psfil0rq","slide":44,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":44,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/7mp0bi9s","slide":44,"text":"Template 77 · BER-TLV 파싱","textPreview":"Template 77 · BER-TLV 파싱","textChars":24,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/wval87ed","slide":44,"text":"44","textPreview":"44","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/pg3ex0nu","slide":44,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":44,"text":"EMV_PROC.C · 2131-2163","textPreview":"EMV_PROC.C · 2131-2163","textChars":22,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/7adsji5s","slide":44,"text":"else if (icRetData[i] == 0x77)\n{\n    for (k = i + 2 + Tg77overlen; k < icRetLen; k++)\n    {\n        if (icRetData[k] == 0x82)\n            memcpy(AIPdata, &icRetData[k+2], 2);\n        else if (icRetData[k] == 0x94)","textPreview":"else if (icRetData[i] == 0x77) | { |     for (k = i + 2 + Tg77overlen; k < icRetLen; k++) |     { |         if (icRetData[k] == 0x82) |  ...","textChars":213,"textLines":7,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/wra5gbq1","slide":44,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":44,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/9w3m94fu","slide":44,"text":"1부 · GPO 응답 / Template 77","textPreview":"1부 · GPO 응답 / Template 77","textChars":25,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/kb6xkf6d","slide":44,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/rqd4vmtw","slide":44,"text":"고정 위치 대신 82와 94 태그를 찾아 AIP와 AFL을 저장한다. 이후 다른 TLV도 같은 루프에서 처리한다.","textPreview":"고정 위치 대신 82와 94 태그를 찾아 AIP와 AFL을 저장한다. 이후 다른 TLV도 같은 루프에서 처리한다.","textChars":63,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/25kb6xkf","slide":44,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/9knih4by","slide":44,"text":"        {\n            tag94len = Realen;\n            SFI_cnt = tag94len / 4;\n            memcpy(AFLdata, &icRetData[k+2+overlen1],\n                   tag94len);\n        }\n    }\n}","textPreview":"{ |             tag94len = Realen; |             SFI_cnt = tag94len / 4; |             memcpy(AFLdata, &icRetData[k+2+overlen1], |       ...","textChars":178,"textLines":8,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/loj2t83i","slide":44,"text":"[슬라이드 44] Template 77 · BER-TLV 파싱\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nTemplate 77은 BER-TLV 방식입니다. 루프에서 82 태그를 찾으면 AIP를, 94를 찾으면 AFL을 저장합니다. CID, CTQ와 다른 태그도 같은 파싱 흐름에서 처리됩니다. 문서의 Format 2 지원 요구사항과 대응합니다.\n\n[보충 설명 - 시간 여유 시]\nVisa C-3 Format 2에서는 AIP와 AFL이 항상 존재하는 것은 아닙니다. 따라서 82와 94가 없다는 이유만으로 즉시 같은 오류를 내기보다 카드 처리 결과와 Card Read Complete의 필수 데이터 규칙을 함께 적용해야 합니다. 이 루프는 다른 BER-TLV 태그까지 저장하는 기반입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘AFL 루프 · READ RECORD 반복’입니다."}
+{"kind":"slide","id":"sl/sfil0rqd","slide":45,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/z61032ls","slide":45,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":45,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":45,"text":"AFL 루프 · READ RECORD 반복","textPreview":"AFL 루프 · READ RECORD 반복","textChars":23,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":45,"text":"45","textPreview":"45","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/zupwb2hw","slide":45,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":45,"text":"EMV_PROC.C · 2515-2573","textPreview":"EMV_PROC.C · 2515-2573","textChars":22,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":45,"text":"ICC_P2 = (AFLdata[dataPos] & 0xF8) + 0x04;\nstart_rec = AFLdata[dataPos+1];\nend_rec   = AFLdata[dataPos+2];\noff_cnt   = AFLdata[dataPos+3];\n\nfor (m_RecordNum = start_rec;\n     m_RecordNum <= end_rec; m_RecordNum++)","textPreview":"ICC_P2 = (AFLdata[dataPos] & 0xF8) + 0x04; | start_rec = AFLdata[dataPos+1]; | end_rec   = AFLdata[dataPos+2]; | off_cnt   = AFLdata[data...","textChars":213,"textLines":7,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/65wjudg7","slide":45,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":45,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":45,"text":"1부 · Read Application Data","textPreview":"1부 · Read Application Data","textChars":26,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":45,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":45,"text":"AFL 엔트리에서 P2와 레코드 범위를 만들고 READ RECORD를 반복한 뒤 응답 TLV를 저장한다.","textPreview":"AFL 엔트리에서 P2와 레코드 범위를 만들고 READ RECORD를 반복한 뒤 응답 TLV를 저장한다.","textChars":58,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":45,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/z61032ls","slide":45,"text":"{\n    SendICCardReadRecordData(0, ICC_P2, m_RecordNum,\n                              icRetData, &icRetLen, pSW12);\n    if (pSW12[0] == 0x90 && pSW12[1] == 0x00)\n        dll_err = settingMDOdata(icRetData, icRetLen, FALSE);\n}","textPreview":"{ |     SendICCardReadRecordData(0, ICC_P2, m_RecordNum, |                               icRetData, &icRetLen, pSW12); |     if (pSW12[0]...","textChars":224,"textLines":6,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/sfil0rqd","slide":45,"text":"[슬라이드 45] AFL 루프 · READ RECORD 반복\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nAFL 루프는 SFI에서 P2를 만들고 시작과 끝 레코드를 읽습니다. 각 레코드마다 SendICCardReadRecordData를 호출하고, 9000 응답이면 settingMDOdata로 TLV를 저장합니다. 1부의 Read Application Data가 가장 직접적으로 구현된 구간입니다.\n\n[보충 설명 - 시간 여유 시]\nAFL 첫 바이트의 상위 5비트가 SFI이고 하위 3비트는 0입니다. READ RECORD의 P2는 SFI 비트를 유지하고 참조 제어값 04를 더해 만듭니다. 예를 들어 AFL 첫 바이트 10 hex는 SFI 2이며 P2는 14 hex가 됩니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘SendICCardReadRecordData() · APDU 생성’입니다."}
+{"kind":"slide","id":"sl/nih4byhg","slide":46,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/x0nuxc3y","slide":46,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":46,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":46,"text":"SendICCardReadRecordData() · APDU 생성","textPreview":"SendICCardReadRecordData() · APDU 생성","textChars":36,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/83itgfml","slide":46,"text":"46","textPreview":"46","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/xobm58z2","slide":46,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":46,"text":"EMV_PROC.C · 9777-9799","textPreview":"EMV_PROC.C · 9777-9799","textChars":22,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":46,"text":"data[len++] = 0x00;\ndata[len++] = 0xB2;\ndata[len++] = RecNum;","textPreview":"data[len++] = 0x00; | data[len++] = 0xB2; | data[len++] = RecNum;","textChars":61,"textLines":3,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/4zidonyd","slide":46,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/xkf6dcbu","slide":46,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/1kre1w7m","slide":46,"text":"1부 · READ RECORD 명령","textPreview":"1부 · READ RECORD 명령","textChars":19,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/c3ylc7u5","slide":46,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/ji5snelo","slide":46,"text":"CLA 00, INS B2, Record, P2, Le를 배열에 넣는다. 예: SFI 2 / Record 1은 00 B2 01 14 00.","textPreview":"CLA 00, INS B2, Record, P2, Le를 배열에 넣는다. 예: SFI 2 / Record 1은 00 B2 01 14 00.","textChars":77,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/uxc3ylc7","slide":46,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/1cfa9w3m","slide":46,"text":"data[len++] = dwFileP2;\ndata[len++] = bDataSize;\nSendRcvICCAPDU(data, len, pRxData, nRxlen, pSW);","textPreview":"data[len++] = dwFileP2; | data[len++] = bDataSize; | SendRcvICCAPDU(data, len, pRxData, nRxlen, pSW);","textChars":97,"textLines":3,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/nih4byhg","slide":46,"text":"[슬라이드 46] SendICCardReadRecordData() · APDU 생성\n기본 대본 권장 시간 0:45\n\n[기본 대본]\nREAD RECORD APDU 생성 함수입니다. Record 번호와 AFL에서 계산한 P2, Le를 순서대로 넣습니다. SFI 2의 첫 레코드는 00 B2 01 14 00이 됩니다. 1부에서 본 명령 예시가 이 코드에서 생성됩니다.\n\n[보충 설명 - 시간 여유 시]\nAFL 10 01 02 00이면 SFI 2의 Record 1과 2를 읽습니다. 첫 명령은 00 B2 01 14 00이고 다음 명령은 00 B2 02 14 00입니다. 응답 9000일 때 settingMDOdata가 TLV를 내부 카드 데이터에 반영합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘TTQandCTQ() · CVM 호환성 판단’입니다."}
+{"kind":"slide","id":"sl/il0rqd4v","slide":47,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/at47y1kr","slide":47,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":47,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":47,"text":"TTQandCTQ() · TNP-10의 단순화된 CVM 검사","textPreview":"TTQandCTQ() · TNP-10의 단순화된 CVM 검사","textChars":33,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/32lszqtc","slide":47,"text":"47","textPreview":"47","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/ahoza1gv","slide":47,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/l87ed8ba","slide":47,"text":"EMV_PROC.C · 9853-9898 · 핵심 분기 발췌","textPreview":"EMV_PROC.C · 9853-9898 · 핵심 분기 발췌","textChars":33,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/sneloj2t","slide":47,"text":"if (tag_9F6Clen > 0)\n{\n    if (tag_9F6C[0] & 0x80) ctqPin = 1;\n    if (stTerminal.tag_9F66[0] & 0x04) ttqPin = 1;\n    if (tag_9F6C[0] & 0x40) ctqSign = 1;\n    if (stTerminal.tag_9F66[0] & 0x02) ttqSign = 1;\n    if (tag_9F6C[1] & 0x80) ctqCDCVM = 1;","textPreview":"if (tag_9F6Clen > 0) | { |     if (tag_9F6C[0] & 0x80) ctqPin = 1; |     if (stTerminal.tag_9F66[0] & 0x04) ttqPin = 1; |     if (tag_9F6...","textChars":248,"textLines":7,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/3q5o7qpg","slide":47,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/e9cvixcz","slide":47,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/87ed8bat","slide":47,"text":"1부 · CVM / TTQ · CTQ","textPreview":"1부 · CVM / TTQ · CTQ","textChars":20,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/xs72x4na","slide":47,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/q1orytsv","slide":47,"text":"비트 불일치가 있어도 TTQ의 CVM Required가 0이면 오류를 해제한다. Visa의 순차적 CVM 선택 전체가 아니라 제품별 보조 검사로 봐야 한다.","textPreview":"비트 불일치가 있어도 TTQ의 CVM Required가 0이면 오류를 해제한다. Visa의 순차적 CVM 선택 전체가 아니라 제품별 보조 검사로 봐야 한다.","textChars":87,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/fmlkjm1c","slide":47,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/8z25kb6x","slide":47,"text":"    if (stTerminal.tag_9F66[2] & 0x40) ttqCDCVM = 1;\n\n    if (ctqCDCVM && !ttqCDCVM) RetCTQ = 0x10;\n    if (ttqPin != ctqPin) RetCTQ = 0x10;\n    if (ctqSign != ttqSign) RetCTQ = 0x10;\n    if (RetCTQ == 0x10)\n        RetCTQ = (stTerminal.tag_9F66[1] & 0x40)\n                   ? 0x10 : 0x00;\n}","textPreview":"if (stTerminal.tag_9F66[2] & 0x40) ttqCDCVM = 1; |  |     if (ctqCDCVM && !ttqCDCVM) RetCTQ = 0x10; |     if (ttqPin != ctqPin) RetCTQ = ...","textChars":292,"textLines":9,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/il0rqd4v","slide":47,"text":"[슬라이드 47] TTQandCTQ() · TNP-10의 단순화된 CVM 검사\n기본 대본 권장 시간 0:55\n\n[기본 대본]\n이 함수는 Online PIN, Signature, CDCVM 비트를 비교해 임시 오류 0x10을 만듭니다. 하지만 뒤에서 TTQ의 CVM Required 비트가 0이면 다시 0으로 해제합니다. Visa 규격은 Online PIN, CDCVM 검증, Signature, CVM 없음 순서로 Outcome의 CVM을 결정하므로, 이 함수 하나를 Visa CVM 규칙 전체 구현이라고 설명해서는 안 됩니다.\n\n[보충 설명 - 시간 여유 시]\nVisa C-3에서는 CTQ가 없을 때도 Reader 지원 능력에 따라 Signature 또는 Online PIN을 요청할 수 있습니다. CTQ가 있으면 Online PIN을 먼저 보고, 그다음 CDCVM과 Card Authentication Related Data 일치 여부, Signature 순으로 판단합니다. 공통 CVM이 없고 CVM Required일 때 Decline Required를 설정합니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘SendRcvICCAPDU()와 RF 전달’입니다."}
+{"kind":"slide","id":"sl/xkf6dcbu","slide":48,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/xobm58z2","slide":48,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":48,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":48,"text":"SendRcvICCAPDU()와 RF 전달","textPreview":"SendRcvICCAPDU()와 RF 전달","textChars":23,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":48,"text":"48","textPreview":"48","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/x0nuxc3y","slide":48,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":48,"text":"EMV_PROC.C 9535 / NFC_Control.c 1902","textPreview":"EMV_PROC.C 9535 / NFC_Control.c 1902","textChars":36,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/fu18jqh0","slide":48,"text":"// EMV_PROC.C\nRF_Menu_Proc_EMV(Direct_Control, pRsp, &nRsplen,\n                 pTxData, nTxlen, 0);\nmemcpy(pSW, &pRsp[nRsplen-2], 2);\nmemcpy(pRxData, pRsp, nRsplen-2);\n","textPreview":"// EMV_PROC.C | RF_Menu_Proc_EMV(Direct_Control, pRsp, &nRsplen, |                  pTxData, nTxlen, 0); | memcpy(pSW, &pRsp[nRsplen-2], ...","textChars":169,"textLines":6,"bbox":[64,220,620,160]}
+{"kind":"textbox","id":"sh/4r65wjud","slide":48,"text":"// NFC_Control.c\nstatus = phpalI14443p4_Exchange(\n    &gphNfcLib_Params.spalI14443p4,\n    PH_EXCHANGE_DEFAULT, com_buffer, cmdsize,\n    &ppRxBuffer, &wRxLen);","textPreview":"// NFC_Control.c | status = phpalI14443p4_Exchange( |     &gphNfcLib_Params.spalI14443p4, |     PH_EXCHANGE_DEFAULT, com_buffer, cmdsize,...","textChars":158,"textLines":5,"bbox":[64,402,620,130]}
+{"kind":"shape","id":"sh/xc3ylc7u","slide":48,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/9cvixcze","slide":48,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/gr2p8nqx","slide":48,"text":"1부 · L2 Kernel → L1 RF 경계","textPreview":"1부 · L2 Kernel → L1 RF 경계","textChars":25,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/r65wjudg","slide":48,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/ylc7u54z","slide":48,"text":"Kernel이 만든 APDU를 NFC 계층으로 넘기고, 응답 마지막 2바이트를 SW1·SW2로 분리한다.","textPreview":"Kernel이 만든 APDU를 NFC 계층으로 넘기고, 응답 마지막 2바이트를 SW1·SW2로 분리한다.","textChars":58,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/5o7qpg3e","slide":48,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"notes","id":"nt/xkf6dcbu","slide":48,"text":"[슬라이드 48] SendRcvICCAPDU()와 RF 전달\n기본 대본 권장 시간 0:55\n\n[기본 대본]\nSendRcvICCAPDU는 Kernel과 RF 계층의 경계입니다. RF_Menu_Proc_EMV로 APDU를 넘기고, 응답의 마지막 두 바이트를 상태어로 분리합니다. NFC_Control.c에서는 ISO 14443-4 교환 함수로 실제 카드 통신을 수행합니다.\n\n[보충 설명 - 시간 여유 시]\nSendRcvICCAPDU는 응답 길이가 최소 2바이트라는 전제 아래 마지막 두 바이트를 SW1·SW2로 분리합니다. RF_Menu_Proc_EMV와 __CCID_CmdDecode를 지나 EmvcoDataExchange가 ISO 14443-4 교환을 수행하므로, RF 오류와 APDU 상태어 오류를 서로 다른 로그로 남기는 것이 좋습니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘결과 구성과 구현 범위 평가’입니다."}
+{"kind":"slide","id":"sl/cfa9w3m9","slide":49,"title":"PART 2 · SOURCE WALKTHROUGH","textShapes":11}
+{"kind":"shape","id":"sh/neloj2t8","slide":49,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/czed8v6p","slide":49,"text":"PART 2 · SOURCE WALKTHROUGH","textPreview":"PART 2 · SOURCE WALKTHROUGH","textChars":27,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/5kb6xkf6","slide":49,"text":"결과 구성과 구현 범위 평가","textPreview":"결과 구성과 구현 범위 평가","textChars":15,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/u54zidon","slide":49,"text":"49","textPreview":"49","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/nqxs72x4","slide":49,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/cbulwval","slide":49,"text":"EMV_PROC.C · 2632-2678","textPreview":"EMV_PROC.C · 2632-2678","textChars":22,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/5sneloj2","slide":49,"text":"if (dll_err == ERR_NONE && formCheck[5] != 0x0F)\n    dll_err = ICC_RSP_ERROR;\n\nif (tag_9F27len)\n{\n    if (TTQandCTQ() == 0x10)","textPreview":"if (dll_err == ERR_NONE && formCheck[5] != 0x0F) |     dll_err = ICC_RSP_ERROR; |  | if (tag_9F27len) | { |     if (TTQandCTQ() == 0x10)","textChars":126,"textLines":6,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/y90je9cv","slide":49,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/nuxc3ylc","slide":49,"text":"1부 대응 단계","textPreview":"1부 대응 단계","textChars":8,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":49,"text":"1부 · Card Read Complete 이후의 제품 응답","textPreview":"1부 · Card Read Complete 이후의 제품 응답","textChars":33,"textLines":1,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":49,"text":"구현 해석","textPreview":"구현 해석","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":49,"text":"dll_err와 TLV 반환은 제품 내부 응답 형식이다. 표준 Outcome Parameter Set·UI Request·Data Record와 동일하다고 볼 근거는 없다.","textPreview":"dll_err와 TLV 반환은 제품 내부 응답 형식이다. 표준 Outcome Parameter Set·UI Request·Data Record와 동일하다고 볼 근거는 없다.","textChars":96,"textLines":1,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/wra5gbq1","slide":49,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/7u54zido","slide":49,"text":"        dll_err = ERR_DECLINED;\n}\n\npRspData[tmplen++] = dll_err;\nmemcpy(&pRspData[tmplen], sDataToicm, sDataLen);\nmemcpy(&pRspData[tmplen], lGPOData, lGPODataLen);","textPreview":"dll_err = ERR_DECLINED; | } |  | pRspData[tmplen++] = dll_err; | memcpy(&pRspData[tmplen], sDataToicm, sDataLen); | memcpy(&pRspData[tmpl...","textChars":163,"textLines":6,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/cfa9w3m9","slide":49,"text":"[슬라이드 49] 결과 구성과 구현 범위 평가\n기본 대본 권장 시간 1:00\n\n[기본 대본]\n마지막 구간은 필수 데이터와 TTQ, CTQ 검사 결과를 dll_err에 반영하고 카드 데이터와 GPO 원문을 상위 응답에 붙입니다. 이는 TNP-10의 제품 내부 응답 형식입니다. Visa 표준의 Outcome Parameter Set, UI Request, Data Record, Discretionary Data 구조와 동일하다고 볼 수 없으며 별도 매핑 계층의 근거가 필요합니다.\n\n[보충 설명 - 시간 여유 시]\n확인된 것은 SELECT, GPO, READ RECORD, 일부 데이터 검증, TTQ·CTQ 보조 검사와 RF 전달입니다. 별도로 확인해야 할 것은 상태어별 표준 Outcome, UI Request 파라미터, 오프라인 가능 Reader의 fDDA 활성 경로, 그리고 선택 기능인 Issuer Update와 IDS입니다.\n\n[전환 멘트]\n이 내용을 기준으로 이어지는 다음 주제는 ‘문서 구조와 코드 경로를 분리해 읽는다’입니다."}
+{"kind":"slide","id":"sl/tgfmlkjm","slide":50,"title":"CONCLUSION","textShapes":11}
+{"kind":"shape","id":"sh/ap4r65wj","slide":50,"bbox":[0,0,1280,8]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":50,"text":"CONCLUSION","textPreview":"CONCLUSION","textChars":10,"textLines":1,"bbox":[64,35,360,24]}
+{"kind":"textbox","id":"sh/svu9knih","slide":50,"text":"문서 구조와 코드 경로를 분리해 읽는다","textPreview":"문서 구조와 코드 경로를 분리해 읽는다","textChars":21,"textLines":1,"bbox":[64,72,1120,65]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":50,"text":"50","textPreview":"50","textChars":2,"textLines":1,"bbox":[1180,40,48,24]}
+{"kind":"shape","id":"sh/a1gvy90j","slide":50,"bbox":[64,150,1152,2]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":50,"text":"1부의 결론","textPreview":"1부의 결론","textChars":6,"textLines":1,"bbox":[64,181,540,28]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":50,"text":"Kernel 3는 GPO부터 시작해 카드 데이터를 수집·검증하고\nTTQ·CTQ·암호 결과와 거래 상태를 종합해 Outcome을 만든다.","textPreview":"Kernel 3는 GPO부터 시작해 카드 데이터를 수집·검증하고 | TTQ·CTQ·암호 결과와 거래 상태를 종합해 Outcome을 만든다.","textChars":75,"textLines":2,"bbox":[64,220,620,160]}
+{"kind":"shape","id":"sh/3m94fu18","slide":50,"bbox":[718,180,2,385]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":50,"text":"확인된 범위","textPreview":"확인된 범위","textChars":6,"textLines":1,"bbox":[754,181,430,28]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":50,"text":"Selection · GPO · READ RECORD\n데이터 검증 · TTQ/CTQ · RF 전달","textPreview":"Selection · GPO · READ RECORD | 데이터 검증 · TTQ/CTQ · RF 전달","textChars":54,"textLines":2,"bbox":[754,220,430,120]}
+{"kind":"textbox","id":"sh/d0z61032","slide":50,"text":"추가 검증","textPreview":"추가 검증","textChars":5,"textLines":1,"bbox":[754,370,430,28]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":50,"text":"상태어별 표준 Outcome·UI Request\nfDDA 필수 조건 · Issuer Update·IDS 선택 기능","textPreview":"상태어별 표준 Outcome·UI Request | fDDA 필수 조건 · Issuer Update·IDS 선택 기능","textChars":63,"textLines":2,"bbox":[754,410,430,120]}
+{"kind":"textbox","id":"sh/vu9knih4","slide":50,"text":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textPreview":"Visa Kernel 3 구조와 TNP-10 소스 활용 · Technical Review","textChars":49,"textLines":1,"bbox":[64,664,1050,20]}
+{"kind":"textbox","id":"sh/knih4byh","slide":50,"text":"2부의 결론\nTNP-10은 interface.c → EmvTranProc() →\nEmvFuncSelectAID() → APDU → NFC_Control.c의\n활성 경로로 기본 거래를 구현한다.","textPreview":"2부의 결론 | TNP-10은 interface.c → EmvTranProc() → | EmvFuncSelectAID() → APDU → NFC_Control.c의 | 활성 경로로 기본 거래를 구현한다.","textChars":107,"textLines":4,"bbox":[64,402,620,130]}
+{"kind":"notes","id":"nt/tgfmlkjm","slide":50,"text":"[슬라이드 50] 문서 구조와 코드 경로를 분리해 읽는다\n기본 대본 권장 시간 0:55\n\n[기본 대본]\n정리하겠습니다. 1부에서는 Visa Kernel 3의 구조와 거래 흐름을 먼저 이해했습니다. 2부에서는 외부 명령에서 RF 전달까지 실제 코드를 따라가며 기본 거래 경로를 확인했습니다. 문서 요약과 소스 분석을 두 단계로 분리하면 구현된 범위와 추가 검증이 필요한 범위를 더 정확하게 설명할 수 있습니다.\n\n[보충 설명 - 시간 여유 시]\n발표의 결론은 구현됐다고 단정하는 기능 목록이 아니라 근거 수준의 구분입니다. APDU 생성과 RF 전달은 코드로 확인됐지만, Visa 표준 Outcome 구조와 상태어별 재시작 동작은 현재 dll_err 반환만으로 입증되지 않습니다. 이 경계를 분명히 말하면 문서와 소스를 과장 없이 연결할 수 있습니다.\n\n[전환 멘트]\n이상으로 문서 구조와 실제 코드 경로에 대한 설명을 마치고 질문을 받겠습니다."}
